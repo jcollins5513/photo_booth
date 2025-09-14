@@ -1,0 +1,325 @@
+# SwiftLint Configuration for Vehicle Photo Booth
+
+# Paths to include/exclude
+included:
+  - VehiclePhotoBooth
+  - VehiclePhotoBoothTests
+
+excluded:
+  - VehiclePhotoBooth.xcodeproj
+  - VehiclePhotoBooth/Resources/CoreDataModel.xcdatamodeld
+
+# Rules to enable
+opt_in_rules:
+  - array_init
+  - attributes
+  - closure_body_length
+  - closure_end_indentation
+  - closure_spacing
+  - collection_alignment
+  - contains_over_filter_count
+  - contains_over_filter_is_empty
+  - contains_over_first_not_nil
+  - contains_over_range_nil_comparison
+  - discouraged_assert
+  - discouraged_conditional_statement
+  - discouraged_direct_init
+  - discouraged_object_literal
+  - discouraged_optional_boolean
+  - discouraged_optional_collection
+  - empty_collection_literal
+  - empty_count
+  - empty_string
+  - enum_case_associated_values_count
+  - explicit_init
+  - extension_access_modifier
+  - fallthrough
+  - fatal_error_message
+  - file_header
+  - first_where
+  - force_unwrapping
+  - function_default_parameter_at_end
+  - identical_operands
+  - implicit_return
+  - joined_default_parameter
+  - last_where
+  - legacy_random
+  - literal_expression_end_indentation
+  - lower_acl_than_parent
+  - modifier_order
+  - multiline_arguments
+  - multiline_function_chains
+  - multiline_literal_brackets
+  - multiline_parameters
+  - multiline_parameters_brackets
+  - nslocalizedstring_key
+  - number_separator
+  - object_literal
+  - operator_usage_whitespace
+  - overridden_super_call
+  - override_in_extension
+  - pattern_matching_keywords
+  - prefer_self_type_over_type_of_self
+  - prefer_zero_over_explicit_init
+  - prefixed_toplevel_constant
+  - prohibited_interface_builder
+  - prohibited_super_call
+  - quick_discouraged_call
+  - quick_discouraged_focused_test
+  - quick_discouraged_pending_test
+  - reduce_into
+  - redundant_nil_coalescing
+  - redundant_type_annotation
+  - required_enum_case
+  - single_test_class
+  - sorted_first_last
+  - sorted_imports
+  - static_operator
+  - strong_iboutlet
+  - switch_case_alignment
+  - toggle_bool
+  - unneeded_parentheses_in_closure_argument
+  - vertical_parameter_alignment_on_call
+  - vertical_whitespace_closing_braces
+  - vertical_whitespace_opening_braces
+  - xct_specific_matcher
+  - yoda_condition
+
+# Rules to disable
+disabled_rules:
+  - todo
+  - line_length
+
+# Custom rules
+custom_rules:
+  # Custom rule for Vehicle Photo Booth specific patterns
+  vehicle_photo_booth_naming:
+    name: "Vehicle Photo Booth Naming"
+    regex: '^(Camera|Vision|Photo|Session|Vehicle|User).*'
+    message: "Use descriptive naming for Vehicle Photo Booth components"
+    severity: warning
+
+# Analyzer rules
+analyzer_rules:
+  - explicit_self
+  - unused_declaration
+  - unused_import
+
+# File header template
+file_header:
+  required_pattern: |
+                    \/\/
+                    \/\/  .*\.swift
+                    \/\/  VehiclePhotoBooth
+                    \/\/
+                    \/\/  Created by .* on \d{4}-\d{2}-\d{2}\.
+                    \/\/  Copyright © \d{4} VehiclePhotoBooth\. All rights reserved\.
+                    \/\/
+
+# Line length (increased for SwiftUI)
+line_length:
+  warning: 120
+  error: 150
+
+# Function body length
+function_body_length:
+  warning: 50
+  error: 100
+
+# Type body length
+type_body_length:
+  warning: 300
+  error: 500
+
+# File length
+file_length:
+  warning: 500
+  error: 1000
+
+# Cyclomatic complexity
+cyclomatic_complexity:
+  warning: 10
+  error: 20
+
+# Nesting
+nesting:
+  type_level:
+    warning: 3
+    error: 5
+  statement_level:
+    warning: 5
+    error: 10
+
+# Identifier name
+identifier_name:
+  min_length:
+    warning: 2
+    error: 1
+  max_length:
+    warning: 40
+    error: 60
+  excluded:
+    - id
+    - url
+    - api
+    - ui
+    - db
+
+# Type name
+type_name:
+  min_length:
+    warning: 3
+    error: 1
+  max_length:
+    warning: 40
+    error: 60
+
+# Force unwrapping
+force_unwrapping:
+  severity: error
+
+# Force casting
+force_cast:
+  severity: error
+
+# Force try
+force_try:
+  severity: error
+
+# Trailing whitespace
+trailing_whitespace:
+  ignores_empty_lines: true
+  ignores_comments: true
+
+# Trailing newline
+trailing_newline:
+  severity: error
+
+# Vertical whitespace
+vertical_whitespace:
+  max_empty_lines: 2
+
+# Large tuple
+large_tuple:
+  warning: 3
+  error: 4
+
+# Operator function whitespace
+operator_whitespace:
+  severity: error
+
+# Return arrow whitespace
+return_arrow_whitespace:
+  severity: error
+
+# Comma
+comma:
+  severity: error
+
+# Colon
+colon:
+  severity: error
+
+# Semicolon
+semicolon:
+  severity: error
+
+# Opening brace
+opening_brace:
+  severity: error
+
+# Closing brace
+closing_brace:
+  severity: error
+
+# Space around braces
+space_around_braces:
+  severity: error
+
+# Space before closing brace
+space_before_closing_brace:
+  severity: error
+
+# Space inside braces
+space_inside_braces:
+  severity: error
+
+# Space inside brackets
+space_inside_brackets:
+  severity: error
+
+# Space inside parentheses
+space_inside_parentheses:
+  severity: error
+
+# Space around operators
+space_around_operators:
+  severity: error
+
+# Space around comments
+space_around_comments:
+  severity: error
+
+# Space around keywords
+space_around_keywords:
+  severity: error
+
+# Space around punctuation
+space_around_punctuation:
+  severity: error
+
+# Space inside comments
+space_inside_comments:
+  severity: error
+
+# Space inside empty braces
+space_inside_empty_braces:
+  severity: error
+
+# Space inside empty brackets
+space_inside_empty_brackets:
+  severity: error
+
+# Space inside empty parentheses
+space_inside_empty_parentheses:
+  severity: error
+
+# Space around braces in control flow
+space_around_braces_in_control_flow:
+  severity: error
+
+# Space around braces in function
+space_around_braces_in_function:
+  severity: error
+
+# Space around braces in if
+space_around_braces_in_if:
+  severity: error
+
+# Space around braces in while
+space_around_braces_in_while:
+  severity: error
+
+# Space around braces in for
+space_around_braces_in_for:
+  severity: error
+
+# Space around braces in switch
+space_around_braces_in_switch:
+  severity: error
+
+# Space around braces in do
+space_around_braces_in_do:
+  severity: error
+
+# Space around braces in catch
+space_around_braces_in_catch:
+  severity: error
+
+# Space around braces in guard
+space_around_braces_in_guard:
+  severity: error
+
+# Space around braces in defer
+space_around_braces_in_defer:
+  severity: error

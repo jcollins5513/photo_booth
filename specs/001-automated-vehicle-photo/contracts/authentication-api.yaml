@@ -1,0 +1,251 @@
+openapi: 3.0.3
+info:
+  title: Vehicle Photo Booth Authentication API
+  description: Firebase Auth integration for user authentication
+  version: 1.0.0
+  contact:
+    name: Vehicle Photo Booth Team
+    email: support@vehiclephotobooth.com
+
+servers:
+  - url: https://identitytoolkit.googleapis.com/v1
+    description: Firebase Auth REST API
+
+paths:
+  /accounts:signUp:
+    post:
+      summary: Create new user account
+      description: Register a new user with email and password
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - email
+                - password
+                - returnSecureToken
+              properties:
+                email:
+                  type: string
+                  format: email
+                  example: user@example.com
+                password:
+                  type: string
+                  minLength: 6
+                  example: password123
+                returnSecureToken:
+                  type: boolean
+                  example: true
+      responses:
+        '200':
+          description: User created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  localId:
+                    type: string
+                    example: "abc123def456"
+                  email:
+                    type: string
+                    example: "user@example.com"
+                  idToken:
+                    type: string
+                    example: "eyJhbGciOiJSUzI1NiIs..."
+                  refreshToken:
+                    type: string
+                    example: "ABC123DEF456..."
+                  expiresIn:
+                    type: string
+                    example: "3600"
+        '400':
+          description: Invalid request or email already exists
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        example: 400
+                      message:
+                        type: string
+                        example: "EMAIL_EXISTS"
+
+  /accounts:signInWithPassword:
+    post:
+      summary: Sign in user
+      description: Authenticate user with email and password
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - email
+                - password
+                - returnSecureToken
+              properties:
+                email:
+                  type: string
+                  format: email
+                  example: user@example.com
+                password:
+                  type: string
+                  example: password123
+                returnSecureToken:
+                  type: boolean
+                  example: true
+      responses:
+        '200':
+          description: User authenticated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  localId:
+                    type: string
+                    example: "abc123def456"
+                  email:
+                    type: string
+                    example: "user@example.com"
+                  idToken:
+                    type: string
+                    example: "eyJhbGciOiJSUzI1NiIs..."
+                  refreshToken:
+                    type: string
+                    example: "ABC123DEF456..."
+                  expiresIn:
+                    type: string
+                    example: "3600"
+        '400':
+          description: Invalid credentials
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        example: 400
+                      message:
+                        type: string
+                        example: "INVALID_PASSWORD"
+
+  /accounts:sendOobCode:
+    post:
+      summary: Send password reset email
+      description: Send password reset email to user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - requestType
+                - email
+              properties:
+                requestType:
+                  type: string
+                  enum: [PASSWORD_RESET]
+                  example: PASSWORD_RESET
+                email:
+                  type: string
+                  format: email
+                  example: user@example.com
+      responses:
+        '200':
+          description: Password reset email sent
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  email:
+                    type: string
+                    example: "user@example.com"
+        '400':
+          description: Invalid email
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        example: 400
+                      message:
+                        type: string
+                        example: "EMAIL_NOT_FOUND"
+
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+          example: "abc123def456"
+        email:
+          type: string
+          format: email
+          example: "user@example.com"
+        displayName:
+          type: string
+          example: "John Doe"
+        createdDate:
+          type: string
+          format: date-time
+          example: "2024-12-19T10:00:00Z"
+        lastLoginDate:
+          type: string
+          format: date-time
+          example: "2024-12-19T10:00:00Z"
+        isActive:
+          type: boolean
+          example: true
+
+    AuthToken:
+      type: object
+      properties:
+        idToken:
+          type: string
+          example: "eyJhbGciOiJSUzI1NiIs..."
+        refreshToken:
+          type: string
+          example: "ABC123DEF456..."
+        expiresIn:
+          type: string
+          example: "3600"
+
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: integer
+              example: 400
+            message:
+              type: string
+              example: "INVALID_CREDENTIALS"
+            details:
+              type: array
+              items:
+                type: object
