@@ -1,5 +1,4 @@
 import XCTest
-import FirebaseAuth
 @testable import Photo_Booth
 
 /// Integration tests for authentication flow
