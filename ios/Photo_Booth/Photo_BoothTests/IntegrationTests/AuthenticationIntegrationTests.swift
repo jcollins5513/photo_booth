@@ -1,6 +1,6 @@
 import XCTest
 import FirebaseAuth
-@testable import VehiclePhotoBooth
+@testable import Photo_Booth
 
 /// Integration tests for authentication flow
 /// These tests MUST FAIL before implementation

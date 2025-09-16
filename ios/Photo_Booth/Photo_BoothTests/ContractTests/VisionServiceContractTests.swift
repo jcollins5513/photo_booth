@@ -2,7 +2,7 @@ import XCTest
 import Vision
 import CoreML
 import UIKit
-@testable import VehiclePhotoBooth
+@testable import Photo_Booth
 
 /// Contract tests for VisionServiceProtocol
 /// These tests MUST FAIL before VisionService implementation

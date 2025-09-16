@@ -1,6 +1,6 @@
 import XCTest
 import FirebaseAuth
-@testable import VehiclePhotoBooth
+@testable import Photo_Booth
 
 /// Contract tests for AuthenticationService
 /// These tests MUST FAIL before AuthenticationService implementation

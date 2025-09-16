@@ -1,6 +1,6 @@
 import XCTest
 import CoreData
-@testable import VehiclePhotoBooth
+@testable import Photo_Booth
 
 /// Integration tests for storage and data persistence
 /// These tests MUST FAIL before implementation

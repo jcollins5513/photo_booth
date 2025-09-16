@@ -1,7 +1,7 @@
 import XCTest
 import AVFoundation
 import UIKit
-@testable import VehiclePhotoBooth
+@testable import Photo_Booth
 
 /// Integration tests for camera capture flow
 /// These tests MUST FAIL before implementation

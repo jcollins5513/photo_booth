@@ -1,5 +1,5 @@
 import XCTest
-@testable import VehiclePhotoBooth
+@testable import Photo_Booth
 
 final class VehiclePhotoBoothTests: XCTestCase {
 

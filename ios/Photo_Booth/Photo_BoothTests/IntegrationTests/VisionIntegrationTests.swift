@@ -2,7 +2,7 @@ import XCTest
 import Vision
 import CoreML
 import UIKit
-@testable import VehiclePhotoBooth
+@testable import Photo_Booth
 
 /// Integration tests for vision detection flow
 /// These tests MUST FAIL before implementation

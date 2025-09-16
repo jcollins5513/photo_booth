@@ -1,6 +1,6 @@
 import XCTest
 import AVFoundation
-@testable import VehiclePhotoBooth
+@testable import Photo_Booth
 
 /// Contract tests for CameraServiceProtocol
 /// These tests MUST FAIL before CameraService implementation
