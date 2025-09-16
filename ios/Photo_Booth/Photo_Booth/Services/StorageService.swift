@@ -276,4 +276,40 @@ class StorageService: StorageServiceProtocol {
             }
         }
     }
+    
+    // MARK: - Additional Methods for Gallery
+    
+    func getAllPhotos() async throws -> [VehiclePhoto] {
+        let context = persistentContainer.viewContext
+        
+        return try await withCheckedThrowingContinuation { continuation in
+            context.perform {
+                do {
+                    let fetchRequest: NSFetchRequest<VehiclePhoto> = VehiclePhoto.fetchRequest()
+                    fetchRequest.sortDescriptors = [NSSortDescriptor(key: "captureDate", ascending: false)]
+                    
+                    let photos = try context.fetch(fetchRequest)
+                    continuation.resume(returning: photos)
+                } catch {
+                    continuation.resume(throwing: StorageServiceError.coreDataError(error.localizedDescription))
+                }
+            }
+        }
+    }
+    
+    func getPhotoData(id: UUID) async throws -> Data {
+        guard let photo = try await getVehiclePhoto(id: id) else {
+            throw StorageServiceError.photoNotFound
+        }
+        
+        guard let filePath = photo.filePath else {
+            throw StorageServiceError.fileSystemError("Photo file path not found")
+        }
+        
+        return try await fileSystemManager.loadImage(filePath: filePath)
+    }
+    
+    func deletePhoto(id: UUID) async throws {
+        try await deleteVehiclePhoto(id: id)
+    }
 }

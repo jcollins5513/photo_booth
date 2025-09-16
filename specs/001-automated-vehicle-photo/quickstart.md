@@ -11,7 +11,7 @@ This guide provides step-by-step instructions for setting up and using the Autom
 ## Prerequisites
 
 ### Hardware Requirements
-- iPhone with iOS 15.0 or later
+- iPhone with iOS 16.0 or later
 - iPhone with Neural Engine (A12 Bionic or later for optimal performance)
 - Camera mount or tripod for stable iPhone positioning
 - Adequate lighting for vehicle photography
@@ -246,7 +246,7 @@ Repeat for all 8 angles:
 - Backup important photo sessions
 
 ### System Requirements
-- iOS 15.0 or later
+- iOS 16.0 or later
 - iPhone with Neural Engine recommended
 - 2GB available storage minimum
 - Camera permissions required

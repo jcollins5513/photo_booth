@@ -86,6 +86,28 @@ struct CameraTabView: View {
 #Preview {
     ContentView()
         .environmentObject(AuthenticationViewModel(authenticationService: AuthenticationService()))
-        .environmentObject(SessionViewModel(sessionManager: SessionManager(), storageService: StorageService(), cameraViewModel: CameraViewModel(cameraService: CameraService(), visionService: VisionService())))
-        .environmentObject(GalleryViewModel(storageService: StorageService(), sessionManager: SessionManager()))
+        .environmentObject(SessionViewModel(
+            sessionManager: SessionManager(storageService: StorageService(
+                persistentContainer: CoreDataStack.shared.container,
+                fileSystemManager: FileSystemManager()
+            )),
+            storageService: StorageService(
+                persistentContainer: CoreDataStack.shared.container,
+                fileSystemManager: FileSystemManager()
+            ),
+            cameraViewModel: CameraViewModel(
+                cameraService: CameraService(),
+                visionService: VisionService()
+            )
+        ))
+        .environmentObject(GalleryViewModel(
+            storageService: StorageService(
+                persistentContainer: CoreDataStack.shared.container,
+                fileSystemManager: FileSystemManager()
+            ),
+            sessionManager: SessionManager(storageService: StorageService(
+                persistentContainer: CoreDataStack.shared.container,
+                fileSystemManager: FileSystemManager()
+            ))
+        ))
 }

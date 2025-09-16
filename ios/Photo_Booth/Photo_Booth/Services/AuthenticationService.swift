@@ -11,6 +11,10 @@ class AuthenticationService: AuthenticationServiceProtocol {
     // MARK: - User Registration
     
     func registerUser(email: String, password: String) async throws -> User {
+        return try await signUp(email: email, password: password)
+    }
+    
+    func signUp(email: String, password: String) async throws -> User {
         // Validate email format
         guard isValidEmail(email) else {
             throw AuthenticationServiceError.invalidEmail
@@ -115,14 +119,18 @@ class AuthenticationService: AuthenticationServiceProtocol {
         }
         
         // Simulate network delay
-        try await Task.sleep(nanoseconds: 400_000_000) // 0.4 second delay
+        try await Task.sleep(nanoseconds: 500_000_000) // 0.5 second delay
         
-        // Mock password reset logic
-        if email == "nonexistent@example.com" {
-            throw AuthenticationServiceError.userNotFound
-        }
-        
-        // Simulate success (in real implementation, this would send an email)
+        // Simulate password reset email sent
+        print("Password reset email sent to: \(email)")
+    }
+    
+    func resetPassword(email: String) async throws {
+        try await sendPasswordReset(email: email)
+    }
+    
+    func isAuthenticated() async -> Bool {
+        return isUserSignedIn()
     }
     
     // MARK: - Token Management

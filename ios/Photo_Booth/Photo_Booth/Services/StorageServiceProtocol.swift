@@ -43,6 +43,15 @@ protocol StorageServiceProtocol {
     
     /// Delete a vehicle photo
     func deleteVehiclePhoto(id: UUID) async throws
+    
+    /// Get all photos
+    func getAllPhotos() async throws -> [VehiclePhoto]
+    
+    /// Get photo data by ID
+    func getPhotoData(id: UUID) async throws -> Data
+    
+    /// Delete photo by ID (alias for deleteVehiclePhoto)
+    func deletePhoto(id: UUID) async throws
 }
 
 /// Protocol defining the file system manager interface

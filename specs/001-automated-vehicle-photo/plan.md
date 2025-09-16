@@ -32,11 +32,11 @@
 iOS application for automated vehicle photography using computer vision to detect vehicle positions and automatically capture photos from multiple angles. The system guides users through a predetermined sequence of photo angles while using on-device ML models to detect when the vehicle is correctly positioned for each shot.
 
 ## Technical Context
-**Language/Version**: Swift 5.9, iOS 15.0+  
+**Language/Version**: Swift 5.9, iOS 16.0+  
 **Primary Dependencies**: SwiftUI, AVFoundation, Vision, CoreML, Firebase Auth SDK  
 **Storage**: Local file storage (Documents directory), Core Data for metadata, Firebase for authentication  
 **Testing**: XCTest, XCUITest for UI testing  
-**Target Platform**: iOS 15.0+ (iPhone), requires Neural Engine for CoreML acceleration  
+**Target Platform**: iOS 16.0+ (iPhone), requires Neural Engine for CoreML acceleration  
 **Project Type**: mobile (iOS app with optional backend integration)  
 **Performance Goals**: Real-time vision processing at 5-10 FPS, photo capture within 1 second of position detection  
 **Constraints**: Offline-capable core functionality, <10 minute complete photo sessions, local storage only for photos  

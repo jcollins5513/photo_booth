@@ -6,7 +6,7 @@ import CoreData
 /// These tests MUST FAIL before implementation
 class StorageIntegrationTests: XCTestCase {
     
-    var persistenceController: PersistenceController!
+    var persistenceController: CoreDataStack!
     var storageService: StorageServiceProtocol!
     var fileSystemManager: FileSystemManagerProtocol!
     

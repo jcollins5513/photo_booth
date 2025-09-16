@@ -171,6 +171,7 @@ struct PhotoGridView: View {
     @Binding var selectedPhotos: Set<UUID>
     @Binding var isSelectionMode: Bool
     let onPhotoSelected: (VehiclePhoto) -> Void
+    @EnvironmentObject var galleryViewModel: GalleryViewModel
     
     private let columns = [
         GridItem(.flexible()),
@@ -184,7 +185,7 @@ struct PhotoGridView: View {
                 ForEach(photos, id: \.id) { photo in
                     PhotoGridItem(
                         photo: photo,
-                        isSelected: selectedPhotos.contains(photo.id),
+                        isSelected: selectedPhotos.contains(photo.id ?? UUID()),
                         isSelectionMode: isSelectionMode,
                         onTap: {
                             if isSelectionMode {
@@ -206,13 +207,14 @@ struct PhotoListView: View {
     @Binding var selectedPhotos: Set<UUID>
     @Binding var isSelectionMode: Bool
     let onPhotoSelected: (VehiclePhoto) -> Void
+    @EnvironmentObject var galleryViewModel: GalleryViewModel
     
     var body: some View {
         List {
             ForEach(photos, id: \.id) { photo in
                 PhotoListItem(
                     photo: photo,
-                    isSelected: selectedPhotos.contains(photo.id),
+                    isSelected: selectedPhotos.contains(photo.id ?? UUID()),
                     isSelectionMode: isSelectionMode,
                     onTap: {
                         if isSelectionMode {
@@ -283,7 +285,7 @@ struct PhotoListItem: View {
                         .foregroundColor(.secondary)
                     
                     if let session = photo.session {
-                        Text(session.vehicleIdentifier)
+                        Text(session.vehicleIdentifier ?? "Unknown Vehicle")
                             .font(.caption)
                             .foregroundColor(.secondary)
                     }
@@ -438,8 +440,8 @@ struct PhotoDetailView: View {
                     DetailRow(title: "Date", value: photo.timestamp.formatted())
                     
                     if let session = photo.session {
-                        DetailRow(title: "Vehicle", value: session.vehicleIdentifier)
-                        DetailRow(title: "Session", value: session.id.uuidString.prefix(8) + "...")
+                        DetailRow(title: "Vehicle", value: session.vehicleIdentifier ?? "Unknown Vehicle")
+                        DetailRow(title: "Session", value: (session.id?.uuidString.prefix(8) ?? "Unknown") + "...")
                     }
                 }
                 .padding()
@@ -485,7 +487,7 @@ struct SessionsView: View {
                 Button(action: { onSessionSelected(session) }) {
                     HStack {
                         VStack(alignment: .leading, spacing: 4) {
-                            Text(session.vehicleIdentifier)
+                            Text(session.vehicleIdentifier ?? "Unknown Vehicle")
                                 .font(.headline)
                             
                             Text(session.timestamp, style: .date)
@@ -496,12 +498,12 @@ struct SessionsView: View {
                         Spacer()
                         
                         VStack(alignment: .trailing, spacing: 4) {
-                            Text(session.status.rawValue.capitalized)
+                            Text(SessionStatus(rawValue: session.status ?? "unknown")?.displayName ?? "Unknown")
                                 .font(.caption)
                                 .padding(.horizontal, 8)
                                 .padding(.vertical, 2)
-                                .background(statusColor(session.status).opacity(0.2))
-                                .foregroundColor(statusColor(session.status))
+                                .background(statusColor(SessionStatus(rawValue: session.status ?? "unknown") ?? .cancelled).opacity(0.2))
+                                .foregroundColor(statusColor(SessionStatus(rawValue: session.status ?? "unknown") ?? .cancelled))
                                 .cornerRadius(4)
                         }
                     }
@@ -518,11 +520,21 @@ struct SessionsView: View {
         case .active: return .blue
         case .completed: return .green
         case .cancelled: return .red
+        case .paused: return .orange
         }
     }
 }
 
 #Preview {
     GalleryView()
-        .environmentObject(GalleryViewModel(storageService: StorageService(), sessionManager: SessionManager()))
+        .environmentObject(GalleryViewModel(
+            storageService: StorageService(
+                persistentContainer: CoreDataStack.shared.container,
+                fileSystemManager: FileSystemManager()
+            ),
+            sessionManager: SessionManager(storageService: StorageService(
+                persistentContainer: CoreDataStack.shared.container,
+                fileSystemManager: FileSystemManager()
+            ))
+        ))
 }

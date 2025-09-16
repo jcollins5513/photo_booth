@@ -14,16 +14,23 @@ class CameraViewModel: ObservableObject {
     @Published var isDetecting = false
     @Published var errorMessage: String?
     @Published var cameraPermissionStatus: AVAuthorizationStatus = .notDetermined
+    @Published var isProcessingFrame = false
+    @Published var frameProcessingRate: Double = 0.0
     
     // MARK: - Private Properties
     private let cameraService: CameraServiceProtocol
     private let visionService: VisionServiceProtocol
+    private let modelManager: ModelManager
     private var previewLayer: AVCaptureVideoPreviewLayer?
+    private var frameProcessingTimer: Timer?
+    private var lastFrameTime: Date = Date()
+    private var frameCount = 0
     
     // MARK: - Initialization
-    init(cameraService: CameraServiceProtocol, visionService: VisionServiceProtocol) {
+    init(cameraService: CameraServiceProtocol, visionService: VisionServiceProtocol, modelManager: ModelManager = ModelManager()) {
         self.cameraService = cameraService
         self.visionService = visionService
+        self.modelManager = modelManager
         setupCameraPermission()
     }
     
@@ -60,6 +67,7 @@ class CameraViewModel: ObservableObject {
             isCameraActive = false
             isDetecting = false
             previewLayer = nil
+            stopFrameProcessingTimer()
         } catch {
             errorMessage = error.localizedDescription
         }
@@ -90,20 +98,63 @@ class CameraViewModel: ObservableObject {
         do {
             try await visionService.loadModel()
             
-            // Create frame provider for continuous detection
-            let frameProvider = CameraFrameProvider(cameraService: cameraService)
+            // Start frame processing timer
+            startFrameProcessingTimer()
             
-            try await visionService.startContinuousClassification(
-                frameProvider: frameProvider
-            ) { [weak self] angle, confidence in
-                Task { @MainActor in
-                    self?.currentAngle = angle
-                    self?.detectionConfidence = confidence
-                    self?.isDetecting = confidence > 0.7
-                }
-            }
         } catch {
             errorMessage = error.localizedDescription
+        }
+    }
+    
+    private func startFrameProcessingTimer() {
+        frameProcessingTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [weak self] _ in
+            Task { @MainActor in
+                self?.updateFrameProcessingRate()
+            }
+        }
+    }
+    
+    private func stopFrameProcessingTimer() {
+        frameProcessingTimer?.invalidate()
+        frameProcessingTimer = nil
+    }
+    
+    private func updateFrameProcessingRate() {
+        let now = Date()
+        let timeInterval = now.timeIntervalSince(lastFrameTime)
+        
+        if timeInterval >= 1.0 {
+            frameProcessingRate = Double(frameCount) / timeInterval
+            frameCount = 0
+            lastFrameTime = now
+        }
+    }
+    
+    // MARK: - Frame Processing
+    func processFrame(_ image: UIImage) {
+        guard !isProcessingFrame else { return }
+        
+        isProcessingFrame = true
+        frameCount += 1
+        
+        Task {
+            do {
+                // Use ModelManager for real-time classification
+                let (angle, confidence) = try await modelManager.classifyVehicleAngle(from: image)
+                
+                await MainActor.run {
+                    self.currentAngle = angle
+                    self.detectionConfidence = confidence
+                    self.isDetecting = confidence > 0.7
+                    self.isProcessingFrame = false
+                }
+                
+            } catch {
+                await MainActor.run {
+                    self.errorMessage = error.localizedDescription
+                    self.isProcessingFrame = false
+                }
+            }
         }
     }
     

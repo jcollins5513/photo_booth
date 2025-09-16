@@ -5,6 +5,9 @@ protocol AuthenticationServiceProtocol {
     /// Register a new user with email and password
     func registerUser(email: String, password: String) async throws -> User
     
+    /// Sign up a new user with email and password (alias for registerUser)
+    func signUp(email: String, password: String) async throws -> User
+    
     /// Sign in with email and password
     func signIn(email: String, password: String) async throws -> User
     
@@ -17,8 +20,14 @@ protocol AuthenticationServiceProtocol {
     /// Check if a user is currently signed in
     func isUserSignedIn() -> Bool
     
+    /// Check if authenticated (alias for isUserSignedIn)
+    func isAuthenticated() async -> Bool
+    
     /// Send password reset email
     func sendPasswordReset(email: String) async throws
+    
+    /// Reset password (alias for sendPasswordReset)
+    func resetPassword(email: String) async throws
     
     /// Refresh the authentication token
     func refreshToken() async throws -> String

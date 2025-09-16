@@ -1,11 +1,11 @@
 import CoreData
 import Foundation
 
-struct PersistenceController {
-    static let shared = PersistenceController()
+struct CoreDataStack {
+    static let shared = CoreDataStack()
 
-    static var preview: PersistenceController = {
-        let result = PersistenceController(inMemory: true)
+    static var preview: CoreDataStack = {
+        let result = CoreDataStack(inMemory: true)
         let viewContext = result.container.viewContext
         
         // Create sample data for previews
@@ -27,6 +27,11 @@ struct PersistenceController {
     }()
 
     let container: NSPersistentContainer
+    
+    // Alias for compatibility
+    var persistentContainer: NSPersistentContainer {
+        return container
+    }
 
     init(inMemory: Bool = false) {
         container = NSPersistentContainer(name: "VehiclePhotoBooth")

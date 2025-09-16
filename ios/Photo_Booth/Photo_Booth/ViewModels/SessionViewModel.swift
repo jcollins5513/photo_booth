@@ -1,6 +1,26 @@
 import Foundation
 import SwiftUI
 
+enum SessionError: Error, LocalizedError {
+    case invalidSession
+    case sessionNotFound
+    case captureFailed
+    case saveFailed
+    
+    var errorDescription: String? {
+        switch self {
+        case .invalidSession:
+            return "Invalid session"
+        case .sessionNotFound:
+            return "Session not found"
+        case .captureFailed:
+            return "Failed to capture photo"
+        case .saveFailed:
+            return "Failed to save photo"
+        }
+    }
+}
+
 @MainActor
 class SessionViewModel: ObservableObject {
     // MARK: - Published Properties
@@ -22,7 +42,7 @@ class SessionViewModel: ObservableObject {
     // MARK: - Computed Properties
     var remainingAngles: [PhotoAngleType] {
         let allAngles = PhotoAngleType.allCases
-        let capturedAngleStrings = Set(capturedPhotos.map { $0.angle })
+        let capturedAngleStrings = Set(capturedPhotos.compactMap { $0.angleType })
         return allAngles.filter { !capturedAngleStrings.contains($0.rawValue) }
     }
     
@@ -90,7 +110,10 @@ class SessionViewModel: ObservableObject {
         isLoading = true
         
         do {
-            let completedSession = try await sessionManager.completeSession(id: session.id)
+            guard let sessionId = session.id else {
+                throw SessionError.invalidSession
+            }
+            let completedSession = try await sessionManager.completeSession(id: sessionId)
             currentSession = completedSession
             isSessionActive = false
             sessionProgress = 1.0
@@ -110,7 +133,10 @@ class SessionViewModel: ObservableObject {
         isLoading = true
         
         do {
-            let cancelledSession = try await sessionManager.cancelSession(id: session.id)
+            guard let sessionId = session.id else {
+                throw SessionError.invalidSession
+            }
+            let cancelledSession = try await sessionManager.cancelSession(id: sessionId)
             currentSession = cancelledSession
             isSessionActive = false
             sessionProgress = 0.0
@@ -141,7 +167,7 @@ class SessionViewModel: ObservableObject {
             
             // Save photo to session
             let vehiclePhoto = try await sessionManager.manualCapture(
-                sessionId: currentSession!.id,
+                sessionId: currentSession?.id ?? UUID(),
                 angle: currentAngle.rawValue,
                 imageData: imageData
             )

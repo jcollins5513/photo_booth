@@ -109,7 +109,9 @@ struct DashboardView: View {
             }
         }
         .sheet(isPresented: $showingSessionSetup) {
-            SessionSetupSheet()
+            // TODO: Create SessionSetupSheet view
+            Text("Session Setup")
+                .padding()
         }
     }
 }
@@ -207,7 +209,7 @@ struct SessionRowView: View {
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 4) {
-                Text(session.vehicleIdentifier)
+                Text(session.vehicleIdentifier ?? "Unknown Vehicle")
                     .font(.subheadline)
                     .fontWeight(.medium)
                 
@@ -223,7 +225,7 @@ struct SessionRowView: View {
                     .font(.caption)
                     .foregroundColor(.secondary)
                 
-                Text(session.status.rawValue.capitalized)
+                Text(SessionStatus(rawValue: session.status ?? "unknown")?.displayName ?? "Unknown")
                     .font(.caption)
                     .padding(.horizontal, 8)
                     .padding(.vertical, 2)
@@ -236,10 +238,12 @@ struct SessionRowView: View {
     }
     
     private var statusColor: Color {
-        switch session.status {
+        switch SessionStatus(rawValue: session.status ?? "unknown") {
         case .active: return .blue
         case .completed: return .green
         case .cancelled: return .red
+        case .paused: return .orange
+        case .none: return .gray
         }
     }
 }
@@ -247,7 +251,29 @@ struct SessionRowView: View {
 
 #Preview {
     DashboardView()
-        .environmentObject(SessionViewModel(sessionManager: SessionManager(), storageService: StorageService(), cameraViewModel: CameraViewModel(cameraService: CameraService(), visionService: VisionService())))
-        .environmentObject(GalleryViewModel(storageService: StorageService(), sessionManager: SessionManager()))
+        .environmentObject(SessionViewModel(
+            sessionManager: SessionManager(storageService: StorageService(
+                persistentContainer: CoreDataStack.shared.container,
+                fileSystemManager: FileSystemManager()
+            )),
+            storageService: StorageService(
+                persistentContainer: CoreDataStack.shared.container,
+                fileSystemManager: FileSystemManager()
+            ),
+            cameraViewModel: CameraViewModel(
+                cameraService: CameraService(),
+                visionService: VisionService()
+            )
+        ))
+        .environmentObject(GalleryViewModel(
+            storageService: StorageService(
+                persistentContainer: CoreDataStack.shared.container,
+                fileSystemManager: FileSystemManager()
+            ),
+            sessionManager: SessionManager(storageService: StorageService(
+                persistentContainer: CoreDataStack.shared.container,
+                fileSystemManager: FileSystemManager()
+            ))
+        ))
         .environmentObject(AuthenticationViewModel(authenticationService: AuthenticationService()))
 }

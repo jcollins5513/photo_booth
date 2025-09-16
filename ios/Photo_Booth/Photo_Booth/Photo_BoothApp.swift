@@ -13,8 +13,9 @@ struct Photo_BoothApp: App {
     private let authenticationService = AuthenticationService()
     private let cameraService = CameraService()
     private let visionService = VisionService()
-    private let storageService = StorageService()
-    private let sessionManager = SessionManager()
+    private let storageService: StorageService
+    private let sessionManager: SessionManager
+    private let modelManager = ModelManager()
     
     // MARK: - ViewModels
     @StateObject private var authenticationViewModel: AuthenticationViewModel
@@ -23,9 +24,17 @@ struct Photo_BoothApp: App {
     @StateObject private var galleryViewModel: GalleryViewModel
     
     init() {
+        // Initialize services with proper dependencies
+        let coreDataStack = CoreDataStack.shared
+        self.storageService = StorageService(
+            persistentContainer: coreDataStack.container,
+            fileSystemManager: FileSystemManager()
+        )
+        self.sessionManager = SessionManager(storageService: storageService)
+        
         // Initialize ViewModels with services
         let authVM = AuthenticationViewModel(authenticationService: authenticationService)
-        let cameraVM = CameraViewModel(cameraService: cameraService, visionService: visionService)
+        let cameraVM = CameraViewModel(cameraService: cameraService, visionService: visionService, modelManager: modelManager)
         let sessionVM = SessionViewModel(sessionManager: sessionManager, storageService: storageService, cameraViewModel: cameraVM)
         let galleryVM = GalleryViewModel(storageService: storageService, sessionManager: sessionManager)
         

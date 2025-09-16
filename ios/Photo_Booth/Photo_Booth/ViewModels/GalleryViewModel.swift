@@ -68,7 +68,7 @@ class GalleryViewModel: ObservableObject {
         if !searchText.isEmpty {
             filtered = filtered.filter { photo in
                 photo.angle.localizedCaseInsensitiveContains(searchText) ||
-                photo.session?.vehicleIdentifier.localizedCaseInsensitiveContains(searchText) == true
+                photo.session?.vehicleIdentifier?.localizedCaseInsensitiveContains(searchText) == true
             }
         }
         
@@ -143,11 +143,13 @@ class GalleryViewModel: ObservableObject {
     
     // MARK: - Photo Management
     func deletePhoto(_ photo: VehiclePhoto) async {
+        guard let photoId = photo.id else { return }
+        
         do {
-            try await storageService.deletePhoto(id: photo.id)
+            try await storageService.deletePhoto(id: photoId)
             await MainActor.run {
-                self.photos.removeAll { $0.id == photo.id }
-                self.selectedPhotos.remove(photo.id)
+                self.photos.removeAll { $0.id == photoId }
+                self.selectedPhotos.remove(photoId)
             }
         } catch {
             await MainActor.run {
@@ -157,7 +159,10 @@ class GalleryViewModel: ObservableObject {
     }
     
     func deleteSelectedPhotos() async {
-        let photosToDelete = photos.filter { selectedPhotos.contains($0.id) }
+        let photosToDelete = photos.filter { photo in
+            guard let photoId = photo.id else { return false }
+            return selectedPhotos.contains(photoId)
+        }
         
         for photo in photosToDelete {
             await deletePhoto(photo)
@@ -167,8 +172,10 @@ class GalleryViewModel: ObservableObject {
     }
     
     func exportPhoto(_ photo: VehiclePhoto) async -> Data? {
+        guard let photoId = photo.id else { return nil }
+        
         do {
-            return try await storageService.getPhotoData(id: photo.id)
+            return try await storageService.getPhotoData(id: photoId)
         } catch {
             await MainActor.run {
                 self.errorMessage = error.localizedDescription
@@ -192,15 +199,18 @@ class GalleryViewModel: ObservableObject {
     
     // MARK: - Selection Management
     func selectPhoto(_ photo: VehiclePhoto) {
-        selectedPhotos.insert(photo.id)
+        guard let photoId = photo.id else { return }
+        selectedPhotos.insert(photoId)
     }
     
     func deselectPhoto(_ photo: VehiclePhoto) {
-        selectedPhotos.remove(photo.id)
+        guard let photoId = photo.id else { return }
+        selectedPhotos.remove(photoId)
     }
     
     func togglePhotoSelection(_ photo: VehiclePhoto) {
-        if selectedPhotos.contains(photo.id) {
+        guard let photoId = photo.id else { return }
+        if selectedPhotos.contains(photoId) {
             deselectPhoto(photo)
         } else {
             selectPhoto(photo)
@@ -208,7 +218,7 @@ class GalleryViewModel: ObservableObject {
     }
     
     func selectAllPhotos() {
-        selectedPhotos = Set(filteredPhotos.map { $0.id })
+        selectedPhotos = Set(filteredPhotos.compactMap { $0.id })
     }
     
     func deselectAllPhotos() {
@@ -237,19 +247,22 @@ class GalleryViewModel: ObservableObject {
     
     // MARK: - Session Management
     func deleteSession(_ session: PhotoSession) async {
+        guard let sessionId = session.id else { return }
+        
         do {
             // First delete all photos in the session
-            let sessionPhotos = photos.filter { $0.session?.id == session.id }
+            let sessionPhotos = photos.filter { $0.session?.id == sessionId }
             for photo in sessionPhotos {
-                try await storageService.deletePhoto(id: photo.id)
+                guard let photoId = photo.id else { continue }
+                try await storageService.deletePhoto(id: photoId)
             }
             
             // Then delete the session
-            try await sessionManager.cancelSession(id: session.id)
+            try await sessionManager.cancelSession(id: sessionId)
             
             await MainActor.run {
-                self.photos.removeAll { $0.session?.id == session.id }
-                self.sessions.removeAll { $0.id == session.id }
+                self.photos.removeAll { $0.session?.id == sessionId }
+                self.sessions.removeAll { $0.id == sessionId }
             }
         } catch {
             await MainActor.run {
@@ -264,10 +277,12 @@ class GalleryViewModel: ObservableObject {
     }
     
     func getPhotosForSession(_ session: PhotoSession) -> [VehiclePhoto] {
-        return photos.filter { $0.session?.id == session.id }
+        guard let sessionId = session.id else { return [] }
+        return photos.filter { $0.session?.id == sessionId }
     }
     
     func getSessionForPhoto(_ photo: VehiclePhoto) -> PhotoSession? {
-        return sessions.first { $0.id == photo.session?.id }
+        guard let photoSessionId = photo.session?.id else { return nil }
+        return sessions.first { $0.id == photoSessionId }
     }
 }

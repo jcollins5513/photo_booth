@@ -49,12 +49,35 @@ struct SessionView: View {
             .cornerRadius(12)
             .padding(.horizontal)
             
-            // Camera Preview Placeholder
-            CameraPreviewPlaceholder()
+            // Real Camera Preview
+            ZStack {
+                CameraPreviewView(
+                    isActive: $cameraViewModel.isCameraActive,
+                    isDetecting: $cameraViewModel.isDetecting,
+                    detectionConfidence: $cameraViewModel.detectionConfidence,
+                    onFrameCaptured: { image in
+                        cameraViewModel.processFrame(image)
+                    }
+                )
                 .frame(height: 300)
-                .background(Color.black)
                 .cornerRadius(12)
                 .padding(.horizontal)
+                
+                CameraOverlayView(
+                    currentAngle: sessionViewModel.currentAngle,
+                    isDetecting: cameraViewModel.isDetecting,
+                    detectionConfidence: cameraViewModel.detectionConfidence,
+                    onTap: { point in
+                        // Handle tap to focus
+                        Task {
+                            await cameraViewModel.setFocusPoint(point)
+                        }
+                    }
+                )
+                .frame(height: 300)
+                .cornerRadius(12)
+                .padding(.horizontal)
+            }
             
             // Detection Status
             DetectionStatusView()
@@ -118,6 +141,18 @@ struct SessionView: View {
         }
         .sheet(isPresented: $showingPhotoReview) {
             PhotoReviewSheet()
+        }
+        .onAppear {
+            // Start camera when session view appears
+            Task {
+                await cameraViewModel.startCamera()
+            }
+        }
+        .onDisappear {
+            // Stop camera when session view disappears
+            Task {
+                await cameraViewModel.stopCamera()
+            }
         }
     }
 }
@@ -311,7 +346,23 @@ struct SessionSetupView: View {
 #Preview {
     NavigationView {
         SessionView()
-            .environmentObject(SessionViewModel(sessionManager: SessionManager(), storageService: StorageService(), cameraViewModel: CameraViewModel(cameraService: CameraService(), visionService: VisionService())))
-            .environmentObject(CameraViewModel(cameraService: CameraService(), visionService: VisionService()))
+            .environmentObject(SessionViewModel(
+                sessionManager: SessionManager(storageService: StorageService(
+                    persistentContainer: CoreDataStack.shared.persistentContainer,
+                    fileSystemManager: FileSystemManager()
+                )),
+                storageService: StorageService(
+                    persistentContainer: CoreDataStack.shared.persistentContainer,
+                    fileSystemManager: FileSystemManager()
+                ),
+                cameraViewModel: CameraViewModel(
+                    cameraService: CameraService(),
+                    visionService: VisionService()
+                )
+            ))
+            .environmentObject(CameraViewModel(
+                cameraService: CameraService(),
+                visionService: VisionService()
+            ))
     }
 }

@@ -6,7 +6,7 @@ import CoreData
 /// These tests MUST FAIL before implementation
 class PhotoSessionIntegrationTests: XCTestCase {
     
-    var persistenceController: PersistenceController!
+    var persistenceController: CoreDataStack!
     var sessionManager: SessionManagerProtocol!
     var cameraService: CameraServiceProtocol!
     var visionService: VisionServiceProtocol!
