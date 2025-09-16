@@ -109,9 +109,7 @@ struct DashboardView: View {
             }
         }
         .sheet(isPresented: $showingSessionSetup) {
-            // TODO: Create SessionSetupSheet view
-            Text("Session Setup")
-                .padding()
+            SessionSetupSheet()
         }
     }
 }

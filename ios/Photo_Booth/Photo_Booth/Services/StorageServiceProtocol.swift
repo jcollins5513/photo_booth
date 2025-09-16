@@ -70,6 +70,24 @@ protocol FileSystemManagerProtocol {
     
     /// Check if file exists
     func fileExists(filePath: String) -> Bool
+    
+    /// Save image with organized folder structure
+    func saveImageWithOrganization(data: Data, sessionId: UUID, angle: String, quality: PhotoQuality) async throws -> String
+    
+    /// Get session directory URL
+    func getSessionDirectory(sessionId: UUID) -> URL
+    
+    /// Get export directory URL
+    func getExportDirectory() -> URL
+    
+    /// Get backup directory URL
+    func getBackupDirectory() -> URL
+    
+    /// Get storage information
+    func getStorageInfo() async -> StorageInfo
+    
+    /// Cleanup old export files
+    func cleanupOldExports(olderThan days: Int) async throws
 }
 
 /// Storage service errors
