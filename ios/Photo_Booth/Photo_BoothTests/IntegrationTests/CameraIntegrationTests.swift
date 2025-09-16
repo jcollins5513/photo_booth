@@ -1,6 +1,7 @@
 import XCTest
 import AVFoundation
 import UIKit
+import CoreData
 @testable import Photo_Booth
 
 /// Integration tests for camera capture flow
@@ -9,11 +10,26 @@ class CameraIntegrationTests: XCTestCase {
     
     var cameraService: CameraServiceProtocol!
     var storageService: StorageServiceProtocol!
+    var persistentContainer: NSPersistentContainer!
+    var fileSystemManager: FileSystemManagerProtocol!
     
     override func setUpWithError() throws {
         // These will fail until services are implemented
         cameraService = CameraService()
-        storageService = StorageService()
+        
+        // Set up Core Data stack
+        persistentContainer = NSPersistentContainer(name: "VehiclePhotoBooth")
+        persistentContainer.persistentStoreDescriptions.first?.url = URL(fileURLWithPath: "/dev/null")
+        try persistentContainer.loadPersistentStores { _, error in
+            if let error = error {
+                fatalError("Failed to load store: \(error)")
+            }
+        }
+        
+        // Set up file system manager
+        fileSystemManager = FileSystemManager()
+        
+        storageService = StorageService(persistentContainer: persistentContainer, fileSystemManager: fileSystemManager)
     }
     
     override func tearDownWithError() throws {

@@ -70,9 +70,7 @@ class VisionServiceContractTests: XCTestCase {
         
         // Verify result
         XCTAssertNotNil(result, "Classification result should not be nil")
-        XCTAssertTrue(result.confidence >= 0.0 && result.confidence <= 1.0, "Confidence should be between 0.0 and 1.0")
-        XCTAssertTrue(PhotoAngleType.allCases.contains(result.angle), "Result angle should be valid")
-        XCTAssertEqual(result.allConfidences.count, PhotoAngleType.allCases.count, "All confidences should be present")
+        XCTAssertTrue(PhotoAngleType.allCases.contains(result), "Result angle should be valid")
     }
     
     func testImageDataClassification() async throws {
@@ -88,7 +86,7 @@ class VisionServiceContractTests: XCTestCase {
         
         // Verify result
         XCTAssertNotNil(result, "Classification result should not be nil")
-        XCTAssertTrue(result.confidence >= 0.0 && result.confidence <= 1.0, "Confidence should be between 0.0 and 1.0")
+        XCTAssertTrue(PhotoAngleType.allCases.contains(result), "Result angle should be valid")
     }
     
     func testClassificationWithoutModel() async {
@@ -151,12 +149,12 @@ class VisionServiceContractTests: XCTestCase {
         
         // Test starting continuous classification
         let expectation = XCTestExpectation(description: "Continuous classification")
-        var receivedClassifications: [VehicleAngleClassification] = []
+        var receivedClassifications: [PhotoAngleType] = []
         
         try await visionService.startContinuousClassification(
             frameProvider: frameProvider
-        ) { classification in
-            receivedClassifications.append(classification)
+        ) { angle, confidence in
+            receivedClassifications.append(angle)
             if receivedClassifications.count >= 3 {
                 expectation.fulfill()
             }
@@ -180,9 +178,9 @@ class VisionServiceContractTests: XCTestCase {
         let frameProvider = MockFrameProvider()
         
         do {
-            try await visionService.startContinuousClassification(
-                frameProvider: frameProvider
-            ) { _ in }
+        try await visionService.startContinuousClassification(
+            frameProvider: frameProvider
+        ) { _, _ in }
             XCTFail("Should throw error when model is not loaded")
         } catch VisionServiceError.modelNotLoaded {
             // Expected error
@@ -199,7 +197,7 @@ class VisionServiceContractTests: XCTestCase {
         do {
             try await visionService.startContinuousClassification(
                 frameProvider: MockFrameProvider()
-            ) { _ in }
+            ) { _, _ in }
         } catch VisionServiceError.frameProviderNotAvailable {
             // Expected error for unimplemented service
             XCTAssertTrue(true, "Should handle frame provider errors")
@@ -217,7 +215,7 @@ class VisionServiceContractTests: XCTestCase {
         XCTAssertTrue(defaultThreshold >= 0.0 && defaultThreshold <= 1.0, "Default threshold should be valid")
         
         // Test setting threshold
-        let newThreshold = 0.8
+        let newThreshold: Float = 0.8
         visionService.setConfidenceThreshold(newThreshold)
         
         let updatedThreshold = visionService.getConfidenceThreshold()
@@ -296,7 +294,7 @@ class VisionServiceContractTests: XCTestCase {
         
         try await visionService.startContinuousClassification(
             frameProvider: frameProvider
-        ) { _ in
+        ) { _, _ in
             classificationCount += 1
             if classificationCount >= 10 {
                 expectation.fulfill()
@@ -396,46 +394,3 @@ class VisionServiceContractTests: XCTestCase {
     }
 }
 
-// MARK: - Mock Frame Provider
-
-class MockFrameProvider: FrameProvider {
-    private var frameCount = 0
-    private let maxFrames = 10
-    
-    var isActive: Bool {
-        return frameCount < maxFrames
-    }
-    
-    func getNextFrame() async -> UIImage? {
-        guard isActive else { return nil }
-        
-        frameCount += 1
-        
-        // Create mock frame
-        let size = CGSize(width: 224, height: 224)
-        UIGraphicsBeginImageContextWithOptions(size, false, 1.0)
-        UIColor.gray.setFill()
-        UIRectFill(CGRect(origin: .zero, size: size))
-        let image = UIGraphicsGetImageFromCurrentImageContext()!
-        UIGraphicsEndImageContext()
-        
-        // Add small delay to simulate real-time processing
-        try? await Task.sleep(nanoseconds: 100_000_000) // 100ms
-        
-        return image
-    }
-    
-    func getCurrentFrame() -> UIImage? {
-        guard isActive else { return nil }
-        
-        // Create mock frame
-        let size = CGSize(width: 224, height: 224)
-        UIGraphicsBeginImageContextWithOptions(size, false, 1.0)
-        UIColor.gray.setFill()
-        UIRectFill(CGRect(origin: .zero, size: size))
-        let image = UIGraphicsGetImageFromCurrentImageContext()!
-        UIGraphicsEndImageContext()
-        
-        return image
-    }
-}

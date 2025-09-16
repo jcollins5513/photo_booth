@@ -69,9 +69,7 @@ class VisionIntegrationTests: XCTestCase {
         
         // Then: Classification should succeed
         XCTAssertNotNil(result, "Classification result should not be nil")
-        XCTAssertTrue(result.confidence >= 0.0 && result.confidence <= 1.0, "Confidence should be between 0.0 and 1.0")
-        XCTAssertTrue(PhotoAngleType.allCases.contains(result.angle), "Result angle should be valid")
-        XCTAssertEqual(result.allConfidences.count, PhotoAngleType.allCases.count, "All confidences should be present")
+        XCTAssertTrue(PhotoAngleType.allCases.contains(result), "Result angle should be valid")
     }
     
     func testImageDataClassification() async throws {
@@ -85,7 +83,7 @@ class VisionIntegrationTests: XCTestCase {
         
         // Then: Classification should succeed
         XCTAssertNotNil(result, "Classification result should not be nil")
-        XCTAssertTrue(result.confidence >= 0.0 && result.confidence <= 1.0, "Confidence should be between 0.0 and 1.0")
+        XCTAssertTrue(PhotoAngleType.allCases.contains(result), "Result angle should be valid")
     }
     
     func testClassificationWithDifferentAngles() async throws {
@@ -99,7 +97,7 @@ class VisionIntegrationTests: XCTestCase {
             let result = try await visionService.classifyVehicleAngle(from: testImage)
             
             XCTAssertNotNil(result, "Classification should succeed for \(angle)")
-            XCTAssertTrue(result.confidence >= 0.0 && result.confidence <= 1.0, "Confidence should be valid for \(angle)")
+            XCTAssertTrue(PhotoAngleType.allCases.contains(result), "Result angle should be valid for \(angle)")
         }
     }
     
@@ -119,7 +117,7 @@ class VisionIntegrationTests: XCTestCase {
             let result = try await visionService.classifyVehicleAngle(from: testImage)
             
             XCTAssertNotNil(result, "Classification should succeed for size \(size)")
-            XCTAssertTrue(result.confidence >= 0.0 && result.confidence <= 1.0, "Confidence should be valid for size \(size)")
+            XCTAssertTrue(PhotoAngleType.allCases.contains(result), "Result angle should be valid for size \(size)")
         }
     }
     
@@ -132,12 +130,12 @@ class VisionIntegrationTests: XCTestCase {
         // When: Starting continuous classification
         let frameProvider = MockFrameProvider()
         let expectation = XCTestExpectation(description: "Continuous classification")
-        var receivedClassifications: [VehicleAngleClassification] = []
+        var receivedClassifications: [PhotoAngleType] = []
         
         try await visionService.startContinuousClassification(
             frameProvider: frameProvider
-        ) { classification in
-            receivedClassifications.append(classification)
+        ) { angle, confidence in
+            receivedClassifications.append(angle)
             if receivedClassifications.count >= 5 {
                 expectation.fulfill()
             }
@@ -167,8 +165,8 @@ class VisionIntegrationTests: XCTestCase {
         
         try await visionService.startContinuousClassification(
             frameProvider: frameProvider
-        ) { classification in
-            if classification.angle == .front && classification.meetsThreshold(0.8) {
+        ) { angle, confidence in
+            if angle == .front && confidence >= 0.8 {
                 targetAngleDetected = true
                 expectation.fulfill()
             }
@@ -193,7 +191,7 @@ class VisionIntegrationTests: XCTestCase {
         
         try await visionService.startContinuousClassification(
             frameProvider: frameProvider
-        ) { _ in
+        ) { angle, confidence in
             classificationCount += 1
             if classificationCount >= 10 {
                 expectation.fulfill()
@@ -222,8 +220,8 @@ class VisionIntegrationTests: XCTestCase {
         let testImage = createTestImage()
         let result = try await visionService.classifyVehicleAngle(from: testImage)
         
-        // Then: Result should meet confidence threshold
-        XCTAssertTrue(result.confidence >= 0.9 || result.confidence < 0.9, "Result should be valid")
+        // Then: Result should be valid
+        XCTAssertTrue(PhotoAngleType.allCases.contains(result), "Result should be valid")
         
         // When: Lowering confidence threshold
         visionService.setConfidenceThreshold(0.5)
@@ -238,7 +236,7 @@ class VisionIntegrationTests: XCTestCase {
         try await visionService.loadModel()
         
         // Test edge case thresholds
-        let thresholds: [Double] = [0.0, 0.5, 1.0]
+        let thresholds: [Float] = [0.0, 0.5, 1.0]
         
         for threshold in thresholds {
             visionService.setConfidenceThreshold(threshold)
@@ -305,7 +303,7 @@ class VisionIntegrationTests: XCTestCase {
         do {
             try await visionService.startContinuousClassification(
                 frameProvider: frameProvider
-            ) { _ in }
+            ) { _, _ in }
             XCTFail("Should throw error when model is not loaded")
         } catch VisionServiceError.modelNotLoaded {
             // Expected error
@@ -428,7 +426,7 @@ class VisionIntegrationTests: XCTestCase {
         
         // Then: Classification should work with camera frames
         XCTAssertNotNil(result, "Classification should work with camera frames")
-        XCTAssertTrue(result.confidence >= 0.0 && result.confidence <= 1.0, "Confidence should be valid")
+        XCTAssertTrue(PhotoAngleType.allCases.contains(result), "Result angle should be valid")
         
         try await cameraService.stopSession()
     }
@@ -447,12 +445,12 @@ class VisionIntegrationTests: XCTestCase {
         
         // When: Starting continuous classification with camera frames
         let expectation = XCTestExpectation(description: "Camera classification")
-        var receivedClassifications: [VehicleAngleClassification] = []
+        var receivedClassifications: [PhotoAngleType] = []
         
         try await visionService.startContinuousClassification(
             frameProvider: CameraFrameProvider(cameraService: cameraService)
-        ) { classification in
-            receivedClassifications.append(classification)
+        ) { angle, confidence in
+            receivedClassifications.append(angle)
             if receivedClassifications.count >= 3 {
                 expectation.fulfill()
             }
