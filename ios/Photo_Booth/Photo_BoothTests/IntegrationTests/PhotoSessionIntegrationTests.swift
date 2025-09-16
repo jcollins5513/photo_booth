@@ -14,7 +14,7 @@ class PhotoSessionIntegrationTests: XCTestCase {
     
     override func setUpWithError() throws {
         // Create in-memory Core Data stack for testing
-        persistenceController = PersistenceController(inMemory: true)
+        persistenceController = CoreDataStack()
         
         // Initialize services with proper dependencies
         let fileSystemManager = FileSystemManager()
