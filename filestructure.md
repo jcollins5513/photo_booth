@@ -33,22 +33,20 @@ photo_booth/
 │       ├── spec-template.md
 │       └── tasks-template.md
 ├── ios/
-│   └── VehiclePhotoBooth/
-│       ├── VehiclePhotoBooth/
-│       │   ├── App/
-│       │   │   ├── VehiclePhotoBoothApp.swift
-│       │   │   └── ContentView.swift
-│       │   ├── Models/
+│   └── Photo_Booth/
+│       ├── Photo_Booth/
+│       │   ├── Assets.xcassets/
+│       │   │   ├── AccentColor.colorset/
+│       │   │   ├── AppIcon.appiconset/
+│       │   │   └── Contents.json
+│       │   ├── ContentView.swift
+│       │   ├── Photo_BoothApp.swift
 │       │   ├── Resources/
-│       │   │   ├── Info.plist
-│       │   │   ├── GoogleService-Info.plist
 │       │   │   └── CoreDataModel.xcdatamodeld/
 │       │   │       └── VehiclePhotoBooth.xcdatamodel/
 │       │   │           └── contents
 │       │   ├── Services/
 │       │   │   └── CoreDataStack.swift
-│       │   ├── Utils/
-│       │   │   └── Extensions/
 │       │   ├── Views/
 │       │   │   ├── Authentication/
 │       │   │   │   └── AuthenticationView.swift
@@ -56,20 +54,27 @@ photo_booth/
 │       │   │   │   └── DashboardView.swift
 │       │   │   ├── Camera/
 │       │   │   │   └── SessionView.swift
-│       │   │   ├── Gallery/
-│       │   │   │   └── GalleryView.swift
-│       │   │   └── Settings/
+│       │   │   └── Gallery/
+│       │   │       └── GalleryView.swift
 │       │   └── ViewModels/
 │       │       └── AuthenticationViewModel.swift
-│       ├── VehiclePhotoBooth.xcodeproj/
-│       │   └── project.pbxproj
-│       ├── VehiclePhotoBoothTests/
-│       │   ├── ContractTests/
-│       │   ├── IntegrationTests/
-│       │   ├── UITests/
-│       │   ├── UnitTests/
-│       │   └── VehiclePhotoBoothTests.swift
-│       └── .swiftlint.yml
+│       ├── Photo_Booth.xcodeproj/
+│       │   ├── project.pbxproj
+│       │   ├── project.xcworkspace/
+│       │   └── xcuserdata/
+│       └── Photo_BoothTests/
+│           ├── ContractTests/
+│           │   ├── AuthenticationServiceContractTests.swift
+│           │   ├── CameraServiceContractTests.swift
+│           │   └── VisionServiceContractTests.swift
+│           ├── IntegrationTests/
+│           │   ├── AuthenticationIntegrationTests.swift
+│           │   ├── CameraIntegrationTests.swift
+│           │   ├── PhotoSessionIntegrationTests.swift
+│           │   ├── StorageIntegrationTests.swift
+│           │   └── VisionIntegrationTests.swift
+│           ├── Photo_BoothTests.swift
+│           └── VehiclePhotoBoothTests.swift
 ├── specs/
 │   └── 001-automated-vehicle-photo/
 │       ├── contracts/
@@ -104,3 +109,6 @@ photo_booth/
 - **2024-12-19**: Set up SwiftUI app with authentication and dashboard views
 - **2024-12-19**: Configured Core Data model and SwiftLint settings
 - **2024-12-19**: Added Firebase configuration placeholder and test structure
+- **2024-12-19**: Consolidated project structure - moved all files from VehiclePhotoBooth to Photo_Booth
+- **2024-12-19**: Updated specification documents with new project paths
+- **2024-12-19**: Added test files to Photo_Booth project

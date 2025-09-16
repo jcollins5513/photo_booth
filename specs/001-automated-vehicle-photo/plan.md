@@ -95,11 +95,11 @@ api/
 └── [Firebase backend configuration]
 
 ios/
-├── VehiclePhotoBooth/
-│   ├── VehiclePhotoBooth.xcodeproj
-│   ├── VehiclePhotoBooth/
+├── Photo_Booth/
+│   ├── Photo_Booth.xcodeproj
+│   ├── Photo_Booth/
 │   │   ├── App/
-│   │   │   ├── VehiclePhotoBoothApp.swift
+│   │   │   ├── Photo_BoothApp.swift
 │   │   │   └── ContentView.swift
 │   │   ├── Models/
 │   │   │   ├── PhotoSession.swift
@@ -127,7 +127,7 @@ ios/
 │   │   └── Utils/
 │   │       ├── Extensions/
 │   │       └── Constants.swift
-│   └── VehiclePhotoBoothTests/
+│   └── Photo_BoothTests/
 │       ├── UnitTests/
 │       ├── IntegrationTests/
 │       └── UITests/
