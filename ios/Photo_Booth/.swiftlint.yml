@@ -1,0 +1,202 @@
+# SwiftLint Configuration for Photo_Booth
+# Based on SwiftLint 0.50+ rules
+
+# Paths to include/exclude
+included:
+  - Photo_Booth
+  - Photo_BoothTests
+
+excluded:
+  - Photo_Booth.xcodeproj
+  - Photo_Booth/Resources
+  - Photo_BoothTests/ContractTests
+  - Photo_BoothTests/IntegrationTests
+
+# Rules to disable
+disabled_rules:
+  - trailing_whitespace
+  - line_length
+  - function_body_length
+  - file_length
+  - type_body_length
+  - identifier_name
+  - todo
+
+# Rules to enable
+opt_in_rules:
+  - empty_count
+  - empty_string
+  - explicit_init
+  - first_where
+  - force_unwrapping
+  - overridden_super_call
+  - prohibited_interface_builder
+  - redundant_nil_coalescing
+  - redundant_optional_initialization
+  - single_test_class
+  - sorted_first_last
+  - unneeded_parentheses_in_closure_argument
+  - vertical_parameter_alignment_on_call
+  - yoda_condition
+
+# Custom rules
+custom_rules:
+  # Disallow print statements in production code
+  no_print:
+    name: "No Print Statements"
+    regex: 'print\('
+    match_kinds:
+      - comment
+      - string
+    message: "Use proper logging instead of print statements"
+    severity: warning
+
+# Line length configuration
+line_length:
+  warning: 120
+  error: 150
+  ignores_urls: true
+  ignores_function_declarations: true
+  ignores_comments: true
+
+# File length configuration
+file_length:
+  warning: 400
+  error: 500
+
+# Function body length
+function_body_length:
+  warning: 50
+  error: 100
+
+# Type body length
+type_body_length:
+  warning: 200
+  error: 300
+
+# Identifier name configuration
+identifier_name:
+  min_length:
+    warning: 2
+    error: 1
+  max_length:
+    warning: 40
+    error: 50
+  excluded:
+    - id
+    - url
+    - api
+    - ui
+    - db
+    - ok
+    - no
+    - yes
+
+# Force unwrapping configuration
+force_unwrapping:
+  severity: warning
+
+# Force casting configuration
+force_cast:
+  severity: warning
+
+# Force try configuration
+force_try:
+  severity: warning
+
+# Empty count configuration
+empty_count:
+  severity: warning
+
+# Explicit init configuration
+explicit_init:
+  severity: warning
+
+# First where configuration
+first_where:
+  severity: warning
+
+# Overridden super call configuration
+overridden_super_call:
+  severity: warning
+
+# Prohibited interface builder configuration
+prohibited_interface_builder:
+  severity: warning
+
+# Redundant nil coalescing configuration
+redundant_nil_coalescing:
+  severity: warning
+
+# Redundant optional initialization configuration
+redundant_optional_initialization:
+  severity: warning
+
+# Single test class configuration
+single_test_class:
+  severity: warning
+
+# Sorted first last configuration
+sorted_first_last:
+  severity: warning
+
+# Unneeded parentheses in closure argument configuration
+unneeded_parentheses_in_closure_argument:
+  severity: warning
+
+# Vertical parameter alignment on call configuration
+vertical_parameter_alignment_on_call:
+  severity: warning
+
+# Yoda condition configuration
+yoda_condition:
+  severity: warning
+
+# Analyzer rules
+analyzer_rules:
+  - explicit_self
+  - unused_import
+  - unused_declaration
+  - unused_parameter
+  - unused_variable
+  - unused_closure_parameter
+  - unused_optional_binding
+  - unused_private_declaration
+  - unused_import
+  - unused_declaration
+  - unused_parameter
+  - unused_variable
+  - unused_closure_parameter
+  - unused_optional_binding
+  - unused_private_declaration
+
+# Reporter configuration
+reporter: "xcode"
+
+# Only run rules that are enabled
+only_rules: []
+
+# Disable all rules by default
+disabled_rules:
+  - trailing_whitespace
+  - line_length
+  - function_body_length
+  - file_length
+  - type_body_length
+  - identifier_name
+  - todo
+  - force_unwrapping
+  - force_cast
+  - force_try
+  - empty_count
+  - explicit_init
+  - first_where
+  - overridden_super_call
+  - prohibited_interface_builder
+  - redundant_nil_coalescing
+  - redundant_optional_initialization
+  - single_test_class
+  - sorted_first_last
+  - unneeded_parentheses_in_closure_argument
+  - vertical_parameter_alignment_on_call
+  - yoda_condition
