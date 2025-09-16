@@ -1,87 +1,118 @@
-# Granular Plan: Project Foundation & Setup
+# Granular Plan: UI Integration and User Experience
 
-**Section**: 1. Project Foundation & Setup  
+**Section**: 6. User Interface & Experience  
 **Created**: 2024-12-19  
 **Status**: In Progress  
-**Parent**: Master Plan Section 1
+**Parent**: Master Plan Section 6
 
 ## Current Focus
-Setting up the foundational structure for the Automated Vehicle Photo Booth iOS application, including development environment, project initialization, and core architecture.
+Building the complete SwiftUI user interface that brings the photo booth app to life, integrating all services and creating an intuitive user experience.
 
 ## Detailed Tasks
 
-### Environment Setup
-- [ ] **E1.1**: Verify Xcode installation and iOS development environment
-  - Check Xcode version compatibility (iOS 15+)
-  - Verify SwiftUI and CoreML framework availability
-  - Test iOS Simulator functionality
+### Main App Structure
+- [ ] **UI1.1**: Create main app navigation structure
+  - Implement TabView with Dashboard, Camera, Gallery, Settings tabs
+  - Set up proper navigation flow and state management
+  - Create app-wide theme and styling system
 
-- [ ] **E1.2**: Initialize Git repository and version control
-  - Create .gitignore for iOS projects
-  - Set up initial commit with project structure
-  - Configure branch protection and workflow
+- [ ] **UI1.2**: Enhance authentication flow
+  - Improve AuthenticationView with better UX
+  - Add registration flow and password reset
+  - Implement proper error handling and validation
 
-### Project Structure
-- [ ] **P1.1**: Create new iOS project with SwiftUI
-  - Project name: "VehiclePhotoBooth"
-  - Bundle identifier: com.vehiclephotobooth.app
-  - Minimum iOS version: 15.0
-  - Use SwiftUI for interface
+### Camera UI Integration
+- [ ] **UI2.1**: Build comprehensive camera interface
+  - Create CameraPreviewView with AVFoundation integration
+  - Implement real-time camera feed display
+  - Add camera controls (focus, exposure, flash)
 
-- [ ] **P1.2**: Set up project folder structure
-  - Create modular folder organization
-  - Separate concerns (Views, Models, Services, Utils)
-  - Set up resource folders (Assets, Localizable)
+- [ ] **UI2.2**: Create photo capture interface
+  - Build capture button with haptic feedback
+  - Implement photo review and retake functionality
+  - Add photo quality indicators and validation
 
-### Core Dependencies
-- [ ] **D1.1**: Integrate essential iOS frameworks
-  - AVFoundation for camera functionality
-  - Vision framework for computer vision
-  - CoreML for machine learning models
-  - SwiftUI for user interface
+- [ ] **UI2.3**: Implement angle guidance system
+  - Create overlay guides for each photo angle
+  - Add real-time angle detection feedback
+  - Build visual indicators for proper positioning
 
-- [ ] **D1.2**: Set up dependency management
-  - Configure Swift Package Manager
-  - Add necessary third-party libraries (if needed)
-  - Set up build configurations
+### Session Management UI
+- [ ] **UI3.1**: Build session creation and configuration
+  - Create vehicle identification input
+  - Implement session settings and preferences
+  - Add session progress tracking display
 
-### Architecture Foundation
-- [ ] **A1.1**: Implement MVVM architecture pattern
-  - Create base ViewModels and Models
-  - Set up navigation structure
-  - Implement dependency injection container
+- [ ] **UI3.2**: Create photo sequence workflow
+  - Build step-by-step angle guidance
+  - Implement progress indicators and completion tracking
+  - Add session pause/resume functionality
 
-- [ ] **A1.2**: Set up core services layer
-  - Camera service interface
-  - Vision processing service
-  - Data persistence service
-  - Authentication service interface
+- [ ] **UI3.3**: Implement auto-capture feedback
+  - Create real-time detection status display
+  - Add confidence level indicators
+  - Build retry and manual capture options
 
-### Development Tools
-- [ ] **T1.1**: Configure development tools
-  - Set up SwiftLint for code quality
-  - Configure Xcode schemes and build settings
-  - Set up debugging and logging infrastructure
+### Gallery and Photo Management
+- [ ] **UI4.1**: Build photo gallery interface
+  - Create grid and list view layouts
+  - Implement photo filtering and sorting
+  - Add photo selection and batch operations
 
-- [ ] **T1.2**: Create development documentation
-  - Code style guidelines
-  - Architecture documentation
-  - Development workflow documentation
+- [ ] **UI4.2**: Implement photo review and editing
+  - Create detailed photo view with metadata
+  - Add basic photo editing capabilities
+  - Implement photo sharing and export
+
+### ViewModels and State Management
+- [ ] **UI5.1**: Create CameraViewModel
+  - Integrate with CameraService and VisionService
+  - Manage camera state and photo capture flow
+  - Handle real-time angle detection updates
+
+- [ ] **UI5.2**: Create SessionViewModel
+  - Integrate with SessionManager and StorageService
+  - Manage session lifecycle and progress
+  - Handle photo sequence coordination
+
+- [ ] **UI5.3**: Create GalleryViewModel
+  - Integrate with StorageService for photo retrieval
+  - Manage gallery state and photo operations
+  - Handle photo metadata and organization
+
+### User Experience Enhancements
+- [ ] **UI6.1**: Implement comprehensive error handling
+  - Create user-friendly error messages
+  - Add retry mechanisms and fallback options
+  - Implement proper loading states and feedback
+
+- [ ] **UI6.2**: Add animations and transitions
+  - Create smooth state transitions
+  - Add micro-interactions and haptic feedback
+  - Implement loading animations and progress indicators
+
+- [ ] **UI6.3**: Optimize for real devices
+  - Test and optimize performance
+  - Implement proper memory management
+  - Add device-specific optimizations
 
 ## Success Criteria
-- [ ] iOS project successfully created and builds without errors
-- [ ] All required frameworks properly integrated
-- [ ] Basic app structure and navigation functional
-- [ ] Development environment fully configured
-- [ ] Ready to begin user authentication implementation
+- [ ] Beautiful, intuitive photo booth interface with smooth user experience
+- [ ] Seamless integration with all existing services (Camera, Vision, Storage, Session)
+- [ ] Complete photo capture workflow from session start to completion
+- [ ] Real-time angle detection feedback and guidance system
+- [ ] Comprehensive error handling and user feedback
+- [ ] Performance optimized for production use on real devices
+- [ ] All UI components properly tested and validated
 
 ## Dependencies
-- Xcode 14.0+ with iOS 15.0+ SDK
-- macOS development machine
-- iOS device or simulator for testing
+- All core services implemented and tested (Phase 2 completed)
+- CameraService, VisionService, StorageService, SessionManager working
+- Core Data model and file system integration functional
+- Authentication system operational
 
 ## Notes
-This foundation phase is critical for establishing a solid base for the entire application. All subsequent development will build upon this structure, so careful attention to architecture and organization is essential.
+This UI phase builds upon the solid foundation of services created in Phase 2. The focus is on creating an exceptional user experience that makes the complex photo booth functionality feel simple and intuitive. All UI components must integrate seamlessly with the existing service layer.
 
 ## Next Steps
-Upon completion of this section, move to "User Authentication System" (Section 2) in the master plan.
+Upon completion of this section, move to "Data Management & Storage" (Section 7) in the master plan for advanced data features and export capabilities.
