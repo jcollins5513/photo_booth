@@ -425,4 +425,18 @@ class MockFrameProvider: FrameProvider {
         
         return image
     }
+    
+    func getCurrentFrame() -> UIImage? {
+        guard isActive else { return nil }
+        
+        // Create mock frame
+        let size = CGSize(width: 224, height: 224)
+        UIGraphicsBeginImageContextWithOptions(size, false, 1.0)
+        UIColor.gray.setFill()
+        UIRectFill(CGRect(origin: .zero, size: size))
+        let image = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        
+        return image
+    }
 }
