@@ -102,7 +102,7 @@ class PhotoMetadataServiceTests: XCTestCase {
         let qualityAssessment = createMockQualityAssessment()
         
         // When
-        let tags = photoMetadataService.generatePhotoTags(
+        let tags = await photoMetadataService.generatePhotoTags(
             for: photo,
             exifData: exifData,
             qualityAssessment: qualityAssessment
@@ -123,7 +123,7 @@ class PhotoMetadataServiceTests: XCTestCase {
         let qualityAssessment = PhotoQualityAssessment() // Empty quality assessment
         
         // When
-        let tags = photoMetadataService.generatePhotoTags(
+        let tags = await photoMetadataService.generatePhotoTags(
             for: photo,
             exifData: exifData,
             qualityAssessment: qualityAssessment

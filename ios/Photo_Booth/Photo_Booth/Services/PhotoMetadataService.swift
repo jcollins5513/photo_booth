@@ -4,7 +4,8 @@ import ImageIO
 import CoreLocation
 
 /// Service for managing photo metadata and quality assessment
-class PhotoMetadataService {
+@MainActor
+class PhotoMetadataService: @unchecked Sendable {
     
     // MARK: - Properties
     
@@ -12,7 +13,7 @@ class PhotoMetadataService {
     
     // MARK: - Initialization
     
-    init(fileSystemManager: FileSystemManagerProtocol) {
+    nonisolated init(fileSystemManager: FileSystemManagerProtocol) {
         self.fileSystemManager = fileSystemManager
     }
     

@@ -2,7 +2,8 @@ import Foundation
 import UIKit
 
 /// File system manager implementation
-class FileSystemManager: FileSystemManagerProtocol {
+@MainActor
+class FileSystemManager: FileSystemManagerProtocol, @unchecked Sendable {
     
     // MARK: - Properties
     
@@ -14,7 +15,7 @@ class FileSystemManager: FileSystemManagerProtocol {
     
     // MARK: - Initialization
     
-    init() {
+    nonisolated init() {
         // Get documents directory
         documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         
@@ -28,7 +29,7 @@ class FileSystemManager: FileSystemManagerProtocol {
         createDirectoryStructure()
     }
     
-    private func createDirectoryStructure() {
+    nonisolated private func createDirectoryStructure() {
         let directories = [imagesDirectory, sessionsDirectory, exportsDirectory, backupsDirectory]
         
         for directory in directories {
@@ -87,7 +88,7 @@ class FileSystemManager: FileSystemManagerProtocol {
         return imagesDirectory.appendingPathComponent(fileName)
     }
     
-    func fileExists(filePath: String) -> Bool {
+    nonisolated func fileExists(filePath: String) -> Bool {
         return FileManager.default.fileExists(atPath: filePath)
     }
     
@@ -144,15 +145,15 @@ class FileSystemManager: FileSystemManagerProtocol {
         return compressedData
     }
     
-    func getSessionDirectory(sessionId: UUID) -> URL {
+    nonisolated func getSessionDirectory(sessionId: UUID) -> URL {
         return sessionsDirectory.appendingPathComponent(sessionId.uuidString)
     }
     
-    func getExportDirectory() -> URL {
+    nonisolated func getExportDirectory() -> URL {
         return exportsDirectory
     }
     
-    func getBackupDirectory() -> URL {
+    nonisolated func getBackupDirectory() -> URL {
         return backupsDirectory
     }
     
