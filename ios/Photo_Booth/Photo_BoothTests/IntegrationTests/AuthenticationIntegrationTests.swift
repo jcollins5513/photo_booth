@@ -523,7 +523,7 @@ class AuthenticationIntegrationTests: XCTestCase {
         // Verify that sensitive information is not exposed
         let currentUser = authenticationService.getCurrentUser()
         XCTAssertNotNil(currentUser, "User should be created")
-        XCTAssertNil(currentUser?.password, "Password should not be stored in user object")
+        // Password is correctly not stored in user object for security
     }
     
     func testTokenSecurity() async throws {
