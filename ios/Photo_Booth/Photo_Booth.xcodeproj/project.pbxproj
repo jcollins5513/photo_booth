@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 90;
 	objects = {
 
 /* Begin PBXContainerItemProxy section */
@@ -37,17 +37,13 @@
 /* Begin PBXFrameworksBuildPhase section */
 		CD1C49582E78E0FA00F79BB3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		CD1C49892E78E66800F79BB3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
@@ -83,14 +79,10 @@
 			);
 			buildRules = (
 			);
-			dependencies = (
-			);
 			fileSystemSynchronizedGroups = (
 				CD1C495D2E78E0FA00F79BB3 /* Photo_Booth */,
 			);
 			name = Photo_Booth;
-			packageProductDependencies = (
-			);
 			productName = Photo_Booth;
 			productReference = CD1C495B2E78E0FA00F79BB3 /* Photo_Booth.app */;
 			productType = "com.apple.product-type.application";
@@ -112,8 +104,6 @@
 				CD1C498D2E78E66800F79BB3 /* Photo_BoothTests */,
 			);
 			name = Photo_BoothTests;
-			packageProductDependencies = (
-			);
 			productName = Photo_BoothTests;
 			productReference = CD1C498C2E78E66800F79BB3 /* Photo_BoothTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -126,7 +116,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1640;
-				LastUpgradeCheck = 1640;
+				LastUpgradeCheck = 2600;
 				TargetAttributes = {
 					CD1C495A2E78E0FA00F79BB3 = {
 						CreatedOnToolsVersion = 16.4;
@@ -142,11 +132,10 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 			);
 			mainGroup = CD1C49522E78E0FA00F79BB3;
 			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
+			preferredProjectObjectVersion = 90;
 			productRefGroup = CD1C495C2E78E0FA00F79BB3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -160,34 +149,26 @@
 /* Begin PBXResourcesBuildPhase section */
 		CD1C49592E78E0FA00F79BB3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		CD1C498A2E78E66800F79BB3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CD1C49572E78E0FA00F79BB3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		CD1C49882E78E66800F79BB3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
@@ -200,7 +181,7 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		CD1C49642E78E0FC00F79BB3 /* Debug */ = {
+		CD1C49642E78E0FC00F79BB3 /* Debug configuration for PBXProject "Photo_Booth" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -259,12 +240,13 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		CD1C49652E78E0FC00F79BB3 /* Release */ = {
+		CD1C49652E78E0FC00F79BB3 /* Release configuration for PBXProject "Photo_Booth" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -316,12 +298,13 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		CD1C49672E78E0FC00F79BB3 /* Debug */ = {
+		CD1C49672E78E0FC00F79BB3 /* Debug configuration for PBXNativeTarget "Photo_Booth" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -349,7 +332,7 @@
 			};
 			name = Debug;
 		};
-		CD1C49682E78E0FC00F79BB3 /* Release */ = {
+		CD1C49682E78E0FC00F79BB3 /* Release configuration for PBXNativeTarget "Photo_Booth" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -377,7 +360,7 @@
 			};
 			name = Release;
 		};
-		CD1C49932E78E66800F79BB3 /* Debug */ = {
+		CD1C49932E78E66800F79BB3 /* Debug configuration for PBXNativeTarget "Photo_BoothTests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -395,7 +378,7 @@
 			};
 			name = Debug;
 		};
-		CD1C49942E78E66800F79BB3 /* Release */ = {
+		CD1C49942E78E66800F79BB3 /* Release configuration for PBXNativeTarget "Photo_BoothTests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -419,28 +402,25 @@
 		CD1C49562E78E0FA00F79BB3 /* Build configuration list for PBXProject "Photo_Booth" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CD1C49642E78E0FC00F79BB3 /* Debug */,
-				CD1C49652E78E0FC00F79BB3 /* Release */,
+				CD1C49642E78E0FC00F79BB3 /* Debug configuration for PBXProject "Photo_Booth" */,
+				CD1C49652E78E0FC00F79BB3 /* Release configuration for PBXProject "Photo_Booth" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		CD1C49662E78E0FC00F79BB3 /* Build configuration list for PBXNativeTarget "Photo_Booth" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CD1C49672E78E0FC00F79BB3 /* Debug */,
-				CD1C49682E78E0FC00F79BB3 /* Release */,
+				CD1C49672E78E0FC00F79BB3 /* Debug configuration for PBXNativeTarget "Photo_Booth" */,
+				CD1C49682E78E0FC00F79BB3 /* Release configuration for PBXNativeTarget "Photo_Booth" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		CD1C49922E78E66800F79BB3 /* Build configuration list for PBXNativeTarget "Photo_BoothTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CD1C49932E78E66800F79BB3 /* Debug */,
-				CD1C49942E78E66800F79BB3 /* Release */,
+				CD1C49932E78E66800F79BB3 /* Debug configuration for PBXNativeTarget "Photo_BoothTests" */,
+				CD1C49942E78E66800F79BB3 /* Release configuration for PBXNativeTarget "Photo_BoothTests" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
