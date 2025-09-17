@@ -89,7 +89,7 @@ class FileSystemManager: FileSystemManagerProtocol, @unchecked Sendable {
         }
     }
     
-    func getFileURL(fileName: String) -> URL {
+    nonisolated func getFileURL(fileName: String) -> URL {
         return imagesDirectory.appendingPathComponent(fileName)
     }
     

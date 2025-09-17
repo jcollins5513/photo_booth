@@ -13,7 +13,7 @@ class PhotoMetadataService: @unchecked Sendable {
     
     // MARK: - Initialization
     
-    nonisolated init(fileSystemManager: FileSystemManagerProtocol) {
+    init(fileSystemManager: FileSystemManagerProtocol) {
         self.fileSystemManager = fileSystemManager
     }
     
@@ -40,7 +40,7 @@ class PhotoMetadataService: @unchecked Sendable {
         }
     }
     
-    private func parseEXIFProperties(_ properties: [CFString: Any]) throws -> PhotoEXIFData {
+    nonisolated private func parseEXIFProperties(_ properties: [CFString: Any]) throws -> PhotoEXIFData {
         var exifData = PhotoEXIFData()
         
         // Basic image properties
@@ -110,13 +110,13 @@ class PhotoMetadataService: @unchecked Sendable {
         return exifData
     }
     
-    private func parseEXIFDate(_ dateString: String) -> Date? {
+    nonisolated private func parseEXIFDate(_ dateString: String) -> Date? {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy:MM:dd HH:mm:ss"
         return formatter.date(from: dateString)
     }
     
-    private func parseGPSData(_ gps: [CFString: Any]) throws -> GPSData? {
+    nonisolated private func parseGPSData(_ gps: [CFString: Any]) throws -> GPSData? {
         guard let latitude = gps[kCGImagePropertyGPSLatitude] as? Double,
               let longitude = gps[kCGImagePropertyGPSLongitude] as? Double,
               let latitudeRef = gps[kCGImagePropertyGPSLatitudeRef] as? String,
@@ -154,7 +154,7 @@ class PhotoMetadataService: @unchecked Sendable {
         }
     }
     
-    private func performQualityAssessment(image: UIImage, imageData: Data) throws -> PhotoQualityAssessment {
+    nonisolated private func performQualityAssessment(image: UIImage, imageData: Data) throws -> PhotoQualityAssessment {
         var assessment = PhotoQualityAssessment()
         
         // Basic metrics
@@ -180,7 +180,7 @@ class PhotoMetadataService: @unchecked Sendable {
         return assessment
     }
     
-    private func detectBlur(image: UIImage) throws -> Double {
+    nonisolated private func detectBlur(image: UIImage) throws -> Double {
         guard let cgImage = image.cgImage else {
             throw PhotoMetadataError.invalidImageData
         }
@@ -237,7 +237,7 @@ class PhotoMetadataService: @unchecked Sendable {
         return variance
     }
     
-    private func assessBrightness(image: UIImage) throws -> Double {
+    nonisolated private func assessBrightness(image: UIImage) throws -> Double {
         guard let cgImage = image.cgImage else {
             throw PhotoMetadataError.invalidImageData
         }
@@ -288,7 +288,7 @@ class PhotoMetadataService: @unchecked Sendable {
         return totalBrightness / Double(pixelCount) / 255.0
     }
     
-    private func assessContrast(image: UIImage) throws -> Double {
+    nonisolated private func assessContrast(image: UIImage) throws -> Double {
         guard let cgImage = image.cgImage else {
             throw PhotoMetadataError.invalidImageData
         }
@@ -354,7 +354,7 @@ class PhotoMetadataService: @unchecked Sendable {
         return standardDeviation / 255.0
     }
     
-    private func calculateOverallScore(_ assessment: PhotoQualityAssessment) -> Double {
+    nonisolated private func calculateOverallScore(_ assessment: PhotoQualityAssessment) -> Double {
         let blurWeight = 0.4
         let brightnessWeight = 0.3
         let contrastWeight = 0.3
@@ -367,7 +367,7 @@ class PhotoMetadataService: @unchecked Sendable {
         return (blurScore * blurWeight + brightnessScore * brightnessWeight + contrastScore * contrastWeight) * 100
     }
     
-    private func determineQualityLevel(_ score: Double) -> PhotoQualityLevel {
+    nonisolated private func determineQualityLevel(_ score: Double) -> PhotoQualityLevel {
         switch score {
         case 90...100:
             return .excellent

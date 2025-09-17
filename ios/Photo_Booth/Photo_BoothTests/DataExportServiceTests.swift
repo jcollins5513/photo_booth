@@ -400,7 +400,7 @@ class MockStorageService: StorageServiceProtocol {
     }
 }
 
-class MockPhotoMetadataService: PhotoMetadataService {
+class MockPhotoMetadataService: PhotoMetadataService, @unchecked Sendable {
     override func extractEXIFData(from imageData: Data) async throws -> PhotoEXIFData {
         var exifData = PhotoEXIFData()
         exifData.width = 200

@@ -10,7 +10,10 @@ class PhotoMetadataServiceTests: XCTestCase {
         try super.setUpWithError()
         
         mockFileSystemManager = MockFileSystemManager()
-        photoMetadataService = PhotoMetadataService(fileSystemManager: mockFileSystemManager)
+    }
+    
+    private func setupPhotoMetadataService() async {
+        photoMetadataService = await PhotoMetadataService(fileSystemManager: mockFileSystemManager)
     }
     
     override func tearDownWithError() throws {
@@ -23,6 +26,7 @@ class PhotoMetadataServiceTests: XCTestCase {
     
     func testExtractEXIFData() async throws {
         // Given
+        await setupPhotoMetadataService()
         let imageData = createTestImageDataWithEXIF()
         
         // When
@@ -36,6 +40,7 @@ class PhotoMetadataServiceTests: XCTestCase {
     
     func testExtractEXIFDataWithInvalidData() async throws {
         // Given
+        await setupPhotoMetadataService()
         let invalidData = Data()
         
         // When & Then
@@ -51,6 +56,7 @@ class PhotoMetadataServiceTests: XCTestCase {
     
     func testAssessPhotoQuality() async throws {
         // Given
+        await setupPhotoMetadataService()
         let imageData = createTestImageData()
         
         // When
@@ -71,6 +77,7 @@ class PhotoMetadataServiceTests: XCTestCase {
     
     func testAssessPhotoQualityWithInvalidData() async throws {
         // Given
+        await setupPhotoMetadataService()
         let invalidData = Data()
         
         // When & Then
@@ -84,6 +91,7 @@ class PhotoMetadataServiceTests: XCTestCase {
     
     func testQualityLevelDetermination() async throws {
         // Given
+        await setupPhotoMetadataService()
         let imageData = createTestImageData()
         
         // When
@@ -97,6 +105,7 @@ class PhotoMetadataServiceTests: XCTestCase {
     
     func testGeneratePhotoTags() async throws {
         // Given
+        await setupPhotoMetadataService()
         let photo = createMockVehiclePhoto()
         let exifData = createMockEXIFData()
         let qualityAssessment = createMockQualityAssessment()
@@ -118,6 +127,7 @@ class PhotoMetadataServiceTests: XCTestCase {
     
     func testGeneratePhotoTagsWithMinimalData() async throws {
         // Given
+        await setupPhotoMetadataService()
         let photo = createMockVehiclePhoto()
         let exifData = PhotoEXIFData() // Empty EXIF data
         let qualityAssessment = PhotoQualityAssessment() // Empty quality assessment
@@ -147,6 +157,7 @@ class PhotoMetadataServiceTests: XCTestCase {
         
         Task {
             do {
+                await setupPhotoMetadataService()
                 _ = try await photoMetadataService.extractEXIFData(from: imageData)
                 let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
                 
@@ -172,6 +183,7 @@ class PhotoMetadataServiceTests: XCTestCase {
         
         Task {
             do {
+                await setupPhotoMetadataService()
                 _ = try await photoMetadataService.assessPhotoQuality(imageData: imageData)
                 let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
                 
@@ -191,6 +203,7 @@ class PhotoMetadataServiceTests: XCTestCase {
     
     func testVerySmallImage() async throws {
         // Given
+        await setupPhotoMetadataService()
         let smallImageData = createVerySmallImageData()
         
         // When
@@ -204,6 +217,7 @@ class PhotoMetadataServiceTests: XCTestCase {
     
     func testVeryLargeImage() async throws {
         // Given
+        await setupPhotoMetadataService()
         let largeImageData = createLargeImageData()
         
         // When
