@@ -40,6 +40,11 @@ class FileSystemManager: FileSystemManagerProtocol, @unchecked Sendable {
     // MARK: - File System Operations
     
     func saveImage(data: Data, fileName: String) async throws -> String {
+        // Validate data
+        guard !data.isEmpty else {
+            throw StorageServiceError.fileSystemError("Cannot save empty data")
+        }
+        
         let fileURL = getFileURL(fileName: fileName)
         
         return try await withCheckedThrowingContinuation { continuation in
@@ -95,6 +100,11 @@ class FileSystemManager: FileSystemManagerProtocol, @unchecked Sendable {
     // MARK: - Enhanced Photo Organization
     
     func saveImageWithOrganization(data: Data, sessionId: UUID, angle: String, quality: PhotoQuality = .high) async throws -> String {
+        // Validate data
+        guard !data.isEmpty else {
+            throw StorageServiceError.fileSystemError("Cannot save empty data")
+        }
+        
         // Create session-specific directory
         let sessionDir = sessionsDirectory.appendingPathComponent(sessionId.uuidString)
         try FileManager.default.createDirectory(at: sessionDir, withIntermediateDirectories: true)

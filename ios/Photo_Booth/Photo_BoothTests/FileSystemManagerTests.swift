@@ -235,14 +235,40 @@ class FileSystemManagerTests: XCTestCase {
     // MARK: - Helper Methods
     
     private func createTestImageData() -> Data {
-        // Create a simple test image
-        let size = CGSize(width: 100, height: 100)
+        // Create a larger test image with more detail to show compression differences
+        let size = CGSize(width: 500, height: 500)
         let renderer = UIGraphicsImageRenderer(size: size)
         let image = renderer.image { context in
-            UIColor.blue.setFill()
-            context.fill(CGRect(origin: .zero, size: size))
+            // Create a more complex image with gradients and patterns
+            let colors = [UIColor.red, UIColor.blue, UIColor.green, UIColor.yellow]
+            for i in 0..<4 {
+                let rect = CGRect(
+                    x: CGFloat(i % 2) * size.width / 2,
+                    y: CGFloat(i / 2) * size.height / 2,
+                    width: size.width / 2,
+                    height: size.height / 2
+                )
+                colors[i].setFill()
+                context.fill(rect)
+            }
+            
+            // Add some text to increase complexity
+            let text = "Test Image for Compression"
+            let attributes: [NSAttributedString.Key: Any] = [
+                .font: UIFont.systemFont(ofSize: 24),
+                .foregroundColor: UIColor.white
+            ]
+            let textSize = text.size(withAttributes: attributes)
+            let textRect = CGRect(
+                x: (size.width - textSize.width) / 2,
+                y: (size.height - textSize.height) / 2,
+                width: textSize.width,
+                height: textSize.height
+            )
+            text.draw(in: textRect, withAttributes: attributes)
         }
-        return image.jpegData(compressionQuality: 0.8) ?? Data()
+        // Return uncompressed PNG data to allow for meaningful compression testing
+        return image.pngData() ?? Data()
     }
 }
 

@@ -191,7 +191,7 @@ class StorageService: StorageServiceProtocol {
                 do {
                     let fetchRequest: NSFetchRequest<VehiclePhoto> = VehiclePhoto.fetchRequest()
                     fetchRequest.predicate = NSPredicate(format: "session.id == %@", sessionId as CVarArg)
-                    fetchRequest.sortDescriptors = [NSSortDescriptor(key: "timestamp", ascending: true)]
+                    fetchRequest.sortDescriptors = [NSSortDescriptor(key: "captureDate", ascending: true)]
                     
                     let photos = try context.fetch(fetchRequest)
                     continuation.resume(returning: photos)
