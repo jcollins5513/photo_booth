@@ -1,169 +1,127 @@
-# Granular Plan: Testing & Quality Assurance
+# Granular Plan: Auto-Capture System
 
-**Section**: 8. Testing & Quality Assurance  
+**Section**: 5. Auto-Capture System  
 **Created**: 2024-12-19  
 **Status**: In Progress  
-**Parent**: Master Plan Section 8
+**Parent**: Master Plan Section 5
 
 ## Current Focus
-Implementing comprehensive testing strategies and quality assurance measures to ensure the photo booth app is robust, reliable, and performs well under various conditions.
+Implementing the complete automated photo capture system that detects vehicle positions, triggers photo captures automatically, and manages the multi-angle capture sequence with quality assurance and retry logic.
 
 ## Detailed Tasks
 
-### Unit Testing Implementation
-- [ ] **TQ1.1**: Create comprehensive unit tests for all services
-  - Test StorageService with mock data
-  - Test FileSystemManager with various file operations
-  - Test PhotoMetadataService with sample images
-  - Test DataExportService with different export formats
-  - Test DataAnalyticsService with sample data sets
-  - Test DataSecurityService with encryption/decryption
-  - Test PerformanceOptimizationService with performance metrics
+### Auto-Capture Core Logic
+- [ ] **AC1.1**: Create AutoCaptureManager service
+  - Implement position detection and validation logic
+  - Create automatic photo triggering system
+  - Add capture timing and sequence management
+  - Implement quality assurance checks before capture
 
-- [ ] **TQ1.2**: Create unit tests for ViewModels
-  - Test AuthenticationViewModel with various auth states
-  - Test CameraViewModel with camera operations
-  - Test SessionViewModel with session management
-  - Test GalleryViewModel with photo display and filtering
+- [ ] **AC1.2**: Implement multi-angle capture sequence
+  - Create sequential angle capture workflow
+  - Add progress tracking for photo session
+  - Implement angle transition logic
+  - Add completion detection and validation
 
-- [ ] **TQ1.3**: Create unit tests for Core Data operations
-  - Test PhotoSession CRUD operations
-  - Test VehiclePhoto CRUD operations
-  - Test data relationships and constraints
-  - Test data migration scenarios
+- [ ] **AC1.3**: Create capture quality assurance
+  - Implement pre-capture quality validation
+  - Add retry logic for failed captures
+  - Create quality scoring system
+  - Add automatic retry with different settings
 
-### Integration Testing
-- [ ] **TQ2.1**: Test service integration workflows
-  - Test complete photo capture workflow
-  - Test session creation to completion flow
-  - Test data export and sharing workflows
-  - Test authentication and session management integration
+### Session Workflow Management
+- [ ] **AC2.1**: Create PhotoSessionManager
+  - Implement complete session lifecycle management
+  - Add session state tracking and persistence
+  - Create session configuration and customization
+  - Add session progress monitoring
 
-- [ ] **TQ2.2**: Test external service integrations
-  - Test camera service integration
-  - Test vision service integration
-  - Test storage service integration
-  - Test cloud storage integration (when implemented)
+- [ ] **AC2.2**: Implement session progress tracking
+  - Create real-time progress indicators
+  - Add completion percentage calculation
+  - Implement session status updates
+  - Add user feedback and guidance
 
-- [ ] **TQ2.3**: Test data persistence and recovery
-  - Test app state persistence across launches
-  - Test data recovery after app crashes
-  - Test data migration between app versions
-  - Test offline/online data synchronization
+- [ ] **AC2.3**: Create session validation system
+  - Implement post-capture validation
+  - Add missing angle detection
+  - Create quality assessment for entire session
+  - Add session completion verification
 
-### User Acceptance Testing
-- [ ] **TQ3.1**: Create user testing scenarios
-  - Design test cases for typical user workflows
-  - Create edge case testing scenarios
-  - Design accessibility testing procedures
-  - Create performance testing scenarios
+### User Interface Integration
+- [ ] **AC3.1**: Update SessionView for auto-capture
+  - Add auto-capture mode toggle
+  - Implement real-time progress display
+  - Add quality feedback indicators
+  - Create capture guidance overlays
 
-- [ ] **TQ3.2**: Implement automated UI testing
-  - Create UI test cases for all major screens
-  - Test navigation flows and user interactions
-  - Test accessibility features and VoiceOver support
-  - Test different device sizes and orientations
+- [ ] **AC3.2**: Create capture status indicators
+  - Add position detection status
+  - Implement quality assessment display
+  - Create capture readiness indicators
+  - Add retry attempt counters
 
-- [ ] **TQ3.3**: Conduct manual testing procedures
-  - Test app functionality on different iOS versions
-  - Test on various device models and screen sizes
-  - Test with different lighting conditions
-  - Test with various vehicle types and sizes
+- [ ] **AC3.3**: Implement user guidance system
+  - Create position guidance overlays
+  - Add audio/visual feedback for positioning
+  - Implement capture countdown timers
+  - Add completion celebrations
 
-### Performance Testing
-- [ ] **TQ4.1**: Implement performance benchmarks
-  - Test app launch time and responsiveness
-  - Test photo capture and processing performance
-  - Test memory usage and optimization
-  - Test battery usage and efficiency
+### Advanced Features
+- [ ] **AC4.1**: Implement smart retry logic
+  - Create adaptive retry strategies
+  - Add different retry approaches per angle
+  - Implement learning from failed attempts
+  - Add user preference-based retry settings
 
-- [ ] **TQ4.2**: Test scalability and load handling
-  - Test with large numbers of photos
-  - Test with long photo sessions
-  - Test with multiple concurrent operations
-  - Test storage capacity limits
+- [ ] **AC4.2**: Create capture optimization
+  - Implement dynamic quality adjustments
+  - Add lighting condition adaptation
+  - Create angle-specific optimization
+  - Add performance-based adjustments
 
-- [ ] **TQ4.3**: Test network and connectivity scenarios
-  - Test offline functionality
-  - Test poor network conditions
-  - Test data synchronization
-  - Test cloud storage operations
+- [ ] **AC4.3**: Add session analytics
+  - Implement capture success rate tracking
+  - Add timing analysis per angle
+  - Create quality trend monitoring
+  - Add performance metrics collection
 
-### Security Testing
-- [ ] **TQ5.1**: Test data security and encryption
-  - Test data encryption and decryption
-  - Test secure data storage
-  - Test data access controls
-  - Test privacy compliance features
+### Testing and Validation
+- [ ] **AC5.1**: Create auto-capture tests
+  - Test position detection accuracy
+  - Validate capture trigger logic
+  - Test retry mechanisms
+  - Validate session completion
 
-- [ ] **TQ5.2**: Test authentication and authorization
-  - Test login/logout functionality
-  - Test session management
-  - Test access control mechanisms
-  - Test data retention policies
+- [ ] **AC5.2**: Implement integration tests
+  - Test complete auto-capture workflow
+  - Validate session management
+  - Test error handling and recovery
+  - Validate user interface updates
 
-- [ ] **TQ5.3**: Test data privacy and compliance
-  - Test GDPR compliance features
-  - Test data export and deletion
-  - Test user consent management
-  - Test data anonymization
-
-### Quality Assurance Processes
-- [ ] **TQ6.1**: Implement code quality checks
-  - Set up automated code analysis
-  - Implement code coverage reporting
-  - Set up static analysis tools
-  - Implement code review processes
-
-- [ ] **TQ6.2**: Create testing documentation
-  - Document testing procedures
-  - Create test case documentation
-  - Document bug reporting processes
-  - Create quality assurance guidelines
-
-- [ ] **TQ6.3**: Implement continuous testing
-  - Set up automated testing pipelines
-  - Implement continuous integration
-  - Set up performance monitoring
-  - Implement error tracking and reporting
-
-### Bug Tracking and Resolution
-- [ ] **TQ7.1**: Set up bug tracking system
-  - Implement bug reporting mechanisms
-  - Create bug classification system
-  - Set up priority and severity levels
-  - Implement bug resolution workflows
-
-- [ ] **TQ7.2**: Implement error handling and recovery
-  - Test error handling mechanisms
-  - Test recovery procedures
-  - Test user feedback and error reporting
-  - Test graceful degradation scenarios
-
-- [ ] **TQ7.3**: Create testing reports and metrics
-  - Generate test coverage reports
-  - Create performance metrics
-  - Generate quality assurance reports
-  - Create user acceptance testing reports
+- [ ] **AC5.3**: Create performance tests
+  - Test capture timing and efficiency
+  - Validate memory usage during sessions
+  - Test battery consumption
+  - Validate real-time performance
 
 ## Success Criteria
-- [ ] 90%+ code coverage across all services and ViewModels
-- [ ] All critical user workflows tested and validated
-- [ ] Performance benchmarks meet or exceed requirements
-- [ ] Security testing passes all security requirements
-- [ ] User acceptance testing shows positive user experience
-- [ ] Automated testing pipeline runs successfully
-- [ ] Bug tracking and resolution processes are established
-- [ ] Quality assurance documentation is complete
+- [ ] Auto-capture triggers within 1 second of position detection
+- [ ] 95%+ success rate for automatic photo captures
+- [ ] Complete 8-angle session in under 10 minutes
+- [ ] Quality assurance prevents poor quality captures
+- [ ] Retry logic recovers from failed captures
+- [ ] User interface provides clear guidance and feedback
+- [ ] Session completion rate >90% without manual intervention
 
 ## Dependencies
-- All core services and ViewModels (already implemented)
-- UI components and navigation (already implemented)
-- Data management and storage services (already implemented)
-- Testing frameworks and tools (to be set up)
+- Camera & Vision Engine (Section 3) - ✅ Completed
+- Photo Session Management (Section 4) - ✅ Completed
+- User Interface & Experience (Section 6) - ✅ Completed
+- Data Management & Storage (Section 7) - ✅ Completed
 
 ## Notes
-This phase focuses on ensuring the app is production-ready with comprehensive testing coverage. The emphasis is on both automated testing and manual testing procedures to catch issues early and ensure a high-quality user experience. All testing should be designed to validate the app's functionality, performance, security, and usability.
+This phase focuses on creating a seamless, automated photo capture experience that requires minimal user intervention. The emphasis is on reliability, quality assurance, and user guidance to ensure successful photo sessions.
 
 ## Next Steps
-Upon completion of this section, move to "Deployment & Distribution" (Section 9) in the master plan for app store preparation and release management.
+Upon completion of this section, move to "Testing & Quality Assurance" (Section 8) in the master plan for comprehensive testing and validation of the auto-capture system.

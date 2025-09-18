@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+import Combine
 
 enum SessionError: Error, LocalizedError {
     case invalidSession
@@ -34,10 +35,24 @@ class SessionViewModel: ObservableObject {
     @Published var vehicleIdentifier = ""
     @Published var totalAngles: Int = 8
     
+    // MARK: - Enhanced Auto-Capture Properties
+    @Published var isAutoCaptureEnabled = false
+    @Published var sessionState: PhotoSessionManager.SessionState = .idle
+    @Published var captureStatus: AutoCaptureManager.CaptureStatus = .idle
+    @Published var qualityScore: Float = 0.0
+    @Published var retryCount = 0
+    @Published var sessionStatistics: PhotoSessionManager.SessionStatistics = PhotoSessionManager.SessionStatistics()
+    @Published var estimatedTimeRemaining: TimeInterval = 0
+    @Published var qualityIssues: [String] = []
+    @Published var isReadyForCapture = false
+    
     // MARK: - Private Properties
     private let sessionManager: SessionManagerProtocol
     private let storageService: StorageServiceProtocol
     private let cameraViewModel: CameraViewModel
+    private let photoSessionManager: PhotoSessionManager
+    private let autoCaptureManager: AutoCaptureManager
+    private var cancellables = Set<AnyCancellable>()
     
     // MARK: - Computed Properties
     var remainingAngles: [PhotoAngleType] {
@@ -56,10 +71,64 @@ class SessionViewModel: ObservableObject {
     }
     
     // MARK: - Initialization
-    init(sessionManager: SessionManagerProtocol, storageService: StorageServiceProtocol, cameraViewModel: CameraViewModel) {
+    init(
+        sessionManager: SessionManagerProtocol, 
+        storageService: StorageServiceProtocol, 
+        cameraViewModel: CameraViewModel,
+        photoSessionManager: PhotoSessionManager,
+        autoCaptureManager: AutoCaptureManager
+    ) {
         self.sessionManager = sessionManager
         self.storageService = storageService
         self.cameraViewModel = cameraViewModel
+        self.photoSessionManager = photoSessionManager
+        self.autoCaptureManager = autoCaptureManager
+        
+        setupBindings()
+    }
+    
+    private func setupBindings() {
+        // Bind to PhotoSessionManager updates
+        photoSessionManager.$currentSession
+            .assign(to: &$currentSession)
+        
+        photoSessionManager.$sessionState
+            .assign(to: &$sessionState)
+        
+        photoSessionManager.$sessionProgress
+            .sink { [weak self] progress in
+                self?.sessionProgress = Double(progress)
+            }
+            .store(in: &cancellables)
+        
+        photoSessionManager.$sessionStatistics
+            .assign(to: &$sessionStatistics)
+        
+        photoSessionManager.$estimatedTimeRemaining
+            .assign(to: &$estimatedTimeRemaining)
+        
+        // Bind to AutoCaptureManager updates
+        autoCaptureManager.$isAutoCaptureEnabled
+            .assign(to: &$isAutoCaptureEnabled)
+        
+        autoCaptureManager.$captureStatus
+            .assign(to: &$captureStatus)
+        
+        autoCaptureManager.$qualityScore
+            .assign(to: &$qualityScore)
+        
+        autoCaptureManager.$retryCount
+            .assign(to: &$retryCount)
+        
+        // Bind to CameraViewModel updates
+        cameraViewModel.$isReadyForCapture
+            .assign(to: &$isReadyForCapture)
+        
+        cameraViewModel.$qualityIssues
+            .sink { [weak self] issues in
+                self?.qualityIssues = issues.map { $0.displayName }
+            }
+            .store(in: &cancellables)
     }
     
     // MARK: - Session Management
@@ -78,12 +147,13 @@ class SessionViewModel: ObservableObject {
         errorMessage = nil
         
         do {
-            let session = try await sessionManager.startSession(
-                vehicleIdentifier: vehicleIdentifier,
-                totalAngles: Int16(totalAngles)
+            // Start enhanced photo session
+            await photoSessionManager.startNewSession(
+                vehicleMake: vehicleIdentifier,
+                vehicleModel: "Vehicle",
+                sessionType: .standard
             )
             
-            currentSession = session
             isSessionActive = true
             self.vehicleIdentifier = vehicleIdentifier
             self.totalAngles = totalAngles
@@ -101,6 +171,60 @@ class SessionViewModel: ObservableObject {
         isLoading = false
     }
     
+    /// Starts a new auto-capture session
+    /// - Parameters:
+    ///   - vehicleMake: Vehicle make
+    ///   - vehicleModel: Vehicle model
+    ///   - vehicleYear: Vehicle year (optional)
+    func startAutoCaptureSession(vehicleMake: String, vehicleModel: String, vehicleYear: Int? = nil) async {
+        guard !isSessionActive else {
+            errorMessage = "A session is already active"
+            return
+        }
+        
+        guard !vehicleMake.isEmpty && !vehicleModel.isEmpty else {
+            errorMessage = "Please enter vehicle make and model"
+            return
+        }
+        
+        isLoading = true
+        errorMessage = nil
+        
+        await photoSessionManager.startNewSession(
+            vehicleMake: vehicleMake,
+            vehicleModel: vehicleModel,
+            vehicleYear: vehicleYear,
+            sessionType: .standard
+        )
+        
+        isSessionActive = true
+        isAutoCaptureEnabled = true
+        vehicleIdentifier = "\(vehicleMake) \(vehicleModel)"
+        
+        isLoading = false
+    }
+    
+    /// Toggles auto-capture mode
+    func toggleAutoCapture() {
+        if isAutoCaptureEnabled {
+            pauseAutoCapture()
+        } else {
+            resumeAutoCapture()
+        }
+    }
+    
+    /// Pauses auto-capture
+    func pauseAutoCapture() {
+        photoSessionManager.pauseSession()
+        isAutoCaptureEnabled = false
+    }
+    
+    /// Resumes auto-capture
+    func resumeAutoCapture() {
+        photoSessionManager.resumeSession()
+        isAutoCaptureEnabled = true
+    }
+    
     func completeSession() async {
         guard let session = currentSession else {
             errorMessage = "No active session to complete"
@@ -109,17 +233,12 @@ class SessionViewModel: ObservableObject {
         
         isLoading = true
         
-        do {
-            guard let sessionId = session.id else {
-                throw SessionError.invalidSession
-            }
-            let completedSession = try await sessionManager.completeSession(id: sessionId)
-            currentSession = completedSession
-            isSessionActive = false
-            sessionProgress = 1.0
-        } catch {
-            errorMessage = error.localizedDescription
-        }
+        // Complete the enhanced photo session
+        await photoSessionManager.completeSession()
+        
+        isSessionActive = false
+        isAutoCaptureEnabled = false
+        sessionProgress = 1.0
         
         isLoading = false
     }
@@ -132,18 +251,13 @@ class SessionViewModel: ObservableObject {
         
         isLoading = true
         
-        do {
-            guard let sessionId = session.id else {
-                throw SessionError.invalidSession
-            }
-            let cancelledSession = try await sessionManager.cancelSession(id: sessionId)
-            currentSession = cancelledSession
-            isSessionActive = false
-            sessionProgress = 0.0
-            capturedPhotos = []
-        } catch {
-            errorMessage = error.localizedDescription
-        }
+        // Stop the enhanced photo session
+        photoSessionManager.stopSession()
+        
+        isSessionActive = false
+        isAutoCaptureEnabled = false
+        sessionProgress = 0.0
+        capturedPhotos = []
         
         isLoading = false
     }
@@ -235,5 +349,69 @@ class SessionViewModel: ObservableObject {
         vehicleIdentifier = ""
         totalAngles = 8
         errorMessage = nil
+        
+        // Reset enhanced properties
+        isAutoCaptureEnabled = false
+        sessionState = .idle
+        captureStatus = .idle
+        qualityScore = 0.0
+        retryCount = 0
+        estimatedTimeRemaining = 0
+        qualityIssues = []
+        isReadyForCapture = false
+        
+        // Reset managers
+        photoSessionManager.reset()
+    }
+    
+    // MARK: - Enhanced Session Methods
+    
+    /// Gets session statistics
+    /// - Returns: Current session statistics
+    func getSessionStatistics() -> PhotoSessionManager.SessionStatistics {
+        return photoSessionManager.getSessionStatistics()
+    }
+    
+    /// Gets remaining angles to capture
+    /// - Returns: Array of remaining angles
+    func getRemainingAngles() -> [ModelManager.VehicleAngle] {
+        return photoSessionManager.getMissingAngles()
+    }
+    
+    /// Gets captured angles
+    /// - Returns: Array of captured angles
+    func getCapturedAngles() -> [ModelManager.VehicleAngle] {
+        return photoSessionManager.getCapturedAngles()
+    }
+    
+    /// Checks if session is complete
+    /// - Returns: True if all angles are captured
+    func isSessionComplete() -> Bool {
+        return photoSessionManager.isSessionComplete()
+    }
+    
+    /// Gets quality issues for a specific angle
+    /// - Parameter angle: The angle to check
+    /// - Returns: Array of quality issues
+    func getQualityIssues(for angle: ModelManager.VehicleAngle) -> [String] {
+        return photoSessionManager.getQualityIssues(for: angle)
+    }
+    
+    /// Exports session data
+    /// - Returns: Dictionary containing session data
+    func exportSessionData() -> [String: Any] {
+        return photoSessionManager.exportSessionData()
+    }
+    
+    /// Gets performance metrics
+    /// - Returns: Performance metrics tuple
+    func getPerformanceMetrics() -> (averageInferenceTime: TimeInterval, modelAccuracy: Float) {
+        return cameraViewModel.getPerformanceMetrics()
+    }
+    
+    /// Checks if performance is acceptable
+    /// - Returns: True if performance meets requirements
+    func isPerformanceAcceptable() -> Bool {
+        return cameraViewModel.isPerformanceAcceptable()
     }
 }

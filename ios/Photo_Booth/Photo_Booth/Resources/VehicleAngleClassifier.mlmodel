@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>MLModelShortDescription</key>
+	<string>Vehicle Angle Classifier for Photo Booth App</string>
+	<key>MLModelVersionString</key>
+	<string>1.0</string>
+	<key>MLModelDescription</key>
+	<string>This is a placeholder CoreML model for vehicle angle classification. In production, this would be replaced with a trained .mlmodelc file created using CreateML.</string>
+	<key>MLModelAuthor</key>
+	<string>Photo Booth Development Team</string>
+	<key>MLModelLicense</key>
+	<string>Proprietary</string>
+	<key>MLModelCreatorDefined</key>
+	<dict>
+		<key>com.apple.coreml.model.pipeline.type</key>
+		<string>classifier</string>
+		<key>com.apple.coreml.model.pipeline.classifier</key>
+		<dict>
+			<key>classLabels</key>
+			<array>
+				<string>front</string>
+				<string>front_left</string>
+				<string>front_right</string>
+				<string>left</string>
+				<string>right</string>
+				<string>rear</string>
+				<string>rear_left</string>
+				<string>rear_right</string>
+			</array>
+		</dict>
+	</dict>
+</dict>
+</plist>

@@ -314,6 +314,8 @@
 				DEVELOPMENT_TEAM = YN6FK3U2YV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app uses the camera to capture vehicle photos for automated photo booth sessions.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app saves captured vehicle photos to your photo library for easy access and sharing.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -342,6 +344,8 @@
 				DEVELOPMENT_TEAM = YN6FK3U2YV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app uses the camera to capture vehicle photos for automated photo booth sessions.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app saves captured vehicle photos to your photo library for easy access and sharing.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

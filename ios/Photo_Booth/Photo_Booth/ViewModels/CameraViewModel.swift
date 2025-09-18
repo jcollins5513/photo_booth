@@ -17,22 +17,59 @@ class CameraViewModel: ObservableObject {
     @Published var isProcessingFrame = false
     @Published var frameProcessingRate: Double = 0.0
     
+    // MARK: - Enhanced Vision Properties
+    @Published var imageQuality: Float = 0.0
+    @Published var qualityIssues: [ImageProcessor.QualityIssue] = []
+    @Published var isPositionValid = false
+    @Published var isReadyForCapture = false
+    @Published var qualityFeedback: [String] = []
+    
     // MARK: - Private Properties
     private let cameraService: CameraServiceProtocol
     private let visionService: VisionServiceProtocol
     private let modelManager: ModelManager
+    private let configurationService: ConfigurationService
     private var previewLayer: AVCaptureVideoPreviewLayer?
     private var frameProcessingTimer: Timer?
     private var lastFrameTime: Date = Date()
     private var frameCount = 0
     
     // MARK: - Initialization
-    init(cameraService: CameraServiceProtocol, visionService: VisionServiceProtocol, modelManager: ModelManager = ModelManager()) {
+    init(cameraService: CameraServiceProtocol, visionService: VisionServiceProtocol, modelManager: ModelManager = ModelManager(), configurationService: ConfigurationService = ConfigurationService()) {
         self.cameraService = cameraService
         self.visionService = visionService
         self.modelManager = modelManager
+        self.configurationService = configurationService
         setupCameraPermission()
+        setupVisionBindings()
     }
+    
+    private func setupVisionBindings() {
+        // Bind to VisionService published properties if it's ObservableObject
+        if let visionService = visionService as? VisionService {
+            visionService.$imageQuality
+                .assign(to: &$imageQuality)
+            
+            visionService.$qualityIssues
+                .assign(to: &$qualityIssues)
+            
+            visionService.$isPositionValid
+                .assign(to: &$isPositionValid)
+            
+            visionService.$currentAngle
+                .sink { [weak self] angleName in
+                    if let angle = PhotoAngleType.allCases.first(where: { $0.rawValue == angleName.lowercased() }) {
+                        self?.currentAngle = angle
+                    }
+                }
+                .store(in: &cancellables)
+            
+            visionService.$confidence
+                .assign(to: &$detectionConfidence)
+        }
+    }
+    
+    private var cancellables = Set<AnyCancellable>()
     
     // MARK: - Camera Management
     func startCamera() async {
@@ -137,22 +174,32 @@ class CameraViewModel: ObservableObject {
         isProcessingFrame = true
         frameCount += 1
         
-        Task {
-            do {
-                // Use ModelManager for real-time classification
-                let (angle, confidence) = try await modelManager.classifyVehicleAngle(from: image)
-                
-                await MainActor.run {
-                    self.currentAngle = angle
-                    self.detectionConfidence = confidence
-                    self.isDetecting = confidence > 0.7
-                    self.isProcessingFrame = false
-                }
-                
-            } catch {
-                await MainActor.run {
-                    self.errorMessage = error.localizedDescription
-                    self.isProcessingFrame = false
+        // Use enhanced VisionService for real-time analysis
+        if let visionService = visionService as? VisionService {
+            visionService.processCameraFrame(image)
+            
+            // Update derived properties
+            isReadyForCapture = visionService.isReadyForCapture()
+            qualityFeedback = visionService.getQualityFeedback()
+            isDetecting = detectionConfidence > configurationService.confidenceThreshold
+        } else {
+            // Fallback to original ModelManager approach
+            Task {
+                do {
+                    let (angle, confidence) = try await modelManager.classifyVehicleAngle(from: image)
+                    
+                    await MainActor.run {
+                        self.currentAngle = angle
+                        self.detectionConfidence = confidence
+                        self.isDetecting = confidence > self.configurationService.confidenceThreshold
+                        self.isProcessingFrame = false
+                    }
+                    
+                } catch {
+                    await MainActor.run {
+                        self.errorMessage = error.localizedDescription
+                        self.isProcessingFrame = false
+                    }
                 }
             }
         }
@@ -206,6 +253,72 @@ class CameraViewModel: ObservableObject {
     
     func clearError() {
         errorMessage = nil
+    }
+    
+    // MARK: - Enhanced Vision Methods
+    
+    /// Gets all angles in the capture sequence
+    /// - Returns: Array of angle display names in capture order
+    func getAllAnglesInSequence() -> [String] {
+        if let visionService = visionService as? VisionService {
+            return visionService.getAllAnglesInSequence()
+        }
+        return PhotoAngleType.allCases.map { $0.rawValue.capitalized }
+    }
+    
+    /// Gets the next angle in the sequence
+    /// - Parameter currentAngle: Current angle name
+    /// - Returns: Next angle name or nil if sequence complete
+    func getNextAngle(currentAngle: String) -> String? {
+        if let visionService = visionService as? VisionService {
+            return visionService.getNextAngle(currentAngle: currentAngle)
+        }
+        return nil
+    }
+    
+    /// Updates confidence threshold
+    /// - Parameter threshold: New confidence threshold
+    func updateConfidenceThreshold(_ threshold: Float) {
+        configurationService.updateConfidenceThreshold(threshold)
+        if let visionService = visionService as? VisionService {
+            visionService.updateConfidenceThreshold(threshold)
+        }
+    }
+    
+    /// Gets current confidence threshold
+    /// - Returns: Current confidence threshold
+    func getConfidenceThreshold() -> Float {
+        return configurationService.confidenceThreshold
+    }
+    
+    /// Gets performance metrics
+    /// - Returns: Performance metrics tuple
+    func getPerformanceMetrics() -> (averageInferenceTime: TimeInterval, modelAccuracy: Float) {
+        if let visionService = visionService as? VisionService {
+            return visionService.getPerformanceMetrics()
+        }
+        return (0.0, 0.0)
+    }
+    
+    /// Checks if performance is acceptable
+    /// - Returns: True if performance meets requirements
+    func isPerformanceAcceptable() -> Bool {
+        if let visionService = visionService as? VisionService {
+            return visionService.isPerformanceAcceptable()
+        }
+        return false
+    }
+    
+    /// Resets vision service state
+    func resetVision() {
+        if let visionService = visionService as? VisionService {
+            visionService.reset()
+        }
+        imageQuality = 0.0
+        qualityIssues = []
+        isPositionValid = false
+        isReadyForCapture = false
+        qualityFeedback = []
     }
 }
 
