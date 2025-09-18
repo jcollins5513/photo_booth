@@ -7,12 +7,6 @@ class DataExportServiceTests: XCTestCase {
     var mockFileSystemManager: MockFileSystemManager!
     var mockStorageService: MockStorageService!
     var mockMetadataService: MockPhotoMetadataService!
-    static var sharedCoreDataStack: CoreDataStack!
-    
-    override class func setUp() {
-        super.setUp()
-        sharedCoreDataStack = CoreDataStack(inMemory: true)
-    }
     
     override func setUpWithError() throws {
         try super.setUpWithError()
@@ -44,8 +38,8 @@ class DataExportServiceTests: XCTestCase {
         // Given
         await setupDataExportService()
         let sessionId = UUID()
-        let session = createMockPhotoSession(id: sessionId)
-        let photos = createMockVehiclePhotos(sessionId: sessionId)
+        let session = TestUtilities.createMockPhotoSession(id: sessionId)
+        let photos = TestUtilities.createMockVehiclePhotos(sessionId: sessionId)
         
         mockStorageService.mockSession = session
         mockStorageService.mockPhotos = photos
@@ -62,8 +56,8 @@ class DataExportServiceTests: XCTestCase {
         // Given
         await setupDataExportService()
         let sessionId = UUID()
-        let session = createMockPhotoSession(id: sessionId)
-        let photos = createMockVehiclePhotos(sessionId: sessionId)
+        let session = TestUtilities.createMockPhotoSession(id: sessionId)
+        let photos = TestUtilities.createMockVehiclePhotos(sessionId: sessionId)
         
         mockStorageService.mockSession = session
         mockStorageService.mockPhotos = photos
@@ -88,8 +82,8 @@ class DataExportServiceTests: XCTestCase {
         // Given
         await setupDataExportService()
         let sessionId = UUID()
-        let session = createMockPhotoSession(id: sessionId)
-        let photos = createMockVehiclePhotos(sessionId: sessionId)
+        let session = TestUtilities.createMockPhotoSession(id: sessionId)
+        let photos = TestUtilities.createMockVehiclePhotos(sessionId: sessionId)
         
         mockStorageService.mockSession = session
         mockStorageService.mockPhotos = photos
@@ -130,7 +124,7 @@ class DataExportServiceTests: XCTestCase {
         // Given
         await setupDataExportService()
         let photoId = UUID()
-        let photo = createMockVehiclePhoto(id: photoId)
+        let photo = TestUtilities.createMockVehiclePhoto(id: photoId)
         let imageData = createTestImageData()
         
         mockStorageService.mockPhoto = photo
@@ -152,7 +146,7 @@ class DataExportServiceTests: XCTestCase {
         // Given
         await setupDataExportService()
         let photoId = UUID()
-        let photo = createMockVehiclePhoto(id: photoId)
+        let photo = TestUtilities.createMockVehiclePhoto(id: photoId)
         let imageData = createTestImageData()
         
         mockStorageService.mockPhoto = photo
@@ -172,7 +166,7 @@ class DataExportServiceTests: XCTestCase {
         // Given
         await setupDataExportService()
         let photoId = UUID()
-        let photo = createMockVehiclePhoto(id: photoId)
+        let photo = TestUtilities.createMockVehiclePhoto(id: photoId)
         let imageData = createTestImageData()
         
         mockStorageService.mockPhoto = photo
@@ -192,7 +186,7 @@ class DataExportServiceTests: XCTestCase {
         // Given
         await setupDataExportService()
         let photoId = UUID()
-        let photo = createMockVehiclePhoto(id: photoId)
+        let photo = TestUtilities.createMockVehiclePhoto(id: photoId)
         let imageData = createTestImageData()
         
         mockStorageService.mockPhoto = photo
@@ -286,11 +280,12 @@ class DataExportServiceTests: XCTestCase {
     
     // MARK: - Performance Tests
     
-    func testExportPerformance() throws {
+    func testExportPerformance() async throws {
         // Given
+        await setupDataExportService()
         let sessionId = UUID()
-        let session = createMockPhotoSession(id: sessionId)
-        let photos = createMockVehiclePhotos(sessionId: sessionId, count: 10)
+        let session = TestUtilities.createMockPhotoSession(id: sessionId)
+        let photos = TestUtilities.createMockVehiclePhotos(sessionId: sessionId, count: 10)
         
         mockStorageService.mockSession = session
         mockStorageService.mockPhotos = photos
@@ -314,7 +309,7 @@ class DataExportServiceTests: XCTestCase {
             }
         }
         
-        wait(for: [expectation], timeout: 10.0)
+        await fulfillment(of: [expectation], timeout: 10.0)
     }
     
     // MARK: - Helper Methods
@@ -336,58 +331,6 @@ class DataExportServiceTests: XCTestCase {
         return fileURL
     }
     
-    private func createMockPhotoSession(id: UUID) -> PhotoSession {
-        // Use the shared Core Data stack for testing
-        let context = Self.sharedCoreDataStack.container.viewContext
-        
-        let session = PhotoSession(context: context)
-        session.vehicleIdentifier = "TEST123"
-        session.startDate = Date()
-        session.status = "completed"
-        session.totalAngles = 8
-        session.completedAngles = 8
-        
-        return session
-    }
-    
-    private func createMockVehiclePhoto(id: UUID) -> VehiclePhoto {
-        // Use the shared Core Data stack for testing
-        let context = Self.sharedCoreDataStack.container.viewContext
-        
-        let photo = VehiclePhoto(context: context)
-        photo.angleType = "front"
-        photo.captureDate = Date()
-        photo.fileName = "test_photo.jpg"
-        photo.filePath = "/test/path/test_photo.jpg"
-        photo.fileSize = 50000
-        photo.imageWidth = 200
-        photo.imageHeight = 200
-        photo.confidenceScore = 0.95
-        photo.isAutoCaptured = true
-        
-        return photo
-    }
-    
-    private func createMockVehiclePhotos(sessionId: UUID, count: Int = 3) -> [VehiclePhoto] {
-        // Use the shared Core Data stack for testing
-        let context = Self.sharedCoreDataStack.container.viewContext
-        
-        var photos: [VehiclePhoto] = []
-        for i in 0..<count {
-            let photo = VehiclePhoto(context: context)
-            photo.angleType = ["front", "side", "rear"][i % 3]
-            photo.captureDate = Date()
-            photo.fileName = "test_photo_\(i).jpg"
-            photo.filePath = "/test/path/test_photo_\(i).jpg"
-            photo.fileSize = 50000
-            photo.imageWidth = 200
-            photo.imageHeight = 200
-            photo.confidenceScore = 0.95
-            photo.isAutoCaptured = true
-            photos.append(photo)
-        }
-        return photos
-    }
 }
 
 // MARK: - Mock Services
@@ -396,10 +339,19 @@ class MockStorageService: StorageServiceProtocol {
     var mockSession: PhotoSession?
     var mockPhoto: VehiclePhoto?
     var mockPhotos: [VehiclePhoto] = []
-    var mockPhotoData: Data = Data()
+    var mockPhotoData: Data = {
+        // Create a simple test image data
+        let size = CGSize(width: 100, height: 100)
+        let renderer = UIGraphicsImageRenderer(size: size)
+        let image = renderer.image { context in
+            UIColor.blue.setFill()
+            context.fill(CGRect(origin: .zero, size: size))
+        }
+        return image.jpegData(compressionQuality: 0.8) ?? Data()
+    }()
     
     func savePhotoSession(id: UUID, vehicleIdentifier: String, startDate: Date, status: String, totalAngles: Int16, completedAngles: Int16) async throws -> PhotoSession {
-        return mockSession ?? PhotoSession()
+        return mockSession ?? TestUtilities.createMockPhotoSession(id: id)
     }
     
     func getPhotoSession(id: UUID) async throws -> PhotoSession? {
@@ -407,11 +359,11 @@ class MockStorageService: StorageServiceProtocol {
     }
     
     func updatePhotoSession(id: UUID, status: String?, completedAngles: Int16?) async throws -> PhotoSession {
-        return mockSession ?? PhotoSession()
+        return mockSession ?? TestUtilities.createMockPhotoSession(id: id)
     }
     
     func saveVehiclePhoto(id: UUID, sessionId: UUID, angle: String, imageData: Data, timestamp: Date) async throws -> VehiclePhoto {
-        return mockPhoto ?? VehiclePhoto()
+        return mockPhoto ?? TestUtilities.createMockVehiclePhoto(id: id)
     }
     
     func getVehiclePhoto(id: UUID) async throws -> VehiclePhoto? {
@@ -466,3 +418,4 @@ class MockPhotoMetadataService: PhotoMetadataService, @unchecked Sendable {
         return assessment
     }
 }
+

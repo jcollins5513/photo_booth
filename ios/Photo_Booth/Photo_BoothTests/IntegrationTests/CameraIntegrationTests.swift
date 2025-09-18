@@ -20,6 +20,7 @@ class CameraIntegrationTests: XCTestCase {
         // Set up Core Data stack
         persistentContainer = NSPersistentContainer(name: "VehiclePhotoBooth")
         persistentContainer.persistentStoreDescriptions.first?.url = URL(fileURLWithPath: "/dev/null")
+        persistentContainer.persistentStoreDescriptions.first?.type = NSInMemoryStoreType
         try persistentContainer.loadPersistentStores { _, error in
             if let error = error {
                 fatalError("Failed to load store: \(error)")

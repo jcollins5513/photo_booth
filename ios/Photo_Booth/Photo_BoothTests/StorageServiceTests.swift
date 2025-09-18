@@ -12,7 +12,7 @@ class StorageServiceTests: XCTestCase {
         try super.setUpWithError()
         
         // Create in-memory Core Data stack for testing
-        persistentContainer = NSPersistentContainer(name: "CoreDataModel")
+        persistentContainer = NSPersistentContainer(name: "VehiclePhotoBooth")
         let description = persistentContainer.persistentStoreDescriptions.first!
         description.type = NSInMemoryStoreType
         description.shouldAddStoreAsynchronously = false

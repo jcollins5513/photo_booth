@@ -303,6 +303,7 @@ class StorageIntegrationTests: XCTestCase {
         XCTAssertTrue(true, "Directory creation test needs FileSystemManager implementation")
     }
     
+    /// <#Description#>
     func testSessionDirectoryCleanup() async throws {
         // Given: A session directory with files
         let sessionId = UUID()
