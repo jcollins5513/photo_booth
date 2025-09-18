@@ -162,7 +162,7 @@ class AutoCaptureManager: ObservableObject {
                 positionStabilityTimer?.invalidate()
                 positionStabilityTimer = Timer.scheduledTimer(withTimeInterval: positionStabilityTime, repeats: false) { [weak self] _ in
                     Task { @MainActor in
-                        self?.triggerCapture()
+                        await self?.triggerCapture()
                     }
                 }
                 captureStatus = .ready
@@ -249,8 +249,7 @@ class AutoCaptureManager: ObservableObject {
         if let session = currentSession {
             session.isCompleted = true
             session.completionDate = Date()
-            session.totalPhotos = successfulCaptures
-            session.sessionDuration = sessionDuration
+            session.totalPhotos = Int16(successfulCaptures)
         }
     }
     
@@ -356,9 +355,9 @@ class AutoCaptureManager: ObservableObject {
         // Estimate time remaining
         if let startTime = sessionStartTime {
             let elapsed = Date().timeIntervalSince(startTime)
-            let averageTimePerAngle = elapsed / Float(currentAngleIndex + 1)
+            let averageTimePerAngle = elapsed / Double(currentAngleIndex + 1)
             let remainingAngles = totalAngles - completedAngles
-            estimatedTimeRemaining = averageTimePerAngle * Float(remainingAngles)
+            estimatedTimeRemaining = averageTimePerAngle * Double(remainingAngles)
         }
     }
     
@@ -398,8 +397,8 @@ class AutoCaptureManager: ObservableObject {
         case .front: return .front
         case .frontLeft: return .frontLeft
         case .frontRight: return .frontRight
-        case .left: return .left
-        case .right: return .right
+        case .left: return .leftSide
+        case .right: return .rightSide
         case .rear: return .rear
         case .rearLeft: return .rearLeft
         case .rearRight: return .rearRight

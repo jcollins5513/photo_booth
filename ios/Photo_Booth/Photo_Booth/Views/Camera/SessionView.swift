@@ -344,25 +344,42 @@ struct SessionSetupView: View {
 }
 
 #Preview {
-    NavigationView {
+    let storageService = StorageService(
+        persistentContainer: CoreDataStack.shared.persistentContainer,
+        fileSystemManager: FileSystemManager()
+    )
+    let sessionManager = SessionManager(storageService: storageService)
+    let cameraService = CameraService()
+    let visionService = VisionService()
+    let modelManager = ModelManager()
+    let cameraViewModel = CameraViewModel(
+        cameraService: cameraService,
+        visionService: visionService,
+        modelManager: modelManager
+    )
+    let configurationService = ConfigurationService()
+    let autoCaptureManager = AutoCaptureManager(
+        modelManager: modelManager,
+        visionService: visionService,
+        cameraService: cameraService,
+        storageService: storageService,
+        configurationService: configurationService
+    )
+    let photoSessionManager = PhotoSessionManager(
+        autoCaptureManager: autoCaptureManager,
+        storageService: storageService,
+        configurationService: configurationService
+    )
+    
+    return NavigationView {
         SessionView()
             .environmentObject(SessionViewModel(
-                sessionManager: SessionManager(storageService: StorageService(
-                    persistentContainer: CoreDataStack.shared.persistentContainer,
-                    fileSystemManager: FileSystemManager()
-                )),
-                storageService: StorageService(
-                    persistentContainer: CoreDataStack.shared.persistentContainer,
-                    fileSystemManager: FileSystemManager()
-                ),
-                cameraViewModel: CameraViewModel(
-                    cameraService: CameraService(),
-                    visionService: VisionService()
-                )
+                sessionManager: sessionManager,
+                storageService: storageService,
+                cameraViewModel: cameraViewModel,
+                photoSessionManager: photoSessionManager,
+                autoCaptureManager: autoCaptureManager
             ))
-            .environmentObject(CameraViewModel(
-                cameraService: CameraService(),
-                visionService: VisionService()
-            ))
+            .environmentObject(cameraViewModel)
     }
 }

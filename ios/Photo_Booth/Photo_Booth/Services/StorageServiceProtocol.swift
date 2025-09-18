@@ -13,6 +13,9 @@ protocol StorageServiceProtocol {
         completedAngles: Int16
     ) async throws -> PhotoSession
     
+    /// Save a complete photo session
+    func saveSession(_ session: PhotoSession) async throws
+    
     /// Get a photo session by ID
     func getPhotoSession(id: UUID) async throws -> PhotoSession?
     

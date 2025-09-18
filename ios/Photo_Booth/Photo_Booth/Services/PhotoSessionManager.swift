@@ -84,7 +84,7 @@ class PhotoSessionManager: ObservableObject {
         session.id = UUID()
         session.vehicleMake = vehicleMake
         session.vehicleModel = vehicleModel
-        session.vehicleYear = vehicleYear
+        session.vehicleYear = Int16(vehicleYear ?? 0)
         session.sessionType = sessionType.rawValue
         session.createdDate = Date()
         session.isCompleted = false
@@ -152,7 +152,7 @@ class PhotoSessionManager: ObservableObject {
         if let session = currentSession {
             session.isCompleted = true
             session.completionDate = Date()
-            session.totalPhotos = capturedPhotos.count
+            session.totalPhotos = Int16(capturedPhotos.count)
             
             // Save session to storage
             do {
@@ -215,9 +215,9 @@ class PhotoSessionManager: ObservableObject {
         // Estimate time remaining
         if let startTime = sessionStartTime {
             let elapsed = Date().timeIntervalSince(startTime)
-            let averageTimePerPhoto = elapsed / Float(capturedCount + 1)
+            let averageTimePerPhoto = elapsed / Double(capturedCount + 1)
             let remainingPhotos = totalCount - capturedCount
-            estimatedTimeRemaining = averageTimePerPhoto * Float(remainingPhotos)
+            estimatedTimeRemaining = averageTimePerPhoto * Double(remainingPhotos)
         }
     }
     

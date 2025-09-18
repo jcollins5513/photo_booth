@@ -66,6 +66,21 @@ class StorageService: StorageServiceProtocol {
         }
     }
     
+    func saveSession(_ session: PhotoSession) async throws {
+        let context = persistentContainer.viewContext
+        
+        try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Void, Error>) in
+            context.perform {
+                do {
+                    try context.save()
+                    continuation.resume()
+                } catch {
+                    continuation.resume(throwing: StorageServiceError.coreDataError(error.localizedDescription))
+                }
+            }
+        }
+    }
+    
     func getPhotoSession(id: UUID) async throws -> PhotoSession? {
         let context = persistentContainer.viewContext
         

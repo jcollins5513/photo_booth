@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct Photo_BoothApp: App {
     // MARK: - Services
-    private let authenticationService = AuthenticationService()
+    private let authenticationService = FirebaseAuthenticationService()
     private let cameraService = CameraService()
     private let visionService = VisionService()
     private let storageService: StorageService
@@ -32,10 +32,31 @@ struct Photo_BoothApp: App {
         )
         self.sessionManager = SessionManager(storageService: storageService)
         
+        // Initialize additional services
+        let configurationService = ConfigurationService()
+        let autoCaptureManager = AutoCaptureManager(
+            modelManager: modelManager,
+            visionService: visionService,
+            cameraService: cameraService,
+            storageService: storageService,
+            configurationService: configurationService
+        )
+        let photoSessionManager = PhotoSessionManager(
+            autoCaptureManager: autoCaptureManager,
+            storageService: storageService,
+            configurationService: configurationService
+        )
+        
         // Initialize ViewModels with services
         let authVM = AuthenticationViewModel(authenticationService: authenticationService)
         let cameraVM = CameraViewModel(cameraService: cameraService, visionService: visionService, modelManager: modelManager)
-        let sessionVM = SessionViewModel(sessionManager: sessionManager, storageService: storageService, cameraViewModel: cameraVM)
+        let sessionVM = SessionViewModel(
+            sessionManager: sessionManager, 
+            storageService: storageService, 
+            cameraViewModel: cameraVM,
+            photoSessionManager: photoSessionManager,
+            autoCaptureManager: autoCaptureManager
+        )
         let galleryVM = GalleryViewModel(storageService: storageService, sessionManager: sessionManager)
         
         _authenticationViewModel = StateObject(wrappedValue: authVM)

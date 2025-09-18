@@ -166,7 +166,7 @@ class ConfigurationService: ObservableObject {
     /// Exports current configuration as JSON
     /// - Returns: JSON data representation of configuration
     func exportConfiguration() -> Data? {
-        let configuration = [
+        let configuration: [String: Any] = [
             "confidenceThreshold": confidenceThreshold,
             "processingFPS": processingFPS,
             "imageQualityThreshold": imageQualityThreshold,

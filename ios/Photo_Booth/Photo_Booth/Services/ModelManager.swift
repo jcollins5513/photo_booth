@@ -88,7 +88,11 @@ class ModelManager: ObservableObject {
         // visionModel = try VNCoreMLModel(for: coreMLModel!)
         
         // For now, we'll simulate model loading
-        await Task.sleep(nanoseconds: 100_000_000) // 0.1 second delay
+        do {
+            try await Task.sleep(nanoseconds: 100_000_000) // 0.1 second delay
+        } catch {
+            // Handle sleep error if needed
+        }
         modelAccuracy = 0.95 // Simulated accuracy
     }
     
@@ -120,7 +124,11 @@ class ModelManager: ObservableObject {
         // In production, this would use VNClassifyImageRequest with the actual model
         
         // Simulate processing time
-        await Task.sleep(nanoseconds: 50_000_000) // 50ms
+        do {
+            try await Task.sleep(nanoseconds: 50_000_000) // 50ms
+        } catch {
+            // Handle sleep error if needed
+        }
         
         // Simulate random classification for testing
         let randomAngle = VehicleAngle.allCases.randomElement()!

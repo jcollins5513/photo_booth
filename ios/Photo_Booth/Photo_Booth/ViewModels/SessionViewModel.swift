@@ -384,11 +384,6 @@ class SessionViewModel: ObservableObject {
         return photoSessionManager.getCapturedAngles()
     }
     
-    /// Checks if session is complete
-    /// - Returns: True if all angles are captured
-    func isSessionComplete() -> Bool {
-        return photoSessionManager.isSessionComplete()
-    }
     
     /// Gets quality issues for a specific angle
     /// - Parameter angle: The angle to check

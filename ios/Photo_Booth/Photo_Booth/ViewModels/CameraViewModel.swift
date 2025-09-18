@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 import AVFoundation
 import UIKit
+import Combine
 
 @MainActor
 class CameraViewModel: ObservableObject {
@@ -27,7 +28,7 @@ class CameraViewModel: ObservableObject {
     // MARK: - Private Properties
     private let cameraService: CameraServiceProtocol
     private let visionService: VisionServiceProtocol
-    private let modelManager: ModelManager
+    private var modelManager: ModelManager
     private let configurationService: ConfigurationService
     private var previewLayer: AVCaptureVideoPreviewLayer?
     private var frameProcessingTimer: Timer?
@@ -35,11 +36,18 @@ class CameraViewModel: ObservableObject {
     private var frameCount = 0
     
     // MARK: - Initialization
-    init(cameraService: CameraServiceProtocol, visionService: VisionServiceProtocol, modelManager: ModelManager = ModelManager(), configurationService: ConfigurationService = ConfigurationService()) {
+    init(cameraService: CameraServiceProtocol, visionService: VisionServiceProtocol, modelManager: ModelManager? = nil, configurationService: ConfigurationService = ConfigurationService()) {
         self.cameraService = cameraService
         self.visionService = visionService
-        self.modelManager = modelManager
         self.configurationService = configurationService
+        
+        // Initialize modelManager
+        if let modelManager = modelManager {
+            self.modelManager = modelManager
+        } else {
+            self.modelManager = ModelManager()
+        }
+        
         setupCameraPermission()
         setupVisionBindings()
     }
@@ -189,7 +197,7 @@ class CameraViewModel: ObservableObject {
                     let (angle, confidence) = try await modelManager.classifyVehicleAngle(from: image)
                     
                     await MainActor.run {
-                        self.currentAngle = angle
+                        self.currentAngle = self.convertToPhotoAngleType(angle)
                         self.detectionConfidence = confidence
                         self.isDetecting = confidence > self.configurationService.confidenceThreshold
                         self.isProcessingFrame = false
@@ -271,7 +279,7 @@ class CameraViewModel: ObservableObject {
     /// - Returns: Next angle name or nil if sequence complete
     func getNextAngle(currentAngle: String) -> String? {
         if let visionService = visionService as? VisionService {
-            return visionService.getNextAngle(currentAngle: currentAngle)
+            return visionService.getNextAngle(currentAngle: PhotoAngleType(rawValue: currentAngle) ?? .front).rawValue
         }
         return nil
     }
@@ -320,6 +328,31 @@ class CameraViewModel: ObservableObject {
         isReadyForCapture = false
         qualityFeedback = []
     }
+    
+    // MARK: - Helper Methods
+    
+    private func convertToPhotoAngleType(_ angle: ModelManager.VehicleAngle?) -> PhotoAngleType {
+        guard let angle = angle else { return .front }
+        
+        switch angle {
+        case .front:
+            return .front
+        case .frontLeft:
+            return .frontLeft
+        case .frontRight:
+            return .frontRight
+        case .left:
+            return .leftSide
+        case .right:
+            return .rightSide
+        case .rear:
+            return .rear
+        case .rearLeft:
+            return .rearLeft
+        case .rearRight:
+            return .rearRight
+        }
+    }
 }
 
 // MARK: - Frame Provider
@@ -339,5 +372,30 @@ private class CameraFrameProvider: FrameProvider {
         // This would need to be implemented based on how we get frames from the camera
         // For now, return nil as this is a placeholder
         return nil
+    }
+    
+    // MARK: - Helper Methods
+    
+    private func convertToPhotoAngleType(_ angle: ModelManager.VehicleAngle?) -> PhotoAngleType {
+        guard let angle = angle else { return .front }
+        
+        switch angle {
+        case .front:
+            return .front
+        case .frontLeft:
+            return .frontLeft
+        case .frontRight:
+            return .frontRight
+        case .left:
+            return .leftSide
+        case .right:
+            return .rightSide
+        case .rear:
+            return .rear
+        case .rearLeft:
+            return .rearLeft
+        case .rearRight:
+            return .rearRight
+        }
     }
 }

@@ -32,9 +32,12 @@ class VisionService: VisionServiceProtocol, ObservableObject {
     
     // MARK: - Initialization
     init() {
-        setupEnhancedServices()
+        Task { @MainActor in
+            setupEnhancedServices()
+        }
     }
     
+    @MainActor
     private func setupEnhancedServices() {
         modelManager = ModelManager()
         imageProcessor = ImageProcessor()
@@ -129,9 +132,9 @@ class VisionService: VisionServiceProtocol, ObservableObject {
         case .frontRight:
             return .frontRight
         case .left:
-            return .left
+            return .leftSide
         case .right:
-            return .right
+            return .rightSide
         case .rear:
             return .rear
         case .rearLeft:
@@ -247,48 +250,35 @@ class VisionService: VisionServiceProtocol, ObservableObject {
         
         isProcessing = true
         
-        do {
-            // Assess image quality first
-            let qualityAssessment = imageProcessor.assessImageQuality(image)
-            
-            // Preprocess image
-            guard let processedImage = imageProcessor.preprocessForClassification(image) else {
-                print("❌ VisionService: Failed to preprocess image")
-                isProcessing = false
-                return
-            }
-            
-            // Classify vehicle angle
-            let result = await modelManager.classifyVehicleAngle(from: processedImage)
-            
-            await MainActor.run {
-                if let angle = result.angle {
-                    self.currentAngle = angle.displayName
-                    self.confidence = result.confidence
-                    self.isPositionValid = modelManager.shouldTriggerCapture(for: angle, confidence: result.confidence)
-                } else {
-                    self.currentAngle = "Unknown"
-                    self.confidence = 0.0
-                    self.isPositionValid = false
-                }
-                
-                // Update quality metrics
-                self.imageQuality = qualityAssessment.score
-                self.qualityIssues = qualityAssessment.issues
-                
-                self.isProcessing = false
-            }
-            
-        } catch {
-            print("❌ VisionService: Analysis failed - \(error.localizedDescription)")
-            await MainActor.run {
-                self.isProcessing = false
-                self.currentAngle = "Error"
+        // Assess image quality first
+        let qualityAssessment = imageProcessor.assessImageQuality(image)
+        
+        // Preprocess image
+        guard let processedImage = imageProcessor.preprocessForClassification(image) else {
+            print("❌ VisionService: Failed to preprocess image")
+            isProcessing = false
+            return
+        }
+        
+        // Classify vehicle angle
+        let result = await modelManager.classifyVehicleAngle(from: processedImage)
+        
+        await MainActor.run {
+            if let angle = result.angle {
+                self.currentAngle = angle.displayName
+                self.confidence = result.confidence
+                self.isPositionValid = modelManager.shouldTriggerCapture(for: angle, confidence: result.confidence)
+            } else {
+                self.currentAngle = "Unknown"
                 self.confidence = 0.0
                 self.isPositionValid = false
-                self.imageQuality = 0.0
-                self.qualityIssues = [.blurry] // Default to blurry on error
             }
+            
+            // Update quality metrics
+            self.imageQuality = qualityAssessment.score
+            self.qualityIssues = qualityAssessment.issues
+            
+            self.isProcessing = false
         }
     }
     
@@ -327,13 +317,37 @@ class VisionService: VisionServiceProtocol, ObservableObject {
     
     /// Gets performance metrics
     /// - Returns: Tuple of average inference time and model accuracy
+    @MainActor
     func getPerformanceMetrics() -> (averageInferenceTime: TimeInterval, modelAccuracy: Float) {
         return modelManager?.getPerformanceMetrics() ?? (0.0, 0.0)
     }
     
     /// Checks if performance is acceptable
     /// - Returns: True if performance meets requirements
+    @MainActor
     func isPerformanceAcceptable() -> Bool {
         return modelManager?.isPerformanceAcceptable() ?? false
+    }
+    
+    // MARK: - Additional Methods
+    
+    /// Gets the next angle in the sequence
+    /// - Parameter currentAngle: The current angle
+    /// - Returns: The next angle to capture
+    func getNextAngle(currentAngle: PhotoAngleType) -> PhotoAngleType {
+        let allAngles: [PhotoAngleType] = [.front, .frontLeft, .frontRight, .leftSide, .rightSide, .rearLeft, .rearRight, .rear]
+        
+        guard let currentIndex = allAngles.firstIndex(of: currentAngle) else {
+            return .front
+        }
+        
+        let nextIndex = (currentIndex + 1) % allAngles.count
+        return allAngles[nextIndex]
+    }
+    
+    /// Updates the confidence threshold
+    /// - Parameter threshold: The new confidence threshold
+    func updateConfidenceThreshold(_ threshold: Float) {
+        confidenceThreshold = threshold
     }
 }
