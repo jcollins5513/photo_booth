@@ -34,7 +34,7 @@ struct CoreDataStack {
     }
 
     init(inMemory: Bool = false) {
-        container = NSPersistentContainer(name: "VehiclePhotoBooth")
+        container = NSPersistentContainer(name: "CoreDataModel")
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         }

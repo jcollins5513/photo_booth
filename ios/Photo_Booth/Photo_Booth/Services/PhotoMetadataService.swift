@@ -384,7 +384,7 @@ class PhotoMetadataService: @unchecked Sendable {
     
     // MARK: - Photo Tagging and Categorization
     
-    func generatePhotoTags(for photo: VehiclePhoto, exifData: PhotoEXIFData, qualityAssessment: PhotoQualityAssessment) -> [String] {
+    func generatePhotoTags(for photo: VehiclePhoto, exifData: PhotoEXIFData, qualityAssessment: PhotoQualityAssessment) async -> [String] {
         var tags: [String] = []
         
         // Angle-based tags

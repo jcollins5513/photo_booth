@@ -5,6 +5,12 @@ class PhotoMetadataServiceTests: XCTestCase {
     
     var photoMetadataService: PhotoMetadataService!
     var mockFileSystemManager: MockFileSystemManager!
+    static var sharedCoreDataStack: CoreDataStack!
+    
+    override class func setUp() {
+        super.setUp()
+        sharedCoreDataStack = CoreDataStack(inMemory: true)
+    }
     
     override func setUpWithError() throws {
         try super.setUpWithError()
@@ -129,7 +135,7 @@ class PhotoMetadataServiceTests: XCTestCase {
         // Given
         await setupPhotoMetadataService()
         let photo = createMockVehiclePhoto()
-        let exifData = PhotoEXIFData() // Empty EXIF data
+        let exifData = PhotoEXIFData(width: nil, height: nil, dpiWidth: nil, dpiHeight: nil, dateTimeOriginal: nil, exposureTime: nil, fNumber: nil, iso: nil, focalLength: nil, flash: nil, whiteBalance: nil, cameraMake: nil, cameraModel: nil, gpsData: nil) // Empty EXIF data
         let qualityAssessment = PhotoQualityAssessment() // Empty quality assessment
         
         // When
@@ -275,11 +281,22 @@ class PhotoMetadataServiceTests: XCTestCase {
     }
     
     private func createMockVehiclePhoto() -> VehiclePhoto {
-        // This would need to be created with Core Data context in a real test
-        // For now, we'll create a mock object
-        let photo = VehiclePhoto()
+        // Use the shared Core Data stack for testing
+        let context = Self.sharedCoreDataStack.container.viewContext
+        
+        // Create a VehiclePhoto entity in the context
+        let photo = VehiclePhoto(context: context)
+        photo.id = UUID()
         photo.angleType = "front"
         photo.captureDate = Date()
+        photo.fileName = "test_photo.jpg"
+        photo.filePath = "/test/path/test_photo.jpg"
+        photo.fileSize = 50000
+        photo.imageWidth = 200
+        photo.imageHeight = 200
+        photo.confidenceScore = 0.95
+        photo.isAutoCaptured = true
+        
         return photo
     }
     
@@ -309,16 +326,3 @@ class PhotoMetadataServiceTests: XCTestCase {
     }
 }
 
-// MARK: - Mock VehiclePhoto for Testing
-
-class MockVehiclePhoto: VehiclePhoto {
-    override var angleType: String? {
-        get { return "front" }
-        set { }
-    }
-    
-    override var captureDate: Date? {
-        get { return Date() }
-        set { }
-    }
-}
