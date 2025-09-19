@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct Photo_BoothApp: App {
@@ -24,6 +25,11 @@ struct Photo_BoothApp: App {
     @StateObject private var galleryViewModel: GalleryViewModel
     
     init() {
+        // Configure Firebase only if not already configured
+        if FirebaseApp.app() == nil {
+            FirebaseApp.configure()
+        }
+        
         // Initialize services with proper dependencies
         let coreDataStack = CoreDataStack.shared
         self.storageService = StorageService(

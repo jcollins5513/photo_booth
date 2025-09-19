@@ -1,0 +1,29 @@
+{
+  "activityEntities" : [
+    "projectCreated",
+    [
+      {
+        "createdDate" : "2025-09-19T02:34:50Z",
+        "event" : "projectCreated",
+        "id" : "45CCEF8C-76F2-4108-B14C-D7C54C23826C",
+        "subtitle" : "VehicleAngleClassifier",
+        "title" : "Project Created"
+      }
+    ]
+  ],
+  "authorName" : "Justin Collins",
+  "createdDate" : "2025-09-19T02:34:50Z",
+  "description" : "8 Different angles for automatic angle detection for automotive.",
+  "id" : "A260039F-8ABE-472D-86BB-47DEAA467CA7",
+  "license" : "",
+  "location" : "",
+  "modifiedDate" : "2025-09-19T02:34:50Z",
+  "projectName" : "VehicleAngleClassifier",
+  "settingsEntity" : {
+    "snapshotOnExtendTraining" : true,
+    "snapshotOnResumeTraining" : false
+  },
+  "taskType" : "imageClassifier",
+  "title" : "Image Classification",
+  "version" : "1.1"
+}

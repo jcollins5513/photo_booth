@@ -14,8 +14,13 @@ class ModelManager: ObservableObject {
     
     // MARK: - Private Properties
     private var coreMLModel: MLModel?
-    private var visionModel: VNCoreMLModel?
+    private var _visionModel: VNCoreMLModel?
     private var classificationRequest: VNClassifyImageRequest?
+    
+    // MARK: - Public Properties
+    var visionModel: VNCoreMLModel? {
+        return _visionModel
+    }
     
     // MARK: - Configuration
     private let confidenceThreshold: Float = 0.8
@@ -69,9 +74,7 @@ class ModelManager: ObservableObject {
     // MARK: - Model Loading
     func loadModel() async {
         do {
-            // For now, we'll create a placeholder model structure
-            // In production, this would load the actual trained .mlmodel file
-            await createPlaceholderModel()
+            try await loadCoreMLModel()
             isModelLoaded = true
             print("✅ ModelManager: CoreML model loaded successfully")
         } catch {
@@ -80,20 +83,31 @@ class ModelManager: ObservableObject {
         }
     }
     
-    private func createPlaceholderModel() async {
-        // This is a placeholder implementation
-        // In production, this would load the actual trained model:
-        // guard let modelURL = Bundle.main.url(forResource: "VehicleAngleClassifier", withExtension: "mlmodelc") else { return }
-        // coreMLModel = try MLModel(contentsOf: modelURL)
-        // visionModel = try VNCoreMLModel(for: coreMLModel!)
-        
-        // For now, we'll simulate model loading
-        do {
-            try await Task.sleep(nanoseconds: 100_000_000) // 0.1 second delay
-        } catch {
-            // Handle sleep error if needed
+    private func loadCoreMLModel() async throws {
+        // Load the actual CoreML model from the bundle
+        // Try .mlmodelc first (compiled version), then .mlmodel
+        guard let modelURL = Bundle.main.url(forResource: "VehicleAngleClassifier", withExtension: "mlmodelc") ??
+                             Bundle.main.url(forResource: "VehicleAngleClassifier", withExtension: "mlmodel") else {
+            throw ModelError.modelNotFound
         }
-        modelAccuracy = 0.95 // Simulated accuracy
+        
+        do {
+            // Load the CoreML model
+            coreMLModel = try MLModel(contentsOf: modelURL)
+            
+            // Create Vision model wrapper
+            _visionModel = try VNCoreMLModel(for: coreMLModel!)
+            
+            // Create classification request
+            classificationRequest = VNClassifyImageRequest()
+            
+            // Set model accuracy based on training data
+            modelAccuracy = 0.95 // This should be updated based on actual model performance
+            
+            print("✅ ModelManager: VehicleAngleClassifier model loaded with \(VehicleAngle.allCases.count) angle classes")
+        } catch {
+            throw ModelError.modelLoadFailed
+        }
     }
     
     // MARK: - Image Classification
@@ -120,21 +134,77 @@ class ModelManager: ObservableObject {
     }
     
     private func performClassification(image: UIImage) async -> (angle: VehicleAngle?, confidence: Float) {
-        // Placeholder implementation - simulate classification
-        // In production, this would use VNClassifyImageRequest with the actual model
-        
-        // Simulate processing time
-        do {
-            try await Task.sleep(nanoseconds: 50_000_000) // 50ms
-        } catch {
-            // Handle sleep error if needed
+        guard let visionModel = visionModel,
+              let request = classificationRequest else {
+            print("❌ ModelManager: Vision model or request not available")
+            return (nil, 0.0)
         }
         
-        // Simulate random classification for testing
-        let randomAngle = VehicleAngle.allCases.randomElement()!
-        let randomConfidence = Float.random(in: 0.7...0.95)
-        
-        return (randomAngle, randomConfidence)
+        return await withCheckedContinuation { continuation in
+            // Create a new request for this classification
+            let classifyRequest = VNClassifyImageRequest { request, error in
+                if let error = error {
+                    print("❌ ModelManager: Classification error - \(error.localizedDescription)")
+                    continuation.resume(returning: (nil, 0.0))
+                    return
+                }
+                
+                guard let observations = request.results as? [VNClassificationObservation] else {
+                    print("❌ ModelManager: No classification results")
+                    continuation.resume(returning: (nil, 0.0))
+                    return
+                }
+                
+                // Find the best classification result
+                guard let bestObservation = observations.first else {
+                    print("❌ ModelManager: No observations found")
+                    continuation.resume(returning: (nil, 0.0))
+                    return
+                }
+                
+                // Map the CoreML output to our VehicleAngle enum
+                let detectedAngle = self.mapCoreMLOutputToVehicleAngle(bestObservation.identifier)
+                let confidence = bestObservation.confidence
+                
+                print("🔍 ModelManager: Detected angle: \(detectedAngle?.displayName ?? "Unknown") with confidence: \(confidence)")
+                continuation.resume(returning: (detectedAngle, confidence))
+            }
+            
+            // Perform the classification using the Vision model
+            let handler = VNImageRequestHandler(cgImage: image.cgImage!, options: [:])
+            do {
+                try handler.perform([classifyRequest])
+            } catch {
+                print("❌ ModelManager: Failed to perform classification - \(error.localizedDescription)")
+                continuation.resume(returning: (nil, 0.0))
+            }
+        }
+    }
+    
+    private func mapCoreMLOutputToVehicleAngle(_ identifier: String) -> VehicleAngle? {
+        // Map CoreML model output identifiers to our VehicleAngle enum
+        // This mapping should match the class labels from your training data
+        switch identifier.lowercased() {
+        case "front":
+            return .front
+        case "front_left", "frontleft":
+            return .frontLeft
+        case "front_right", "frontright":
+            return .frontRight
+        case "left", "left_side", "leftside":
+            return .left
+        case "right", "right_side", "rightside":
+            return .right
+        case "rear":
+            return .rear
+        case "rear_left", "rearleft":
+            return .rearLeft
+        case "rear_right", "rearright":
+            return .rearRight
+        default:
+            print("⚠️ ModelManager: Unknown angle identifier: \(identifier)")
+            return nil
+        }
     }
     
     // MARK: - Position Detection

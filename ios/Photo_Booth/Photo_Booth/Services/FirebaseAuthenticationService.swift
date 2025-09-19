@@ -64,6 +64,11 @@ class FirebaseAuthenticationService: AuthenticationServiceProtocol {
             
             return user
         } catch {
+            // Log the actual Firebase error for debugging
+            print("❌ Firebase signup error: \(error.localizedDescription)")
+            if let authError = error as? AuthErrorCode {
+                print("❌ Auth error code: \(authError.code.rawValue)")
+            }
             // Map Firebase errors to our custom errors
             throw mapFirebaseError(error)
         }

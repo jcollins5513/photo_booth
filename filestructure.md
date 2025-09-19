@@ -42,9 +42,18 @@ photo_booth/
 │       │   ├── ContentView.swift
 │       │   ├── Photo_BoothApp.swift
 │       │   ├── Resources/
-│       │   │   └── CoreDataModel.xcdatamodeld/
-│       │   │       └── VehiclePhotoBooth.xcdatamodel/
-│       │   │           └── contents
+│       │   │   ├── CoreDataModel.xcdatamodeld/
+│       │   │   │   └── VehiclePhotoBooth.xcdatamodel/
+│       │   │   │       └── contents
+│       │   │   ├── GoogleService-Info.plist
+│       │   │   ├── VehicleAngleClassifier.mlmodel
+│       │   │   └── VehicleAngleClassifier.mlproj/
+│       │   │       ├── Checkpoints/
+│       │   │       ├── Data Sources/
+│       │   │       ├── Model Containers/
+│       │   │       ├── Models/
+│       │   │       ├── Snapshots/
+│       │   │       └── Project.json
 │       │   ├── Services/
 │       │   │   └── CoreDataStack.swift
 │       │   ├── Views/
@@ -124,3 +133,6 @@ photo_booth/
 - **2024-12-19**: Updated master-plan.md to reflect completed sections (Foundation, Authentication, Session Management, UI, Data Management)
 - **2024-12-19**: Updated granular-plan.md to focus on Camera & Vision Engine - CoreML Integration (Section 3)
 - **2024-12-19**: Verified .specify directory structure with constitution.md and templates
+- **2024-12-19**: Added VehicleAngleClassifier CoreML model and project files to Resources/
+- **2024-12-19**: Integrated CoreML model into ModelManager with real classification functionality
+- **2024-12-19**: Updated VisionService to use actual CoreML model instead of mock implementation

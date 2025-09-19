@@ -46,20 +46,24 @@ class VisionService: VisionServiceProtocol, ObservableObject {
     // MARK: - Model Management
     
     func loadModel() async throws {
-        // For now, we'll simulate model loading
-        // In a real implementation, this would load a CoreML model
-        try await Task.sleep(nanoseconds: 100_000_000) // 0.1 second delay
+        // Load the model through ModelManager
+        guard let modelManager = modelManager else {
+            throw VisionServiceError.modelLoadFailed("ModelManager not initialized")
+        }
         
-        // Simulate model loading success
-        // In real implementation: load actual CoreML model
-        self.model = nil // Placeholder - would be actual VNCoreMLModel
+        await modelManager.loadModel()
         
-        // For testing purposes, we'll consider the model "loaded" even without actual model
-        // This allows tests to pass while we develop the interface
+        if await modelManager.isModelLoaded {
+            // Get the Vision model from ModelManager
+            self.model = await modelManager.visionModel
+            print("✅ VisionService: Model loaded successfully through ModelManager")
+        } else {
+            throw VisionServiceError.modelLoadFailed("Failed to load model through ModelManager")
+        }
     }
     
     var isModelLoaded: Bool {
-        return model != nil || true // Allow tests to pass
+        return model != nil
     }
     
     // MARK: - Classification
