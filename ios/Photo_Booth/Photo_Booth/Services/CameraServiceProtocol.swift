@@ -48,7 +48,7 @@ struct PhotoCaptureSettings {
     let whiteBalanceMode: AVCaptureDevice.WhiteBalanceMode
     
     static let `default` = PhotoCaptureSettings(
-        format: [AVVideoCodecKey: AVVideoCodecType.jpeg],
+        format: [:], // No format settings needed for AVCapturePhotoSettings
         flashMode: .auto,
         focusMode: .continuousAutoFocus,
         exposureMode: .continuousAutoExposure,

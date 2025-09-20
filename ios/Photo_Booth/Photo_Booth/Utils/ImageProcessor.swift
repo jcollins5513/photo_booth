@@ -7,7 +7,7 @@ import Vision
 class ImageProcessor {
     
     // MARK: - Configuration
-    private let targetSize = CGSize(width: 224, height: 224) // Standard input size for many CoreML models
+    private let targetSize = CGSize(width: 299, height: 299) // VehicleAngleClassifier model expects 299x299 input
     private let jpegCompressionQuality: CGFloat = 0.8
     
     // MARK: - Image Preprocessing
@@ -16,11 +16,15 @@ class ImageProcessor {
     /// - Parameter image: Input image from camera
     /// - Returns: Preprocessed image ready for classification
     func preprocessForClassification(_ image: UIImage) -> UIImage? {
+        print("🔍 ImageProcessor: Input image size: \(image.size)")
+        
         // Resize image to target size
         guard let resizedImage = resizeImage(image, to: targetSize) else {
             print("❌ ImageProcessor: Failed to resize image")
             return nil
         }
+        
+        print("🔍 ImageProcessor: Resized image size: \(resizedImage.size)")
         
         // Normalize image orientation
         guard let normalizedImage = normalizeOrientation(resizedImage) else {

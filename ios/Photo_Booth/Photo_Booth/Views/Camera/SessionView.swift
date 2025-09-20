@@ -87,7 +87,10 @@ struct SessionView: View {
                 Button(action: {
                     Task {
                         await sessionViewModel.capturePhoto()
-                        showingPhotoReview = true
+                        // Only show photo review for manual capture, not auto-capture
+                        if !sessionViewModel.isAutoCaptureEnabled {
+                            showingPhotoReview = true
+                        }
                     }
                 }) {
                     HStack {

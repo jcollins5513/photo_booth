@@ -264,6 +264,8 @@ class SessionViewModel: ObservableObject {
             return
         }
         
+        print("📸 SessionViewModel: Manual photo capture initiated")
+        
         do {
             // Capture photo using camera
             await cameraViewModel.capturePhoto()
@@ -273,6 +275,8 @@ class SessionViewModel: ObservableObject {
                 errorMessage = "Failed to capture photo"
                 return
             }
+            
+            print("✅ SessionViewModel: Photo captured, saving to session")
             
             // Save photo to session
             let vehiclePhoto = try await sessionManager.manualCapture(
@@ -284,10 +288,13 @@ class SessionViewModel: ObservableObject {
             capturedPhotos.append(vehiclePhoto)
             updateProgress()
             
+            print("✅ SessionViewModel: Photo saved successfully, moving to next angle")
+            
             // Move to next angle
             moveToNextAngle()
             
         } catch {
+            print("❌ SessionViewModel: Photo capture failed - \(error.localizedDescription)")
             errorMessage = error.localizedDescription
         }
     }

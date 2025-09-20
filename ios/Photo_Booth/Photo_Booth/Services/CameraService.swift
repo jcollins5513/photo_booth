@@ -39,39 +39,55 @@ class CameraService: @unchecked Sendable, CameraServiceProtocol {
         let session = AVCaptureSession()
         session.beginConfiguration()
         
-        // Set session preset
+        // Set session preset with error handling
         if session.canSetSessionPreset(quality) {
             session.sessionPreset = quality
+        } else {
+            print("⚠️ CameraService: Cannot set session preset \(quality), using default")
+            session.sessionPreset = .photo
         }
         
-        // Get camera device
+        // Get camera device with better error handling
         guard let camera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: position) else {
             session.commitConfiguration()
+            print("❌ CameraService: No camera device available for position \(position)")
             throw CameraServiceError.deviceNotAvailable
         }
         
-        // Create device input
+        // Check if camera is available
+        guard camera.isConnected && !camera.isSuspended else {
+            session.commitConfiguration()
+            print("❌ CameraService: Camera device is not connected or is suspended")
+            throw CameraServiceError.deviceNotAvailable
+        }
+        
+        // Create device input with better error handling
         do {
             let input = try AVCaptureDeviceInput(device: camera)
             if session.canAddInput(input) {
                 session.addInput(input)
                 videoDeviceInput = input
+                print("✅ CameraService: Device input added successfully")
             } else {
                 session.commitConfiguration()
+                print("❌ CameraService: Cannot add device input to session")
                 throw CameraServiceError.configurationFailed
             }
         } catch {
             session.commitConfiguration()
+            print("❌ CameraService: Failed to create device input - \(error.localizedDescription)")
             throw CameraServiceError.configurationFailed
         }
         
-        // Create photo output
+        // Create photo output with better error handling
         let output = AVCapturePhotoOutput()
         if session.canAddOutput(output) {
             session.addOutput(output)
             photoOutput = output
+            print("✅ CameraService: Photo output added successfully")
         } else {
             session.commitConfiguration()
+            print("❌ CameraService: Cannot add photo output to session")
             throw CameraServiceError.configurationFailed
         }
         
@@ -154,26 +170,48 @@ class CameraService: @unchecked Sendable, CameraServiceProtocol {
     // MARK: - Photo Capture
     
     func capturePhoto(settings: PhotoCaptureSettings) async throws -> Data {
-        guard captureSession != nil, isSessionRunning else {
+        guard isSessionRunning else {
+            print("❌ CameraService: Session not running for photo capture")
             throw CameraServiceError.sessionNotRunning
         }
         
         guard let photoOutput = photoOutput else {
+            print("❌ CameraService: Photo output not available")
             throw CameraServiceError.captureFailed
         }
+        
+        print("🔍 CameraService: Session running: \(isSessionRunning)")
+        print("🔍 CameraService: Session configured: \(isSessionConfigured)")
+        
+        // Double-check that the session is actually running
+        guard let session = captureSession else {
+            print("❌ CameraService: No capture session available")
+            throw CameraServiceError.sessionNotRunning
+        }
+        
+        // Give the session a moment to start if it's not running yet
+        if !session.isRunning {
+            print("⚠️ CameraService: Session not running, attempting to start...")
+            session.startRunning()
+            // Wait a brief moment for the session to start
+            try await Task.sleep(nanoseconds: 100_000_000) // 0.1 seconds
+        }
+        
+        guard session.isRunning else {
+            print("❌ CameraService: Session failed to start")
+            throw CameraServiceError.sessionNotRunning
+        }
+        
+        // Note: AVCapturePhotoOutput doesn't have a direct property to check if capturing
+        // We'll rely on the delegate pattern to handle concurrent captures
         
         return try await withCheckedThrowingContinuation { continuation in
             let photoSettings = AVCapturePhotoSettings()
             
-            // Configure format
-            for (key, value) in settings.format {
-                photoSettings.setValue(value, forKey: key)
-            }
-            
             // Configure flash
             photoSettings.flashMode = settings.flashMode
             
-            // Configure focus and exposure
+            // Configure focus and exposure with better error handling
             if let device = videoDeviceInput?.device {
                 do {
                     try device.lockForConfiguration()
@@ -181,8 +219,10 @@ class CameraService: @unchecked Sendable, CameraServiceProtocol {
                     device.exposureMode = settings.exposureMode
                     device.whiteBalanceMode = settings.whiteBalanceMode
                     device.unlockForConfiguration()
+                    print("✅ CameraService: Camera settings configured successfully")
                 } catch {
-                    // Configuration failed, but continue with capture
+                    print("⚠️ CameraService: Failed to configure camera settings - \(error.localizedDescription)")
+                    // Continue with capture even if configuration fails
                 }
             }
             
@@ -190,8 +230,10 @@ class CameraService: @unchecked Sendable, CameraServiceProtocol {
             let delegate = PhotoCaptureDelegate { result in
                 switch result {
                 case .success(let data):
+                    print("✅ CameraService: Photo captured successfully (\(data.count) bytes)")
                     continuation.resume(returning: data)
                 case .failure(let error):
+                    print("❌ CameraService: Photo capture failed - \(error.localizedDescription)")
                     continuation.resume(throwing: error)
                 }
             }
@@ -201,6 +243,7 @@ class CameraService: @unchecked Sendable, CameraServiceProtocol {
             
             // Capture photo
             photoOutput.capturePhoto(with: photoSettings, delegate: delegate)
+            print("📸 CameraService: Photo capture initiated")
         }
     }
     
@@ -270,15 +313,19 @@ private class PhotoCaptureDelegate: NSObject, AVCapturePhotoCaptureDelegate {
     
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
         if let error = error {
+            print("❌ PhotoCaptureDelegate: Photo processing error - \(error.localizedDescription)")
+            print("❌ PhotoCaptureDelegate: Error details - \(error)")
             completion(.failure(error))
             return
         }
         
         guard let imageData = photo.fileDataRepresentation() else {
+            print("❌ PhotoCaptureDelegate: Failed to get image data from photo")
             completion(.failure(CameraServiceError.captureFailed))
             return
         }
         
+        print("✅ PhotoCaptureDelegate: Photo processed successfully (\(imageData.count) bytes)")
         completion(.success(imageData))
     }
 }

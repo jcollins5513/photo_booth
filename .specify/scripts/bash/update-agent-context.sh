@@ -50,6 +50,7 @@ fi; mv "$temp_file" "$target_file" 2>/dev/null || true; echo "✅ $agent_name co
 case "$AGENT_TYPE" in
   claude) update_agent_file "$CLAUDE_FILE" "Claude Code" ;;
   gemini) update_agent_file "$GEMINI_FILE" "Gemini CLI" ;;
+  cursor) update_agent_file "$CURSOR_FILE" "Cursor" ;;
   copilot) update_agent_file "$COPILOT_FILE" "GitHub Copilot" ;;
   "") [ -f "$CLAUDE_FILE" ] && update_agent_file "$CLAUDE_FILE" "Claude Code"; [ -f "$GEMINI_FILE" ] && update_agent_file "$GEMINI_FILE" "Gemini CLI"; [ -f "$COPILOT_FILE" ] && update_agent_file "$COPILOT_FILE" "GitHub Copilot"; if [ ! -f "$CLAUDE_FILE" ] && [ ! -f "$GEMINI_FILE" ] && [ ! -f "$COPILOT_FILE" ]; then update_agent_file "$CLAUDE_FILE" "Claude Code"; fi ;;
   *) echo "ERROR: Unknown agent type '$AGENT_TYPE'"; exit 1 ;;

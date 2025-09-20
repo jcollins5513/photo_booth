@@ -113,7 +113,10 @@ class AutoCaptureManager: ObservableObject {
         updateSessionProgress()
         startSessionTimer()
         
-        print("🚀 AutoCaptureManager: Started session for \(session.vehicleMake ?? "Unknown") \(session.vehicleModel ?? "Vehicle")")
+        print("🚀 AutoCaptureManager: Started SEQUENTIAL capture session for \(session.vehicleMake ?? "Unknown") \(session.vehicleModel ?? "Vehicle")")
+        print("📋 AutoCaptureManager: Photo sequence: \(angleSequence.map { $0.displayName }.joined(separator: " → "))")
+        print("🎯 AutoCaptureManager: Starting with \(currentAngle?.displayName ?? "unknown") - wait for vehicle to stop moving for \(positionStabilityTime)s")
+        print("ℹ️ AutoCaptureManager: Will capture photos in order regardless of detected angle - just wait for stable position")
     }
     
     /// Stops the current auto-capture session
@@ -155,8 +158,12 @@ class AutoCaptureManager: ObservableObject {
     private func handlePositionChange(isValid: Bool) {
         guard isAutoCaptureEnabled, currentAngle != nil else { return }
         
+        print("🔍 AutoCaptureManager: Position change - isValid: \(isValid), currentAngle: \(currentAngle?.displayName ?? "nil")")
+        
+        // For sequential capture, we don't care about angle detection
+        // We just wait for any stable position and then capture
         if isValid {
-            // Position is valid, start stability timer
+            // Position is stable, start capture timer
             if stablePositionStart == nil {
                 stablePositionStart = Date()
                 positionStabilityTimer?.invalidate()
@@ -166,9 +173,13 @@ class AutoCaptureManager: ObservableObject {
                     }
                 }
                 captureStatus = .ready
+                print("⏱️ AutoCaptureManager: Position stable, starting \(positionStabilityTime)s timer for \(currentAngle?.displayName ?? "unknown")")
             }
         } else {
-            // Position is invalid, reset stability timer
+            // Position is not stable, reset timer
+            if stablePositionStart != nil {
+                print("🔄 AutoCaptureManager: Position changed, resetting stability timer")
+            }
             stablePositionStart = nil
             positionStabilityTimer?.invalidate()
             captureStatus = .positioning
@@ -201,17 +212,22 @@ class AutoCaptureManager: ObservableObject {
                     successfulCaptures += 1
                     capturedAngles.insert(currentAngle)
                     
+                    print("✅ AutoCaptureManager: Successfully captured \(currentAngle.displayName)")
+                    
                     // Move to next angle
                     await moveToNextAngle()
                 } else {
                     // Quality not acceptable, retry if attempts remaining
+                    print("⚠️ AutoCaptureManager: Image quality not acceptable for \(currentAngle.displayName): \(qualityAssessment.issues.joined(separator: ", "))")
                     await handleFailedCapture(qualityAssessment.issues)
                 }
             } else {
+                print("❌ AutoCaptureManager: Invalid image data received")
                 await handleFailedCapture(["Invalid image data"])
             }
             
         } catch {
+            print("❌ AutoCaptureManager: Photo capture failed for \(currentAngle.displayName) - \(error.localizedDescription)")
             await handleFailedCapture([error.localizedDescription])
         }
         
@@ -228,9 +244,11 @@ class AutoCaptureManager: ObservableObject {
             captureStatus = .positioning
             updateSessionProgress()
             
-            print("➡️ AutoCaptureManager: Moving to \(currentAngle!.displayName)")
+            print("➡️ AutoCaptureManager: Moving to \(currentAngle!.displayName) (Step \(currentAngleIndex + 1)/\(angleSequence.count))")
+            print("📋 AutoCaptureManager: Remaining angles: \(angleSequence.suffix(from: currentAngleIndex + 1).map { $0.displayName }.joined(separator: ", "))")
         } else {
             // Session complete
+            print("🎉 AutoCaptureManager: All angles captured! Session complete.")
             await completeSession()
         }
     }

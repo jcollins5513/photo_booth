@@ -25,10 +25,8 @@ struct Photo_BoothApp: App {
     @StateObject private var galleryViewModel: GalleryViewModel
     
     init() {
-        // Configure Firebase only if not already configured
-        if FirebaseApp.app() == nil {
-            FirebaseApp.configure()
-        }
+        // Configure Firebase using the configuration manager
+        FirebaseConfigurationManager.shared.configure()
         
         // Initialize services with proper dependencies
         let coreDataStack = CoreDataStack.shared

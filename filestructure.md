@@ -138,3 +138,21 @@ photo_booth/
 - **2024-12-19**: Updated VisionService to use actual CoreML model instead of mock implementation
 - **2024-12-19**: Updated project configuration for iOS 26.0 and iPhone 17 optimization
 - **2024-12-19**: Updated constitution and specification files to reflect iOS 26 and iPhone 17 target platform
+- **2024-12-19**: Fixed camera capture error (-17281) with improved session configuration and error handling
+- **2024-12-19**: Fixed ModelManager unknown angle identifier issue by updating class mapping to match actual CoreML model output
+- **2024-12-19**: Enhanced error handling across CameraService, ModelManager, VisionService, and AutoCaptureManager
+- **2024-12-19**: Fixed Firebase configuration issue by moving FirebaseApp.configure() to app initialization
+- **2024-12-19**: Fixed manual capture crash with improved error handling and logging
+- **2024-12-19**: Fixed auto-capture not working by improving VisionService position validation logic
+- **2024-12-19**: Fixed model classification returning 'material' identifier with better debugging and fallback handling
+- **2024-12-19**: Enhanced debugging output to track camera capture and model classification issues
+- **2024-12-19**: Fixed Firebase multiple configuration error by creating FirebaseConfigurationManager singleton
+- **2024-12-19**: Added FirebaseConfigurationManager.swift to prevent duplicate Firebase initialization
+- **2024-12-19**: Fixed model classification issue by correcting image preprocessing size from 224x224 to 299x299 pixels
+- **2024-12-19**: Fixed camera capture crash by removing invalid AVVideoCodecKey from PhotoCaptureSettings
+- **2024-12-19**: Fixed model classification by switching from VNClassifyImageRequest to VNCoreMLRequest for proper CoreML model usage
+- **2024-12-19**: Added enhanced debugging for model classification and camera capture issues
+- **2024-12-19**: Fixed model classification by handling VNClassificationObservation instead of VNCoreMLFeatureValueObservation
+- **2024-12-19**: Enhanced camera session validation to ensure session is running before photo capture
+- **2024-12-19**: Implemented sequential photo capture system that follows fixed order regardless of detected angle
+- **2024-12-19**: Modified VisionService to use confidence-based position validation instead of angle matching

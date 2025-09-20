@@ -51,13 +51,13 @@ protocol FrameProvider: AnyObject {
 /// Vehicle photo angle types
 enum PhotoAngleType: String, CaseIterable, Codable {
     case front = "front"
-    case rear = "rear"
-    case leftSide = "left_side"
-    case rightSide = "right_side"
-    case frontLeft = "front_left"
     case frontRight = "front_right"
+    case rightSide = "right_side"
     case rearLeft = "rear_left"
+    case rear = "rear"
     case rearRight = "rear_right"
+    case leftSide = "left_side"
+    case frontLeft = "front_left"
     
     /// Human-readable display name
     var displayName: String {

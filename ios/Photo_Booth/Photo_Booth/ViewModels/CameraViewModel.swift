@@ -120,16 +120,25 @@ class CameraViewModel: ObservableObject {
     
     // MARK: - Photo Capture
     func capturePhoto() async {
-        guard isCameraActive && !isCapturing else { return }
+        guard isCameraActive && !isCapturing else { 
+            print("⚠️ CameraViewModel: Cannot capture - camera not active or already capturing")
+            return 
+        }
         
+        print("📸 CameraViewModel: Starting photo capture")
         isCapturing = true
         
         do {
             let imageData = try await cameraService.capturePhoto(settings: .default)
             if let image = UIImage(data: imageData) {
                 lastCapturedPhoto = image
+                print("✅ CameraViewModel: Photo captured successfully")
+            } else {
+                print("❌ CameraViewModel: Failed to create image from data")
+                errorMessage = "Failed to create image from captured data"
             }
         } catch {
+            print("❌ CameraViewModel: Photo capture failed - \(error.localizedDescription)")
             errorMessage = error.localizedDescription
         }
         

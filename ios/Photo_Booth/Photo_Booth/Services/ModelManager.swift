@@ -53,13 +53,13 @@ class ModelManager: ObservableObject {
         var captureOrder: Int {
             switch self {
             case .front: return 1
-            case .frontLeft: return 2
-            case .frontRight: return 3
-            case .left: return 4
-            case .right: return 5
-            case .rear: return 6
-            case .rearLeft: return 7
-            case .rearRight: return 8
+            case .frontRight: return 2
+            case .right: return 3
+            case .rearLeft: return 4
+            case .rear: return 5
+            case .rearRight: return 6
+            case .left: return 7
+            case .frontLeft: return 8
             }
         }
     }
@@ -105,6 +105,9 @@ class ModelManager: ObservableObject {
             modelAccuracy = 0.95 // This should be updated based on actual model performance
             
             print("✅ ModelManager: VehicleAngleClassifier model loaded with \(VehicleAngle.allCases.count) angle classes")
+            
+            // Log model information for debugging
+            logModelInfo()
         } catch {
             throw ModelError.modelLoadFailed
         }
@@ -129,25 +132,32 @@ class ModelManager: ObservableObject {
     }
     
     private func performClassification(image: UIImage) async -> (angle: VehicleAngle?, confidence: Float) {
-        guard visionModel != nil,
-              classificationRequest != nil else {
-            print("❌ ModelManager: Vision model or request not available")
+        guard let visionModel = visionModel else {
+            print("❌ ModelManager: Vision model not available")
             return (nil, 0.0)
         }
         
         return await withCheckedContinuation { continuation in
-            // Create a new request for this classification
-            let classifyRequest = VNClassifyImageRequest { request, error in
+            // Create a custom Vision request using our CoreML model
+            let classifyRequest = VNCoreMLRequest(model: visionModel) { request, error in
                 if let error = error {
                     print("❌ ModelManager: Classification error - \(error.localizedDescription)")
                     continuation.resume(returning: (nil, 0.0))
                     return
                 }
                 
+                // Handle VNCoreMLRequest results - they come as VNClassificationObservation
                 guard let observations = request.results as? [VNClassificationObservation] else {
-                    print("❌ ModelManager: No classification results")
+                    print("❌ ModelManager: No CoreML results")
+                    print("🔍 ModelManager: Request results type: \(type(of: request.results))")
+                    print("🔍 ModelManager: Request results: \(String(describing: request.results))")
                     continuation.resume(returning: (nil, 0.0))
                     return
+                }
+                
+                print("🔍 ModelManager: Found \(observations.count) classification observations")
+                for (index, obs) in observations.enumerated() {
+                    print("   \(index): identifier=\(obs.identifier), confidence=\(obs.confidence)")
                 }
                 
                 // Find the best classification result
@@ -157,11 +167,26 @@ class ModelManager: ObservableObject {
                     return
                 }
                 
-                // Map the CoreML output to our VehicleAngle enum
-                let detectedAngle = self.mapCoreMLOutputToVehicleAngle(bestObservation.identifier)
+                // Extract the string value and confidence
+                let stringValue = bestObservation.identifier
                 let confidence = bestObservation.confidence
                 
-                print("🔍 ModelManager: Detected angle: \(detectedAngle?.displayName ?? "Unknown") with confidence: \(confidence)")
+                // Map the CoreML output to our VehicleAngle enum
+                let detectedAngle = self.mapCoreMLOutputToVehicleAngle(stringValue)
+                
+                // Debug: Print the result
+                print("🔍 ModelManager: Model output - identifier: \(stringValue), confidence: \(confidence)")
+                print("🔍 ModelManager: All probabilities:")
+                for (index, obs) in observations.enumerated() {
+                    print("   \(index): \(obs.identifier): \(obs.confidence)")
+                }
+                
+                if let angle = detectedAngle {
+                    print("✅ ModelManager: Detected angle: \(angle.displayName) with confidence: \(confidence)")
+                } else {
+                    print("⚠️ ModelManager: Unknown angle identifier: \(stringValue)")
+                    print("🔍 ModelManager: Detected angle: Unknown with confidence: \(confidence)")
+                }
                 continuation.resume(returning: (detectedAngle, confidence))
             }
             
@@ -178,10 +203,25 @@ class ModelManager: ObservableObject {
     
     private func mapCoreMLOutputToVehicleAngle(_ identifier: String) -> VehicleAngle? {
         // Map CoreML model output identifiers to our VehicleAngle enum
-        // This mapping should match the class labels from your training data
-        switch identifier.lowercased() {
+        // This mapping matches the actual class labels from the trained model
+        switch identifier {
         case "front":
             return .front
+        case "frontLeft":
+            return .frontLeft
+        case "frontRight":
+            return .frontRight
+        case "leftSide":
+            return .left
+        case "rightSide":
+            return .right
+        case "rear":
+            return .rear
+        case "rearLeft":
+            return .rearLeft
+        case "rearRight":
+            return .rearRight
+        // Handle legacy naming conventions
         case "front_left", "frontleft":
             return .frontLeft
         case "front_right", "frontright":
@@ -190,12 +230,14 @@ class ModelManager: ObservableObject {
             return .left
         case "right", "right_side", "rightside":
             return .right
-        case "rear":
-            return .rear
         case "rear_left", "rearleft":
             return .rearLeft
         case "rear_right", "rearright":
             return .rearRight
+        // Handle unexpected identifiers that might be from the model
+        case "material":
+            print("⚠️ ModelManager: Received 'material' identifier - this might indicate a model issue")
+            return nil
         default:
             print("⚠️ ModelManager: Unknown angle identifier: \(identifier)")
             return nil
@@ -205,6 +247,23 @@ class ModelManager: ObservableObject {
     // MARK: - Position Detection
     func shouldTriggerCapture(for angle: VehicleAngle, confidence: Float) -> Bool {
         return confidence >= confidenceThreshold
+    }
+    
+    // MARK: - Debug Methods
+    func getAvailableClassLabels() -> [String] {
+        // Return the known class labels from our mapping
+        return ["front", "frontLeft", "frontRight", "leftSide", "rightSide", "rear", "rearLeft", "rearRight"]
+    }
+    
+    func logModelInfo() {
+        guard let model = coreMLModel else {
+            print("❌ ModelManager: No model loaded")
+            return
+        }
+        
+        print("📊 ModelManager: Model Information")
+        print("   - Model Description: \(model.modelDescription)")
+        print("   - Available Classes: \(getAvailableClassLabels())")
     }
     
     func getNextAngleInSequence(currentAngle: VehicleAngle?) -> VehicleAngle? {

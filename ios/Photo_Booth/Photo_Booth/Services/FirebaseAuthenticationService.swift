@@ -12,10 +12,8 @@ class FirebaseAuthenticationService: AuthenticationServiceProtocol {
     // MARK: - Initialization
     
     init() {
-        // Configure Firebase if not already configured
-        if FirebaseApp.app() == nil {
-            FirebaseApp.configure()
-        }
+        // Configure Firebase using the configuration manager
+        FirebaseConfigurationManager.shared.configure()
         
         // Set up auth state listener
         setupAuthStateListener()

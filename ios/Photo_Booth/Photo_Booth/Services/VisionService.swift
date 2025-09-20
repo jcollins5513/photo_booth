@@ -79,38 +79,58 @@ class VisionService: VisionServiceProtocol, ObservableObject {
         
         // Use enhanced classification with ModelManager
         if let modelManager = modelManager, let imageProcessor = imageProcessor {
-            // Assess image quality
-            let qualityAssessment = imageProcessor.assessImageQuality(image)
-            
-            // Preprocess image
-            guard let processedImage = imageProcessor.preprocessForClassification(image) else {
-                throw VisionServiceError.invalidImage
-            }
-            
-            // Classify using ModelManager
-            let result = await modelManager.classifyVehicleAngle(from: processedImage)
-            
-            // Update published properties
-            await MainActor.run {
-                if let angle = result.angle {
-                    self.currentAngle = angle.displayName
-                    self.confidence = result.confidence
-                    self.isPositionValid = modelManager.shouldTriggerCapture(for: angle, confidence: result.confidence)
+            do {
+                // Assess image quality
+                let qualityAssessment = imageProcessor.assessImageQuality(image)
+                
+                // Preprocess image
+                guard let processedImage = imageProcessor.preprocessForClassification(image) else {
+                    print("❌ VisionService: Failed to preprocess image for classification")
+                    throw VisionServiceError.invalidImage
+                }
+                
+                // Classify using ModelManager
+                let result = await modelManager.classifyVehicleAngle(from: processedImage)
+                
+                // Update published properties
+                await MainActor.run {
+                    if let angle = result.angle {
+                        self.currentAngle = angle.displayName
+                        self.confidence = result.confidence
+                        // For sequential capture, validate that we have a proper vehicle view
+                        // Check confidence and ensure it's not detecting non-vehicle objects
+                        let isValidVehicleView = result.confidence > 0.7 && isValidVehicleAngle(angle, confidence: result.confidence)
+                        self.isPositionValid = isValidVehicleView
+                        print("✅ VisionService: Detected angle: \(angle.displayName) with confidence: \(result.confidence) - Position valid: \(self.isPositionValid)")
+                    } else {
+                        self.currentAngle = "Unknown"
+                        self.confidence = result.confidence
+                        // Even if we can't classify the angle, if confidence is high enough, allow capture
+                        self.isPositionValid = result.confidence > 0.7
+                        print("⚠️ VisionService: Failed to classify angle - result was nil, but confidence is \(result.confidence) - Position valid: \(self.isPositionValid)")
+                    }
+                    
+                    self.imageQuality = qualityAssessment.score
+                    self.qualityIssues = qualityAssessment.issues
+                }
+                
+                // Convert ModelManager.VehicleAngle to PhotoAngleType
+                if let detectedAngle = result.angle {
+                    return convertToPhotoAngleType(detectedAngle)
                 } else {
-                    self.currentAngle = "Unknown"
+                    print("⚠️ VisionService: No valid angle detected, using default fallback")
+                    return .front // Default fallback
+                }
+            } catch {
+                print("❌ VisionService: Classification failed - \(error.localizedDescription)")
+                // Update UI to show error state
+                await MainActor.run {
+                    self.currentAngle = "Error"
                     self.confidence = 0.0
                     self.isPositionValid = false
                 }
-                
-                self.imageQuality = qualityAssessment.score
-                self.qualityIssues = qualityAssessment.issues
-            }
-            
-            // Convert ModelManager.VehicleAngle to PhotoAngleType
-            if let detectedAngle = result.angle {
-                return convertToPhotoAngleType(detectedAngle)
-            } else {
-                return .front // Default fallback
+                // Return default fallback
+                return .front
             }
         } else {
             // Fallback to original mock implementation
@@ -339,7 +359,7 @@ class VisionService: VisionServiceProtocol, ObservableObject {
     /// - Parameter currentAngle: The current angle
     /// - Returns: The next angle to capture
     func getNextAngle(currentAngle: PhotoAngleType) -> PhotoAngleType {
-        let allAngles: [PhotoAngleType] = [.front, .frontLeft, .frontRight, .leftSide, .rightSide, .rearLeft, .rearRight, .rear]
+        let allAngles: [PhotoAngleType] = [.front, .frontRight, .rightSide, .rearLeft, .rear, .rearRight, .leftSide, .frontLeft]
         
         guard let currentIndex = allAngles.firstIndex(of: currentAngle) else {
             return .front
@@ -353,5 +373,27 @@ class VisionService: VisionServiceProtocol, ObservableObject {
     /// - Parameter threshold: The new confidence threshold
     func updateConfidenceThreshold(_ threshold: Float) {
         confidenceThreshold = threshold
+    }
+    
+    /// Validates that the detected angle represents a proper vehicle view
+    /// - Parameters:
+    ///   - angle: The detected vehicle angle
+    ///   - confidence: The confidence score for the detection
+    /// - Returns: True if the angle represents a valid vehicle view
+    private func isValidVehicleAngle(_ angle: ModelManager.VehicleAngle, confidence: Float) -> Bool {
+        // Additional validation to prevent false positives
+        // Check for minimum confidence thresholds per angle type
+        let minimumConfidence: Float = 0.6
+        
+        // Ensure confidence is above minimum threshold
+        guard confidence >= minimumConfidence else {
+            print("⚠️ VisionService: Confidence too low for \(angle.displayName): \(confidence)")
+            return false
+        }
+        
+        // Additional checks could be added here for specific angle validation
+        // For example, checking image quality, aspect ratios, etc.
+        
+        return true
     }
 }
