@@ -3,7 +3,7 @@ import Foundation
 import UIKit
 
 /// Camera service implementation
-class CameraService: CameraServiceProtocol {
+class CameraService: @unchecked Sendable, CameraServiceProtocol {
     
     // MARK: - Properties
     
@@ -101,7 +101,9 @@ class CameraService: CameraServiceProtocol {
         await withCheckedContinuation { continuation in
             DispatchQueue.global(qos: .userInitiated).async { [weak self] in
                 session.startRunning()
-                self?.isSessionRunning = session.isRunning
+                Task { @MainActor in
+                    self?.isSessionRunning = session.isRunning
+                }
                 continuation.resume()
             }
         }
@@ -123,7 +125,9 @@ class CameraService: CameraServiceProtocol {
         await withCheckedContinuation { continuation in
             DispatchQueue.global(qos: .userInitiated).async { [weak self] in
                 session.stopRunning()
-                self?.isSessionRunning = false
+                Task { @MainActor in
+                    self?.isSessionRunning = false
+                }
                 continuation.resume()
             }
         }
@@ -150,7 +154,7 @@ class CameraService: CameraServiceProtocol {
     // MARK: - Photo Capture
     
     func capturePhoto(settings: PhotoCaptureSettings) async throws -> Data {
-        guard let session = captureSession, isSessionRunning else {
+        guard captureSession != nil, isSessionRunning else {
             throw CameraServiceError.sessionNotRunning
         }
         

@@ -146,27 +146,22 @@ class SessionViewModel: ObservableObject {
         isLoading = true
         errorMessage = nil
         
-        do {
-            // Start enhanced photo session
-            await photoSessionManager.startNewSession(
-                vehicleMake: vehicleIdentifier,
-                vehicleModel: "Vehicle",
-                sessionType: .standard
-            )
-            
-            isSessionActive = true
-            self.vehicleIdentifier = vehicleIdentifier
-            self.totalAngles = totalAngles
-            capturedPhotos = []
-            currentAngle = .front
-            sessionProgress = 0.0
-            
-            // Set the first angle as target for camera
-            cameraViewModel.setTargetAngle(currentAngle)
-            
-        } catch {
-            errorMessage = error.localizedDescription
-        }
+        // Start enhanced photo session
+        await photoSessionManager.startNewSession(
+            vehicleMake: vehicleIdentifier,
+            vehicleModel: "Vehicle",
+            sessionType: .standard
+        )
+        
+        isSessionActive = true
+        self.vehicleIdentifier = vehicleIdentifier
+        self.totalAngles = totalAngles
+        capturedPhotos = []
+        currentAngle = .front
+        sessionProgress = 0.0
+        
+        // Set the first angle as target for camera
+        cameraViewModel.setTargetAngle(currentAngle)
         
         isLoading = false
     }
@@ -226,7 +221,7 @@ class SessionViewModel: ObservableObject {
     }
     
     func completeSession() async {
-        guard let session = currentSession else {
+        guard currentSession != nil else {
             errorMessage = "No active session to complete"
             return
         }
@@ -244,7 +239,7 @@ class SessionViewModel: ObservableObject {
     }
     
     func cancelSession() async {
-        guard let session = currentSession else {
+        guard currentSession != nil else {
             errorMessage = "No active session to cancel"
             return
         }
@@ -281,7 +276,7 @@ class SessionViewModel: ObservableObject {
             
             // Save photo to session
             let vehiclePhoto = try await sessionManager.manualCapture(
-                sessionId: currentSession?.id ?? UUID(),
+                sessionId: UUID(uuidString: currentSession?.id ?? UUID().uuidString)!,
                 angle: currentAngle.rawValue,
                 imageData: imageData
             )
@@ -327,7 +322,7 @@ class SessionViewModel: ObservableObject {
     // MARK: - Session History
     func loadSessionHistory() async {
         do {
-            let sessions = try await sessionManager.getAllSessions()
+            let _ = try await sessionManager.getAllSessions()
             // This would be used to display session history
             // For now, we'll just handle the current session
         } catch {

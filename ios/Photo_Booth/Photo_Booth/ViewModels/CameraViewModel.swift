@@ -193,21 +193,13 @@ class CameraViewModel: ObservableObject {
         } else {
             // Fallback to original ModelManager approach
             Task {
-                do {
-                    let (angle, confidence) = try await modelManager.classifyVehicleAngle(from: image)
-                    
-                    await MainActor.run {
-                        self.currentAngle = self.convertToPhotoAngleType(angle)
-                        self.detectionConfidence = confidence
-                        self.isDetecting = confidence > self.configurationService.confidenceThreshold
-                        self.isProcessingFrame = false
-                    }
-                    
-                } catch {
-                    await MainActor.run {
-                        self.errorMessage = error.localizedDescription
-                        self.isProcessingFrame = false
-                    }
+                let (angle, confidence) = await modelManager.classifyVehicleAngle(from: image)
+                
+                await MainActor.run {
+                    self.currentAngle = self.convertToPhotoAngleType(angle)
+                    self.detectionConfidence = confidence
+                    self.isDetecting = confidence > self.configurationService.confidenceThreshold
+                    self.isProcessingFrame = false
                 }
             }
         }

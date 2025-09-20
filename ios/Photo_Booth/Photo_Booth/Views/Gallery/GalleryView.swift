@@ -168,7 +168,7 @@ struct GalleryView: View {
 
 struct PhotoGridView: View {
     let photos: [VehiclePhoto]
-    @Binding var selectedPhotos: Set<UUID>
+    @Binding var selectedPhotos: Set<String>
     @Binding var isSelectionMode: Bool
     let onPhotoSelected: (VehiclePhoto) -> Void
     @EnvironmentObject var galleryViewModel: GalleryViewModel
@@ -185,7 +185,7 @@ struct PhotoGridView: View {
                 ForEach(photos, id: \.id) { photo in
                     PhotoGridItem(
                         photo: photo,
-                        isSelected: selectedPhotos.contains(photo.id ?? UUID()),
+                        isSelected: selectedPhotos.contains(photo.id ?? ""),
                         isSelectionMode: isSelectionMode,
                         onTap: {
                             if isSelectionMode {
@@ -204,7 +204,7 @@ struct PhotoGridView: View {
 
 struct PhotoListView: View {
     let photos: [VehiclePhoto]
-    @Binding var selectedPhotos: Set<UUID>
+    @Binding var selectedPhotos: Set<String>
     @Binding var isSelectionMode: Bool
     let onPhotoSelected: (VehiclePhoto) -> Void
     @EnvironmentObject var galleryViewModel: GalleryViewModel
@@ -214,7 +214,7 @@ struct PhotoListView: View {
             ForEach(photos, id: \.id) { photo in
                 PhotoListItem(
                     photo: photo,
-                    isSelected: selectedPhotos.contains(photo.id ?? UUID()),
+                    isSelected: selectedPhotos.contains(photo.id ?? ""),
                     isSelectionMode: isSelectionMode,
                     onTap: {
                         if isSelectionMode {
@@ -441,7 +441,7 @@ struct PhotoDetailView: View {
                     
                     if let session = photo.session {
                         DetailRow(title: "Vehicle", value: session.vehicleIdentifier ?? "Unknown Vehicle")
-                        DetailRow(title: "Session", value: (session.id?.uuidString.prefix(8) ?? "Unknown") + "...")
+                        DetailRow(title: "Session", value: (session.id?.prefix(8) ?? "Unknown") + "...")
                     }
                 }
                 .padding()

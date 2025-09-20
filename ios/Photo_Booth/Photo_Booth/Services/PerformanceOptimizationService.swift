@@ -209,12 +209,12 @@ class PerformanceOptimizationService {
             for photo in photos {
                 group.addTask {
                     do {
-                        let imageData = try await self.storageService.getPhotoData(id: photo.id!)
+                        let imageData = try await self.storageService.getPhotoData(id: UUID(uuidString: photo.id!)!)
                         if let image = UIImage(data: imageData) {
-                            self.setCachedImage(image, for: photo.id!)
+                            self.setCachedImage(image, for: UUID(uuidString: photo.id!)!)
                         }
                     } catch {
-                        print("Failed to preload image for photo \(photo.id?.uuidString ?? "unknown"): \(error)")
+                        print("Failed to preload image for photo \(photo.id ?? "unknown"): \(error)")
                     }
                 }
             }

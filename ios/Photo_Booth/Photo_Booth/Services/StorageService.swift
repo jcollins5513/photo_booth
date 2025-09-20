@@ -2,7 +2,7 @@ import Foundation
 import CoreData
 
 /// Storage service implementation
-class StorageService: StorageServiceProtocol {
+class StorageService: @unchecked Sendable, StorageServiceProtocol {
     
     // MARK: - Properties
     
@@ -49,7 +49,7 @@ class StorageService: StorageServiceProtocol {
                     } else {
                         // Create new session
                         let session = PhotoSession(context: context)
-                        session.id = id
+                        session.id = id.uuidString
                         session.vehicleIdentifier = vehicleIdentifier
                         session.startDate = startDate
                         session.status = status
@@ -165,7 +165,7 @@ class StorageService: StorageServiceProtocol {
                     
                     // Create vehicle photo entity
                     let photo = VehiclePhoto(context: context)
-                    photo.id = id
+                    photo.id = id.uuidString
                     photo.session = session
                     photo.angleType = angle
                     photo.filePath = filePath
@@ -242,8 +242,8 @@ class StorageService: StorageServiceProtocol {
                     for photo in photos {
                         // Delete file from file system
                         if let filePath = photo.filePath {
-                            Task {
-                                try? await self.fileSystemManager.deleteImage(filePath: filePath)
+                            Task { [weak self] in
+                                try? await self?.fileSystemManager.deleteImage(filePath: filePath)
                             }
                         }
                         context.delete(photo)
@@ -277,8 +277,8 @@ class StorageService: StorageServiceProtocol {
                     
                     // Delete file from file system
                     if let filePath = photo.filePath {
-                        Task {
-                            try? await self.fileSystemManager.deleteImage(filePath: filePath)
+                        Task { [weak self] in
+                            try? await self?.fileSystemManager.deleteImage(filePath: filePath)
                         }
                     }
                     

@@ -73,7 +73,8 @@ Build an Automated Vehicle Photo Booth system that allows users to capture compr
 - User interface is intuitive for non-technical users
 
 ## Technical Constraints
-- iOS native development (Swift/SwiftUI)
+- iOS 26.0+ native development (Swift/SwiftUI) optimized for iPhone 17
 - On-device processing for privacy and offline capability
-- Support for iPhone camera hardware
+- Support for iPhone 17 camera hardware and Neural Engine
 - Local storage with optional cloud sync capability
+- Real-time vision processing leveraging iPhone 17's enhanced Neural Engine

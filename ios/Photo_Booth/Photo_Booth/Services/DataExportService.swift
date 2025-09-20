@@ -40,13 +40,13 @@ class DataExportService {
     
     private func exportSessionAsZIP(session: PhotoSession, photos: [VehiclePhoto]) async throws -> URL {
         let exportDir = fileSystemManager.getExportDirectory()
-        let sessionDir = exportDir.appendingPathComponent("\(session.id?.uuidString ?? "unknown")_\(Date().timeIntervalSince1970)")
+        let sessionDir = exportDir.appendingPathComponent("\(session.id ?? "unknown")_\(Date().timeIntervalSince1970)")
         
         try FileManager.default.createDirectory(at: sessionDir, withIntermediateDirectories: true)
         
         // Create session info file
         let sessionInfo = SessionExportInfo(
-            id: session.id?.uuidString ?? "",
+            id: session.id ?? "",
             vehicleIdentifier: session.vehicleIdentifier ?? "",
             startDate: session.startDate ?? Date(),
             status: session.status ?? "",
@@ -63,8 +63,8 @@ class DataExportService {
             guard let photoId = photo.id,
                   let angle = photo.angleType else { continue }
             
-            let photoData = try await storageService.getPhotoData(id: photoId)
-            let photoURL = sessionDir.appendingPathComponent("\(angle)_\(photoId.uuidString).jpg")
+            let photoData = try await storageService.getPhotoData(id: UUID(uuidString: photoId) ?? UUID())
+            let photoURL = sessionDir.appendingPathComponent("\(angle)_\(photoId).jpg")
             try photoData.write(to: photoURL)
         }
         
@@ -83,7 +83,7 @@ class DataExportService {
         
         // Session data
         exportData["session"] = [
-            "id": session.id?.uuidString ?? "",
+            "id": session.id ?? "",
             "vehicleIdentifier": session.vehicleIdentifier ?? "",
             "startDate": ISO8601DateFormatter().string(from: session.startDate ?? Date()),
             "status": session.status ?? "",
@@ -96,11 +96,11 @@ class DataExportService {
         for photo in photos {
             guard let photoId = photo.id else { continue }
             
-            let photoData = try await storageService.getPhotoData(id: photoId)
+            let photoData = try await storageService.getPhotoData(id: UUID(uuidString: photoId) ?? UUID())
             let base64String = photoData.base64EncodedString()
             
             var photoInfo: [String: Any] = [
-                "id": photoId.uuidString,
+                "id": photoId,
                 "angle": photo.angleType ?? "",
                 "timestamp": ISO8601DateFormatter().string(from: photo.captureDate ?? Date()),
                 "imageData": base64String
@@ -109,15 +109,15 @@ class DataExportService {
             // Add metadata if available
             do {
                 let exifData = try await metadataService.extractEXIFData(from: photoData)
-                photoInfo["exif"] = [
-                    "width": exifData.width ?? 0,
-                    "height": exifData.height ?? 0,
-                    "cameraMake": exifData.cameraMake ?? "",
-                    "cameraModel": exifData.cameraModel ?? "",
-                    "exposureTime": exifData.exposureTime ?? 0,
-                    "fNumber": exifData.fNumber ?? 0,
-                    "iso": exifData.iso ?? 0
-                ]
+                var exifDict: [String: Any] = [:]
+                exifDict["width"] = exifData.width ?? 0
+                exifDict["height"] = exifData.height ?? 0
+                exifDict["cameraMake"] = exifData.cameraMake ?? ""
+                exifDict["cameraModel"] = exifData.cameraModel ?? ""
+                exifDict["exposureTime"] = exifData.exposureTime ?? 0
+                exifDict["fNumber"] = exifData.fNumber ?? 0
+                exifDict["iso"] = exifData.iso ?? 0
+                photoInfo["exif"] = exifDict
             } catch {
                 // Continue without metadata if extraction fails
             }
@@ -139,17 +139,17 @@ class DataExportService {
         let fileURL = exportDir.appendingPathComponent(fileName)
         
         var csvContent = "Session ID,Vehicle ID,Start Date,Status,Total Angles,Completed Angles\n"
-        csvContent += "\(session.id?.uuidString ?? ""),\(session.vehicleIdentifier ?? ""),\(ISO8601DateFormatter().string(from: session.startDate ?? Date())),\(session.status ?? ""),\(session.totalAngles),\(session.completedAngles)\n\n"
+        csvContent += "\(session.id ?? ""),\(session.vehicleIdentifier ?? ""),\(ISO8601DateFormatter().string(from: session.startDate ?? Date())),\(session.status ?? ""),\(session.totalAngles),\(session.completedAngles)\n\n"
         
         csvContent += "Photo ID,Angle,Timestamp,File Size (bytes),Width,Height,Camera Make,Camera Model,Exposure Time,F Number,ISO\n"
         
         for photo in photos {
             guard let photoId = photo.id else { continue }
             
-            let photoData = try await storageService.getPhotoData(id: photoId)
+            let photoData = try await storageService.getPhotoData(id: UUID(uuidString: photoId) ?? UUID())
             let fileSize = photoData.count
             
-            var photoRow = "\(photoId.uuidString),\(photo.angleType ?? ""),\(ISO8601DateFormatter().string(from: photo.captureDate ?? Date())),\(fileSize)"
+            var photoRow = "\(photoId),\(photo.angleType ?? ""),\(ISO8601DateFormatter().string(from: photo.captureDate ?? Date())),\(fileSize)"
             
             // Add EXIF data if available
             do {

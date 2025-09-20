@@ -132,7 +132,7 @@ class AuthenticationViewModel: ObservableObject {
                 if isAuth {
                     // Get current user info if authenticated
                     Task {
-                        if let user = try? await authenticationService.getCurrentUser() {
+                        if let user = authenticationService.getCurrentUser() {
                             await MainActor.run {
                                 self.userEmail = user.email
                             }

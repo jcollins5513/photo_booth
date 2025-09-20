@@ -191,7 +191,7 @@ class ImageProcessor {
         guard let cgImage = image.cgImage else { return 0.0 }
         
         // Simplified contrast calculation
-        let context = CIContext()
+        let _ = CIContext()
         let ciImage = CIImage(cgImage: cgImage)
         
         // Calculate standard deviation of pixel intensities as contrast measure
@@ -199,7 +199,7 @@ class ImageProcessor {
         filter?.setValue(ciImage, forKey: kCIInputImageKey)
         filter?.setValue(2.0, forKey: kCIInputContrastKey)
         
-        guard let outputImage = filter?.outputImage else { return 0.0 }
+        guard filter?.outputImage != nil else { return 0.0 }
         
         // This is a simplified implementation
         // In production, you'd calculate actual standard deviation

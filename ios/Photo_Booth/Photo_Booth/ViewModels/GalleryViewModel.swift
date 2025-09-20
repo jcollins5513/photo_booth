@@ -6,7 +6,7 @@ class GalleryViewModel: ObservableObject {
     // MARK: - Published Properties
     @Published var photos: [VehiclePhoto] = []
     @Published var sessions: [PhotoSession] = []
-    @Published var selectedPhotos: Set<UUID> = []
+    @Published var selectedPhotos: Set<String> = []
     @Published var isLoading = false
     @Published var errorMessage: String?
     @Published var searchText = ""
@@ -146,7 +146,7 @@ class GalleryViewModel: ObservableObject {
         guard let photoId = photo.id else { return }
         
         do {
-            try await storageService.deletePhoto(id: photoId)
+            try await storageService.deletePhoto(id: UUID(uuidString: photoId)!)
             await MainActor.run {
                 self.photos.removeAll { $0.id == photoId }
                 self.selectedPhotos.remove(photoId)
@@ -175,7 +175,7 @@ class GalleryViewModel: ObservableObject {
         guard let photoId = photo.id else { return nil }
         
         do {
-            return try await storageService.getPhotoData(id: photoId)
+            return try await storageService.getPhotoData(id: UUID(uuidString: photoId)!)
         } catch {
             await MainActor.run {
                 self.errorMessage = error.localizedDescription
@@ -254,11 +254,11 @@ class GalleryViewModel: ObservableObject {
             let sessionPhotos = photos.filter { $0.session?.id == sessionId }
             for photo in sessionPhotos {
                 guard let photoId = photo.id else { continue }
-                try await storageService.deletePhoto(id: photoId)
+                try await storageService.deletePhoto(id: UUID(uuidString: photoId)!)
             }
             
             // Then delete the session
-            try await sessionManager.cancelSession(id: sessionId)
+            _ = try await sessionManager.cancelSession(id: UUID(uuidString: sessionId)!)
             
             await MainActor.run {
                 self.photos.removeAll { $0.session?.id == sessionId }

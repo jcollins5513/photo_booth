@@ -136,3 +136,5 @@ photo_booth/
 - **2024-12-19**: Added VehicleAngleClassifier CoreML model and project files to Resources/
 - **2024-12-19**: Integrated CoreML model into ModelManager with real classification functionality
 - **2024-12-19**: Updated VisionService to use actual CoreML model instead of mock implementation
+- **2024-12-19**: Updated project configuration for iOS 26.0 and iPhone 17 optimization
+- **2024-12-19**: Updated constitution and specification files to reflect iOS 26 and iPhone 17 target platform

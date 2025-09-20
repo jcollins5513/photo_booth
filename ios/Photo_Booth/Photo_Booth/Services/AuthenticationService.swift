@@ -164,7 +164,7 @@ class AuthenticationService: AuthenticationServiceProtocol {
     // MARK: - Account Management
     
     func deleteAccount() async throws {
-        guard let user = currentUser, isSignedIn else {
+        guard currentUser != nil, isSignedIn else {
             throw AuthenticationServiceError.notSignedIn
         }
         

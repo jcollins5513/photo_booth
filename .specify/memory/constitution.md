@@ -1,50 +1,40 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+# Photo Booth Project Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. iOS-First Architecture
+Every feature is designed for iOS 26 and iPhone 17 as the primary target platform. The app leverages the latest iOS capabilities including advanced CoreML models, enhanced Vision framework, and iPhone 17's improved Neural Engine for real-time vehicle detection and photo capture.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Real-Time Computer Vision
+The system prioritizes real-time vehicle position detection using on-device CoreML models optimized for iPhone 17's Neural Engine. All vision processing must maintain 5-10 FPS performance with sub-second photo capture response times.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Test-First Development (NON-NEGOTIABLE)
+TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced. All camera functionality, CoreML model integration, and photo capture workflows must have comprehensive test coverage.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Offline-First Design
+Core functionality must work without internet connection. Photo sessions, vehicle detection, and local storage are fully offline-capable. Only authentication and optional cloud sync require network connectivity.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. User Experience Excellence
+The app provides intuitive visual guidance for vehicle positioning, clear feedback for photo capture success, and seamless session management. All interactions are optimized for single-handed use while driving.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## Technology Stack Requirements
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+**Platform**: iOS 26.0+ (iPhone 17 optimized)  
+**Language**: Swift 5.9+  
+**Frameworks**: SwiftUI, AVFoundation, Vision, CoreML, Firebase Auth  
+**Storage**: Core Data (metadata), File System (photos)  
+**Testing**: XCTest, XCUITest  
+**Performance**: Real-time vision processing, <1 second photo capture  
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+## Development Workflow
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+**Constitution Compliance**: All code changes must pass constitution checks before merge  
+**Testing Gates**: 100% test coverage for camera and vision functionality  
+**Performance Validation**: Real-time processing benchmarks must be maintained  
+**Code Review**: All PRs must verify iOS 26 compatibility and iPhone 17 optimization  
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+Constitution supersedes all other practices. Amendments require documentation, approval, and migration plan. All development must align with iOS 26 capabilities and iPhone 17 hardware optimization.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2024-12-19 | **Last Amended**: 2024-12-19

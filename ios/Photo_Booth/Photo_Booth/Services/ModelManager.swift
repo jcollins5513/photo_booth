@@ -119,23 +119,18 @@ class ModelManager: ObservableObject {
         
         let startTime = CFAbsoluteTimeGetCurrent()
         
-        do {
-            // In production, this would use the actual Vision framework classification
-            let result = await performClassification(image: image)
-            
-            let inferenceTime = CFAbsoluteTimeGetCurrent() - startTime
-            lastInferenceTime = inferenceTime
-            
-            return result
-        } catch {
-            print("❌ ModelManager: Classification failed - \(error.localizedDescription)")
-            return (nil, 0.0)
-        }
+        // In production, this would use the actual Vision framework classification
+        let result = await performClassification(image: image)
+        
+        let inferenceTime = CFAbsoluteTimeGetCurrent() - startTime
+        lastInferenceTime = inferenceTime
+        
+        return result
     }
     
     private func performClassification(image: UIImage) async -> (angle: VehicleAngle?, confidence: Float) {
-        guard let visionModel = visionModel,
-              let request = classificationRequest else {
+        guard visionModel != nil,
+              classificationRequest != nil else {
             print("❌ ModelManager: Vision model or request not available")
             return (nil, 0.0)
         }

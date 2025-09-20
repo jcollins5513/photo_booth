@@ -61,7 +61,7 @@ class SessionManager: SessionManagerProtocol {
         )
         
         // Clear current session if it's the same
-        if currentSession?.id == id {
+        if currentSession?.id == id.uuidString {
             currentSession = nil
         }
         
@@ -70,7 +70,7 @@ class SessionManager: SessionManagerProtocol {
     
     func cancelSession(id: UUID) async throws -> PhotoSession {
         // Get the session
-        guard let session = try await storageService.getPhotoSession(id: id) else {
+        guard try await storageService.getPhotoSession(id: id) != nil else {
             throw SessionManagerError.sessionNotFound
         }
         
@@ -82,7 +82,7 @@ class SessionManager: SessionManagerProtocol {
         )
         
         // Clear current session if it's the same
-        if currentSession?.id == id {
+        if currentSession?.id == id.uuidString {
             currentSession = nil
         }
         

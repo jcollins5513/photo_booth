@@ -88,7 +88,7 @@ class DataAnalyticsService {
         guard !completedSessions.isEmpty else { return 0 }
         
         var totalDuration: TimeInterval = 0
-        for session in completedSessions {
+        for _ in completedSessions {
             // This would need to be calculated based on session start/end times
             // For now, we'll use a placeholder
             totalDuration += 300 // 5 minutes placeholder
@@ -279,7 +279,7 @@ class DataAnalyticsService {
             completedAngles: Int(session.completedAngles),
             photos: photos.map { photo in
                 PhotoReportData(
-                    id: photo.id?.uuidString ?? "",
+                    id: photo.id ?? "",
                     angle: photo.angleType ?? "",
                     timestamp: photo.captureDate ?? Date(),
                     fileSize: 0 // This would need to be calculated

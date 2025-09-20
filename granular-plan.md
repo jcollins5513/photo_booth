@@ -83,10 +83,11 @@ Implementing comprehensive testing strategies and quality assurance measures to 
   - Test different device sizes and orientations
 
 - [ ] **TQ4.3**: Conduct manual testing procedures
-  - Test app functionality on different iOS versions
-  - Test on various device models and screen sizes
+  - Test app functionality on iOS 26.0+ (primary target)
+  - Test on iPhone 17 and other compatible device models
   - Test with different lighting conditions
   - Test with various vehicle types and sizes
+  - Test Neural Engine performance optimization on iPhone 17
 
 ### Security Testing
 - [ ] **TQ5.1**: Test data security and encryption

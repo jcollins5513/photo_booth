@@ -1,6 +1,7 @@
 import Foundation
 import UIKit
 import Combine
+import CoreData
 
 /// Manages complete photo session lifecycle and workflow
 @MainActor
@@ -53,13 +54,13 @@ class PhotoSessionManager: ObservableObject {
             .assign(to: &$currentAngle)
         
         autoCaptureManager.$isCapturing
-            .sink { [weak self] isCapturing in
+            .sink { [weak self] (isCapturing: Bool) in
                 self?.updateSessionState()
             }
             .store(in: &cancellables)
         
         autoCaptureManager.$captureStatus
-            .sink { [weak self] status in
+            .sink { [weak self] (status: AutoCaptureManager.CaptureStatus) in
                 self?.updateSessionState()
             }
             .store(in: &cancellables)
@@ -79,33 +80,39 @@ class PhotoSessionManager: ObservableObject {
         vehicleYear: Int? = nil,
         sessionType: SessionType = .standard
     ) async {
-        // Create new session
-        let session = PhotoSession()
-        session.id = UUID()
-        session.vehicleMake = vehicleMake
-        session.vehicleModel = vehicleModel
-        session.vehicleYear = Int16(vehicleYear ?? 0)
-        session.sessionType = sessionType.rawValue
-        session.createdDate = Date()
-        session.isCompleted = false
+        do {
+            // Create new session using storage service
+            let sessionId = UUID()
+            let session = try await storageService.savePhotoSession(
+                id: sessionId,
+                vehicleIdentifier: "\(vehicleMake) \(vehicleModel)",
+                startDate: Date(),
+                status: "active",
+                totalAngles: 8,
+                completedAngles: 0
+            )
         
-        // Start auto-capture session
-        await autoCaptureManager.startAutoCaptureSession(session)
-        
-        // Update local state
-        currentSession = session
-        sessionState = .active
-        isSessionActive = true
-        sessionStartTime = Date()
-        capturedPhotos.removeAll()
-        qualityIssues.removeAll()
-        
-        // Initialize statistics
-        sessionStatistics = SessionStatistics()
-        sessionStatistics.sessionId = session.id
-        sessionStatistics.startTime = Date()
-        
-        print("🚀 PhotoSessionManager: Started new session for \(vehicleMake) \(vehicleModel)")
+            // Start auto-capture session
+            await autoCaptureManager.startAutoCaptureSession(session)
+            
+            // Update local state
+            currentSession = session
+            sessionState = .active
+            isSessionActive = true
+            sessionStartTime = Date()
+            capturedPhotos.removeAll()
+            qualityIssues.removeAll()
+            
+            // Initialize statistics
+            sessionStatistics = SessionStatistics()
+            sessionStatistics.sessionId = UUID(uuidString: session.id ?? "")
+            sessionStatistics.startTime = Date()
+            
+            print("🚀 PhotoSessionManager: Started new session for \(vehicleMake) \(vehicleModel)")
+        } catch {
+            print("❌ PhotoSessionManager: Failed to create session - \(error.localizedDescription)")
+            sessionState = .idle
+        }
     }
     
     /// Pauses the current session
@@ -224,13 +231,13 @@ class PhotoSessionManager: ObservableObject {
     private func updateSessionState() {
         if autoCaptureManager.isCapturing {
             sessionState = .capturing
-        } else if autoCaptureManager.captureStatus == .positioning {
+        } else if autoCaptureManager.captureStatus == AutoCaptureManager.CaptureStatus.positioning {
             sessionState = .positioning
-        } else if autoCaptureManager.captureStatus == .ready {
+        } else if autoCaptureManager.captureStatus == AutoCaptureManager.CaptureStatus.ready {
             sessionState = .ready
-        } else if autoCaptureManager.captureStatus == .completed {
+        } else if autoCaptureManager.captureStatus == AutoCaptureManager.CaptureStatus.completed {
             sessionState = .completed
-        } else if autoCaptureManager.captureStatus == .paused {
+        } else if autoCaptureManager.captureStatus == AutoCaptureManager.CaptureStatus.paused {
             sessionState = .paused
         }
     }
@@ -296,7 +303,7 @@ class PhotoSessionManager: ObservableObject {
         var exportData: [String: Any] = [:]
         
         if let session = currentSession {
-            exportData["sessionId"] = session.id?.uuidString
+            exportData["sessionId"] = session.id
             exportData["vehicleMake"] = session.vehicleMake
             exportData["vehicleModel"] = session.vehicleModel
             exportData["vehicleYear"] = session.vehicleYear

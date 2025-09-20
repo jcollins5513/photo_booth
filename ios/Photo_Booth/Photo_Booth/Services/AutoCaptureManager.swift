@@ -153,7 +153,7 @@ class AutoCaptureManager: ObservableObject {
     // MARK: - Position Detection and Capture
     
     private func handlePositionChange(isValid: Bool) {
-        guard isAutoCaptureEnabled, let currentAngle = currentAngle else { return }
+        guard isAutoCaptureEnabled, currentAngle != nil else { return }
         
         if isValid {
             // Position is valid, start stability timer
