@@ -242,8 +242,9 @@ class StorageService: @unchecked Sendable, StorageServiceProtocol {
                     for photo in photos {
                         // Delete file from file system
                         if let filePath = photo.filePath {
-                            Task { [weak self] in
-                                try? await self?.fileSystemManager.deleteImage(filePath: filePath)
+                            let fileSystemManager = self.fileSystemManager
+                            Task {
+                                try? await fileSystemManager.deleteImage(filePath: filePath)
                             }
                         }
                         context.delete(photo)
@@ -277,8 +278,9 @@ class StorageService: @unchecked Sendable, StorageServiceProtocol {
                     
                     // Delete file from file system
                     if let filePath = photo.filePath {
-                        Task { [weak self] in
-                            try? await self?.fileSystemManager.deleteImage(filePath: filePath)
+                        let fileSystemManager = self.fileSystemManager
+                        Task {
+                            try? await fileSystemManager.deleteImage(filePath: filePath)
                         }
                     }
                     

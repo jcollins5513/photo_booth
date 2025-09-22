@@ -199,6 +199,11 @@ class CameraViewModel: ObservableObject {
             isReadyForCapture = visionService.isReadyForCapture()
             qualityFeedback = visionService.getQualityFeedback()
             isDetecting = detectionConfidence > configurationService.confidenceThreshold
+            
+            // Reset processing flag after a short delay to allow continuous processing
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                self.isProcessingFrame = false
+            }
         } else {
             // Fallback to original ModelManager approach
             Task {

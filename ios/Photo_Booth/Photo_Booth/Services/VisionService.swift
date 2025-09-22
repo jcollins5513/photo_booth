@@ -97,16 +97,16 @@ class VisionService: VisionServiceProtocol, ObservableObject {
                     if let angle = result.angle {
                         self.currentAngle = angle.displayName
                         self.confidence = result.confidence
-                        // For sequential capture, validate that we have a proper vehicle view
-                        // Check confidence and ensure it's not detecting non-vehicle objects
-                        let isValidVehicleView = result.confidence > 0.7 && isValidVehicleAngle(angle, confidence: result.confidence)
+                        // For sequential capture, we just need a stable vehicle view with good confidence
+                        // Don't require specific angle matching - just ensure it's a valid vehicle detection
+                        let isValidVehicleView = result.confidence > 0.5 && isValidVehicleAngle(angle, confidence: result.confidence)
                         self.isPositionValid = isValidVehicleView
                         print("✅ VisionService: Detected angle: \(angle.displayName) with confidence: \(result.confidence) - Position valid: \(self.isPositionValid)")
                     } else {
                         self.currentAngle = "Unknown"
                         self.confidence = result.confidence
                         // Even if we can't classify the angle, if confidence is high enough, allow capture
-                        self.isPositionValid = result.confidence > 0.7
+                        self.isPositionValid = result.confidence > 0.5
                         print("⚠️ VisionService: Failed to classify angle - result was nil, but confidence is \(result.confidence) - Position valid: \(self.isPositionValid)")
                     }
                     
@@ -216,7 +216,8 @@ class VisionService: VisionServiceProtocol, ObservableObject {
             if let frame = frameProvider.getCurrentFrame() {
                 do {
                     let angle = try await classifyVehicleAngle(from: frame)
-                    let confidence: Float = 0.85 // Mock confidence
+                    // Use the actual confidence from the model instead of mock value
+                    let confidence = self.confidence
                     handler(angle, confidence)
                 } catch {
                     // Handle classification error
@@ -258,6 +259,8 @@ class VisionService: VisionServiceProtocol, ObservableObject {
         guard currentTime - lastProcessingTime >= processingInterval else { return }
         lastProcessingTime = currentTime
         
+        print("🔍 VisionService: Processing camera frame - size: \(image.size)")
+        
         Task {
             await analyzeImage(image)
         }
@@ -291,11 +294,19 @@ class VisionService: VisionServiceProtocol, ObservableObject {
             if let angle = result.angle {
                 self.currentAngle = angle.displayName
                 self.confidence = result.confidence
-                self.isPositionValid = modelManager.shouldTriggerCapture(for: angle, confidence: result.confidence)
+                
+                // Use our enhanced validation logic with image quality check
+                let isValidVehicleView = result.confidence > 0.7 && 
+                                       isValidVehicleAngle(angle, confidence: result.confidence) &&
+                                       qualityAssessment.score > 0.2 // Require minimum image quality
+                
+                self.isPositionValid = isValidVehicleView
+                print("✅ VisionService: Detected angle: \(angle.displayName) with confidence: \(result.confidence), quality: \(qualityAssessment.score) - Position valid: \(self.isPositionValid)")
             } else {
                 self.currentAngle = "Unknown"
                 self.confidence = 0.0
                 self.isPositionValid = false
+                print("⚠️ VisionService: No angle detected - Position valid: false")
             }
             
             // Update quality metrics
@@ -381,9 +392,8 @@ class VisionService: VisionServiceProtocol, ObservableObject {
     ///   - confidence: The confidence score for the detection
     /// - Returns: True if the angle represents a valid vehicle view
     private func isValidVehicleAngle(_ angle: ModelManager.VehicleAngle, confidence: Float) -> Bool {
-        // Additional validation to prevent false positives
-        // Check for minimum confidence thresholds per angle type
-        let minimumConfidence: Float = 0.6
+        // More strict validation to prevent false positives
+        let minimumConfidence: Float = 0.8
         
         // Ensure confidence is above minimum threshold
         guard confidence >= minimumConfidence else {
@@ -391,8 +401,17 @@ class VisionService: VisionServiceProtocol, ObservableObject {
             return false
         }
         
-        // Additional checks could be added here for specific angle validation
-        // For example, checking image quality, aspect ratios, etc.
+        // Additional validation: Check if this looks like a real vehicle detection
+        // Very high confidence (>0.9) on non-vehicle objects often indicates the model
+        // is overconfident on wrong predictions
+        
+        // If confidence is extremely high (>0.95), be more suspicious
+        // This often happens when the model is very confident about wrong predictions
+        if confidence > 0.95 {
+            print("⚠️ VisionService: Extremely high confidence (\(confidence)) - might be false positive")
+            // For now, we'll still allow it, but in production you might want to add
+            // additional validation like checking image quality or using a secondary model
+        }
         
         return true
     }

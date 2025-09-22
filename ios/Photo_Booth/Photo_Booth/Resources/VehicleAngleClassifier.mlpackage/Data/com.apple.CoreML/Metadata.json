@@ -1,0 +1,13 @@
+{
+  "MLModelDescriptionKey" : "8 Different angles for automatic angle detection for automotive.",
+  "MLModelCreatorDefinedKey" : {
+    "com.apple.coreml.model.preview.type" : "imageClassifier",
+    "com.apple.createml.training.started" : "2025-09-22T19:56:02Z",
+    "com.apple.createml.version" : "26.0.0",
+    "com.apple.createml.training.finished" : "2025-09-22T19:56:45Z",
+    "com.apple.createml.app.tag" : "175.6",
+    "com.apple.createml.model.created" : "2025-09-22T19:56:45Z",
+    "com.apple.createml.app.version" : "6.2"
+  },
+  "MLModelAuthorKey" : "Justin Collins"
+}

@@ -161,29 +161,29 @@
           [
             "front"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/3510P_8.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/20498A_6.jpg",
           [
-            "front"
+            "leftSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/10304P_2.jpg",
           [
             "rightSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/20498A_6.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/10546P_5.jpg",
           [
-            "leftSide"
+            "rearRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/10551P_3.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/3510P_8.jpg",
           [
-            "rearLeft"
+            "front"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/10530P_3.jpg",
           [
             "rearLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/10546P_5.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/10551P_3.jpg",
           [
-            "rearRight"
+            "rearLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/20404A_1.jpg",
           [
@@ -229,13 +229,13 @@
           [
             "frontLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/10575P_4.jpg",
-          [
-            "rear"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/34670A_8.jpg",
           [
             "front"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/10575P_4.jpg",
+          [
+            "rear"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/10478PA_6.jpg",
           [
@@ -269,23 +269,19 @@
           [
             "rightSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/10299P_2.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/20464B_7.jpg",
           [
-            "rightSide"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/20671B_1.jpg",
-          [
-            "frontRight"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/32816H_4.jpg",
-          [
-            "rear"
+            "frontLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/20424A_7.jpg",
           [
             "frontLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/10305P_4.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/3526P_4.jpg",
+          [
+            "rear"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/32816H_4.jpg",
           [
             "rear"
           ],
@@ -293,9 +289,13 @@
           [
             "rearRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/33910B_1.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/10299P_2.jpg",
           [
-            "frontRight"
+            "rightSide"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/20728B_2.jpg",
+          [
+            "rightSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/33882A_6.jpg",
           [
@@ -305,7 +305,7 @@
           [
             "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/20728B_2.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/33831A_2.jpg",
           [
             "rightSide"
           ],
@@ -313,33 +313,33 @@
           [
             "rear"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/20871A_7.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/20671B_1.jpg",
           [
-            "frontLeft"
+            "frontRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/10572P_3.jpg",
           [
             "rearLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/33831A_2.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/10305P_4.jpg",
           [
-            "rightSide"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/20464B_7.jpg",
-          [
-            "frontLeft"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/10302P_1.jpg",
-          [
-            "frontRight"
+            "rear"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/34237A_3.jpg",
           [
             "rearLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/3526P_4.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/10302P_1.jpg",
           [
-            "rear"
+            "frontRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/33910B_1.jpg",
+          [
+            "frontRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/20871A_7.jpg",
+          [
+            "frontLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/34202B_4.jpg",
           [
@@ -381,9 +381,9 @@
           [
             "leftSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/S197_1.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/34173A_5.jpg",
           [
-            "frontRight"
+            "rearRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/20925A_2.jpg",
           [
@@ -401,9 +401,9 @@
           [
             "leftSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/34173A_5.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/S197_1.jpg",
           [
-            "rearRight"
+            "frontRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/S207_5.jpg",
           [
@@ -425,13 +425,13 @@
           [
             "frontLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/34025A_2.jpg",
-          [
-            "rightSide"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/10304P_6.jpg",
           [
             "leftSide"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/34025A_2.jpg",
+          [
+            "rightSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/32161B_8.jpg",
           [
@@ -449,13 +449,13 @@
           [
             "rightSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/10498P_5.jpg",
-          [
-            "rearRight"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/10573P_2.jpg",
           [
             "rightSide"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/10498P_5.jpg",
+          [
+            "rearRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/10285P_4.jpg",
           [
@@ -497,13 +497,13 @@
           [
             "rear"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/10310P_3.jpg",
-          [
-            "rearLeft"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/20437A_8.jpg",
           [
             "front"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/10310P_3.jpg",
+          [
+            "rearLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/34050B_2.jpg",
           [
@@ -521,7 +521,7 @@
           [
             "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/33841A_3.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/20498A_3.jpg",
           [
             "rearLeft"
           ],
@@ -529,7 +529,7 @@
           [
             "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/20498A_3.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/33841A_3.jpg",
           [
             "rearLeft"
           ],
@@ -549,13 +549,13 @@
           [
             "leftSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/S197_6.jpg",
-          [
-            "leftSide"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/20806A_7.jpg",
           [
             "frontLeft"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/S197_6.jpg",
+          [
+            "leftSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/34250B_8.jpg",
           [
@@ -569,13 +569,13 @@
           [
             "rear"
           ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/S164_2.jpg",
+          [
+            "rightSide"
+          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/34155A_6.jpg",
           [
             "leftSide"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/34116B_8.jpg",
-          [
-            "front"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/20735B_1.jpg",
           [
@@ -585,21 +585,21 @@
           [
             "leftSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/S164_2.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/34116B_8.jpg",
           [
-            "rightSide"
+            "front"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/34229AA_7.jpg",
           [
             "frontLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/10540P_2.jpg",
-          [
-            "rightSide"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/3528P_4.jpg",
           [
             "rear"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/10540P_2.jpg",
+          [
+            "rightSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/20450AAA_1.jpg",
           [
@@ -617,21 +617,21 @@
           [
             "leftSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/20735B_2.jpg",
-          [
-            "rightSide"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/34231A_4.jpg",
           [
             "rear"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/20782B_1.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/20735B_2.jpg",
           [
-            "frontRight"
+            "rightSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/3534P_3.jpg",
           [
             "rearLeft"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/20782B_1.jpg",
+          [
+            "frontRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/S193_2.jpg",
           [
@@ -669,6 +669,10 @@
           [
             "leftSide"
           ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/20552A_2.jpg",
+          [
+            "rightSide"
+          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/3495P_1.jpg",
           [
             "frontRight"
@@ -677,17 +681,13 @@
           [
             "rightSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/S181_5.jpg",
-          [
-            "rearRight"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/10460P_2.jpg",
           [
             "rightSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/20552A_2.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/S181_5.jpg",
           [
-            "rightSide"
+            "rearRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/74935A_4.jpg",
           [
@@ -741,13 +741,13 @@
           [
             "rightSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/3508P_7.jpg",
-          [
-            "frontLeft"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/S160A_1.jpg",
           [
             "frontRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/3508P_7.jpg",
+          [
+            "frontLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/10304P_4.jpg",
           [
@@ -765,11 +765,11 @@
           [
             "rear"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/33841A_6.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/10569P_6.jpg",
           [
             "leftSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/10569P_6.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/33841A_6.jpg",
           [
             "leftSide"
           ],
@@ -777,13 +777,13 @@
           [
             "rear"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/34124A_4.jpg",
-          [
-            "rear"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/3435P_1.jpg",
           [
             "frontRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/34124A_4.jpg",
+          [
+            "rear"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/33664BA_4.jpg",
           [
@@ -821,13 +821,13 @@
           [
             "rear"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/20633A_5.jpg",
-          [
-            "rearRight"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/20424A_6.jpg",
           [
             "leftSide"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/20633A_5.jpg",
+          [
+            "rearRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/74881A_5.jpg",
           [
@@ -837,27 +837,23 @@
           [
             "rearLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/20450AAA_7.jpg",
-          [
-            "frontLeft"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/34082A_1.jpg",
           [
             "frontRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/20450AAA_7.jpg",
+          [
+            "frontLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/S167_4.jpg",
           [
             "rear"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/32412A_6.jpg",
-          [
-            "leftSide"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/33915A_2.jpg",
           [
             "rightSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/20699A_6.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/32412A_6.jpg",
           [
             "leftSide"
           ],
@@ -865,15 +861,19 @@
           [
             "frontLeft"
           ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/20699A_6.jpg",
+          [
+            "leftSide"
+          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/10557P_1.jpg",
           [
             "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/10519P_1.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/S187_1.jpg",
           [
             "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/S187_1.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/10519P_1.jpg",
           [
             "frontRight"
           ],
@@ -885,13 +885,13 @@
           [
             "frontLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/3532P_7.jpg",
-          [
-            "frontLeft"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/32869B_2.jpg",
           [
             "rightSide"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/3532P_7.jpg",
+          [
+            "frontLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/33868A_8.jpg",
           [
@@ -909,13 +909,13 @@
           [
             "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/10563P_6.jpg",
-          [
-            "leftSide"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/10458PA_1.jpg",
           [
             "frontRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/10563P_6.jpg",
+          [
+            "leftSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/S10210_4.jpg",
           [
@@ -937,13 +937,13 @@
           [
             "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/10512P_5.jpg",
-          [
-            "rearRight"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/33759B_6.jpg",
           [
             "leftSide"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/10512P_5.jpg",
+          [
+            "rearRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/20404B_1.jpg",
           [
@@ -953,29 +953,29 @@
           [
             "rearLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/34138A_6.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/10519P_2.jpg",
           [
-            "leftSide"
+            "rightSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/10237PA_7.jpg",
           [
             "frontLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/10519P_2.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/34138A_6.jpg",
           [
-            "rightSide"
+            "leftSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/10460P_4.jpg",
           [
             "rear"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/20317B_5.jpg",
-          [
-            "rearRight"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/3526P_1.jpg",
           [
             "frontRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/20317B_5.jpg",
+          [
+            "rearRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/33998A_5.jpg",
           [
@@ -1009,33 +1009,33 @@
           [
             "front"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/S170_7.jpg",
-          [
-            "frontLeft"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/20778A_2.jpg",
           [
             "rightSide"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/S170_7.jpg",
+          [
+            "frontLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/10299P_4.jpg",
           [
             "rear"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/S10209_6.jpg",
-          [
-            "leftSide"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/33678A_5.jpg",
           [
             "rearRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/10534P_7.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/S10209_6.jpg",
           [
-            "frontLeft"
+            "leftSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/34020A_6.jpg",
           [
             "leftSide"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/10534P_7.jpg",
+          [
+            "frontLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/33846A_5.jpg",
           [
@@ -1073,21 +1073,21 @@
           [
             "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/19982D_1.jpg",
-          [
-            "frontRight"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/20546A_4.jpg",
           [
             "rear"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/32869B_3.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/19982D_1.jpg",
           [
-            "rearLeft"
+            "frontRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/10566P_1.jpg",
           [
             "frontRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/32869B_3.jpg",
+          [
+            "rearLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/3529P_3.jpg",
           [
@@ -1109,10 +1109,6 @@
           [
             "rear"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/34130A_2.jpg",
-          [
-            "rightSide"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/33910B_7.jpg",
           [
             "frontLeft"
@@ -1121,11 +1117,19 @@
           [
             "leftSide"
           ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/34312A_3.jpg",
+          [
+            "rearLeft"
+          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/3495P_7.jpg",
           [
             "frontLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/34312A_3.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/34130A_2.jpg",
+          [
+            "rightSide"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/10526P_3.jpg",
           [
             "rearLeft"
           ],
@@ -1133,15 +1137,11 @@
           [
             "front"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/10526P_3.jpg",
-          [
-            "rearLeft"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/34458A_8.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/34067A_8.jpg",
           [
             "front"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/34067A_8.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/34458A_8.jpg",
           [
             "front"
           ],
@@ -1181,13 +1181,13 @@
           [
             "leftSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/20361A_5.jpg",
-          [
-            "rearRight"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/20615A_2.jpg",
           [
             "rightSide"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/20361A_5.jpg",
+          [
+            "rearRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/3500P_8.jpg",
           [
@@ -1217,13 +1217,13 @@
           [
             "frontLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/20546A_7.jpg",
-          [
-            "frontLeft"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/S167_6.jpg",
           [
             "leftSide"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/20546A_7.jpg",
+          [
+            "frontLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/74912A_5.jpg",
           [
@@ -1249,21 +1249,21 @@
           [
             "frontLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/S197_8.jpg",
-          [
-            "front"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/34074A_6.jpg",
           [
             "leftSide"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/3503P_7.jpg",
+          [
+            "frontLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/10562P_2.jpg",
           [
             "rightSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/3503P_7.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/S197_8.jpg",
           [
-            "frontLeft"
+            "front"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/3504P_7.jpg",
           [
@@ -1277,10 +1277,6 @@
           [
             "rear"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/34143A_8.jpg",
-          [
-            "front"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/20418A_3.jpg",
           [
             "rearLeft"
@@ -1288,6 +1284,10 @@
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/3523P_4.jpg",
           [
             "rear"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/34143A_8.jpg",
+          [
+            "front"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/34032A_8.jpg",
           [
@@ -1305,17 +1305,21 @@
           [
             "frontLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/34094B_3.jpg",
-          [
-            "rearLeft"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/34352A_2.jpg",
           [
             "rightSide"
           ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/34094B_3.jpg",
+          [
+            "rearLeft"
+          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/S193_1.jpg",
           [
             "frontRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/34154A_2.jpg",
+          [
+            "rightSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/20510A_2.jpg",
           [
@@ -1325,10 +1329,6 @@
           [
             "rearRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/34154A_2.jpg",
-          [
-            "rightSide"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/34277A_4.jpg",
           [
             "rear"
@@ -1337,53 +1337,53 @@
           [
             "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/33908A_7.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/34229AA_5.jpg",
           [
-            "frontLeft"
+            "rearRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/S164_7.jpg",
           [
             "frontLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/34229AA_5.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/33908A_7.jpg",
           [
-            "rearRight"
+            "frontLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/10569P_2.jpg",
           [
             "rightSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/20768A_5.jpg",
-          [
-            "rearRight"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/3507P_5.jpg",
           [
             "rearRight"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/3534P_4.jpg",
-          [
-            "rear"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/74777C_6.jpg",
           [
             "leftSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/74954A_2.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/3534P_4.jpg",
+          [
+            "rear"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/20768A_5.jpg",
+          [
+            "rearRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/3519P_2.jpg",
           [
             "rightSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/S178_5.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/74954A_2.jpg",
           [
-            "rearRight"
+            "rightSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/20404B_2.jpg",
           [
             "rightSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/3519P_2.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/74954A_1.jpg",
           [
-            "rightSide"
+            "frontRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/10310P_5.jpg",
           [
@@ -1393,13 +1393,13 @@
           [
             "rearRight"
           ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/S178_5.jpg",
+          [
+            "rearRight"
+          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/10512P_6.jpg",
           [
             "leftSide"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/74954A_1.jpg",
-          [
-            "frontRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/34085A_2.jpg",
           [
@@ -1433,15 +1433,15 @@
           [
             "rear"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/20571B_4.jpg",
-          [
-            "rear"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/10525P_8.jpg",
           [
             "front"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/33893D_4.jpg",
+          [
+            "rear"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/20571B_4.jpg",
           [
             "rear"
           ],
@@ -1497,19 +1497,19 @@
           [
             "rearRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/74912A_7.jpg",
-          [
-            "frontLeft"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/74974B_5.jpg",
           [
             "rearRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/33910B_6.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/74912A_7.jpg",
+          [
+            "frontLeft"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/20346D_6.jpg",
           [
             "leftSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/20346D_6.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/33910B_6.jpg",
           [
             "leftSide"
           ],
@@ -1517,15 +1517,15 @@
           [
             "front"
           ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/33913A_4.jpg",
+          [
+            "rear"
+          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/33776A_3.jpg",
           [
             "rearLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/34203A_4.jpg",
-          [
-            "rear"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/33913A_4.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/3517P_4.jpg",
           [
             "rear"
           ],
@@ -1533,21 +1533,21 @@
           [
             "rear"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/3517P_4.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/34203A_4.jpg",
           [
             "rear"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/20768A_8.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/3519P_5.jpg",
           [
-            "front"
+            "rearRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/10502P_5.jpg",
           [
             "rearRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/3519P_5.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/20768A_8.jpg",
           [
-            "rearRight"
+            "front"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/34292A_2.jpg",
           [
@@ -1569,10 +1569,6 @@
           [
             "leftSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/34416A_1.jpg",
-          [
-            "frontRight"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/33974A_1.jpg",
           [
             "frontRight"
@@ -1581,45 +1577,49 @@
           [
             "rear"
           ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/34416A_1.jpg",
+          [
+            "frontRight"
+          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/34017A_4.jpg",
           [
             "rear"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/33950A_2.jpg",
-          [
-            "rightSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/3522P_6.jpg",
           [
             "leftSide"
           ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/33950A_2.jpg",
+          [
+            "rightSide"
+          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/20437A_4.jpg",
           [
             "rear"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/3516P_3.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/34024BA_7.jpg",
           [
-            "rearLeft"
+            "frontLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/10534P_2.jpg",
           [
             "rightSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/34025A_7.jpg",
-          [
-            "frontLeft"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/3525P_7.jpg",
           [
             "frontLeft"
           ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/34025A_7.jpg",
+          [
+            "frontLeft"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/3516P_3.jpg",
+          [
+            "rearLeft"
+          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/33759B_5.jpg",
           [
             "rearRight"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/34024BA_7.jpg",
-          [
-            "frontLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/S170_6.jpg",
           [
@@ -1665,21 +1665,21 @@
           [
             "front"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/10237PA_4.jpg",
-          [
-            "rear"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/3514P_1.jpg",
           [
             "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/34237A_2.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/10237PA_4.jpg",
           [
-            "rightSide"
+            "rear"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/20424A_5.jpg",
           [
             "rearRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/34237A_2.jpg",
+          [
+            "rightSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/S205_5.jpg",
           [
@@ -1717,13 +1717,13 @@
           [
             "rearRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/33959A_7.jpg",
-          [
-            "frontLeft"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/34035A_5.jpg",
           [
             "rearRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/33959A_7.jpg",
+          [
+            "frontLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/10298PA_6.jpg",
           [
@@ -1741,19 +1741,19 @@
           [
             "rear"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/3321P_7.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/33831A_5.jpg",
           [
-            "frontLeft"
+            "rearRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/34237A_6.jpg",
           [
             "leftSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/20441A_5.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/3321P_7.jpg",
           [
-            "rearRight"
+            "frontLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/33831A_5.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/20441A_5.jpg",
           [
             "rearRight"
           ],
@@ -1769,13 +1769,13 @@
           [
             "rightSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/33690AA_5.jpg",
-          [
-            "rearRight"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/33903A_1.jpg",
           [
             "frontRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/33690AA_5.jpg",
+          [
+            "rearRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/3534P_7.jpg",
           [
@@ -1785,6 +1785,10 @@
           [
             "frontLeft"
           ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/74935A_6.jpg",
+          [
+            "leftSide"
+          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/34352A_6.jpg",
           [
             "leftSide"
@@ -1793,7 +1797,15 @@
           [
             "rearLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/74935A_6.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/20464B_5.jpg",
+          [
+            "rearRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/3503P_3.jpg",
+          [
+            "rearLeft"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/34307A_6.jpg",
           [
             "leftSide"
           ],
@@ -1801,23 +1813,11 @@
           [
             "rear"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/20464B_5.jpg",
-          [
-            "rearRight"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/34307A_6.jpg",
-          [
-            "leftSide"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/3503P_3.jpg",
-          [
-            "rearLeft"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/20806A_1.jpg",
-          [
-            "frontRight"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/S205_4.jpg",
+          [
+            "rear"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/34458A_4.jpg",
           [
             "rear"
           ],
@@ -1825,25 +1825,25 @@
           [
             "rightSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/34458A_4.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/20806A_1.jpg",
           [
-            "rear"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/20554A_8.jpg",
-          [
-            "front"
+            "frontRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/10495P_5.jpg",
           [
             "rearRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/10559P_6.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/20554A_8.jpg",
           [
-            "leftSide"
+            "front"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/20746A_1.jpg",
           [
             "frontRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/10559P_6.jpg",
+          [
+            "leftSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/10568P_1.jpg",
           [
@@ -1857,13 +1857,13 @@
           [
             "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/34250B_1.jpg",
-          [
-            "frontRight"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/3427P_4.jpg",
           [
             "rear"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/34250B_1.jpg",
+          [
+            "frontRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/34066B_4.jpg",
           [
@@ -1873,17 +1873,21 @@
           [
             "rear"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/34345B_3.jpg",
-          [
-            "rearLeft"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/3455P_2.jpg",
           [
             "rightSide"
           ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/34345B_3.jpg",
+          [
+            "rearLeft"
+          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/3526P_3.jpg",
           [
             "rearLeft"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/20404A_6.jpg",
+          [
+            "leftSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/20510A_3.jpg",
           [
@@ -1892,10 +1896,6 @@
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/20361A_4.jpg",
           [
             "rear"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/20404A_6.jpg",
-          [
-            "leftSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/10568P_8.jpg",
           [
@@ -1961,13 +1961,13 @@
           [
             "leftSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/34431A_3.jpg",
-          [
-            "rearLeft"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/S163_7.jpg",
           [
             "frontLeft"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/34431A_3.jpg",
+          [
+            "rearLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/33536C_3.jpg",
           [
@@ -1993,21 +1993,21 @@
           [
             "leftSide"
           ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/20474A_4.jpg",
+          [
+            "rear"
+          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/18958A_8.jpg",
           [
             "front"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/33738CA_7.jpg",
-          [
-            "frontLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/33210B_2.jpg",
           [
             "rightSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/20474A_4.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/33738CA_7.jpg",
           [
-            "rear"
+            "frontLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/20346AA_7.jpg",
           [
@@ -2045,13 +2045,13 @@
           [
             "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/10559P_3.jpg",
-          [
-            "rearLeft"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/74974B_6.jpg",
           [
             "leftSide"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/10559P_3.jpg",
+          [
+            "rearLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/34066B_3.jpg",
           [
@@ -2081,11 +2081,11 @@
           [
             "front"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/20491AA_7.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/33294A_7.jpg",
           [
             "frontLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/33294A_7.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/20491AA_7.jpg",
           [
             "frontLeft"
           ],
@@ -2101,33 +2101,33 @@
           [
             "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/74913B_6.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/33738CA_6.jpg",
           [
             "leftSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/32597A_1.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/74913B_6.jpg",
           [
-            "frontRight"
+            "leftSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/20778A_3.jpg",
           [
             "rearLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/33738CA_6.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/32597A_1.jpg",
           [
-            "leftSide"
+            "frontRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/20633A_4.jpg",
           [
             "rear"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/34670A_2.jpg",
-          [
-            "rightSide"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/33664BA_7.jpg",
           [
             "frontLeft"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/34670A_2.jpg",
+          [
+            "rightSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/20513A_2.jpg",
           [
@@ -2185,17 +2185,17 @@
           [
             "rearRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/20558A_2.jpg",
-          [
-            "rightSide"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/3524P_3.jpg",
           [
             "rearLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/10309P_7.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/20558A_2.jpg",
           [
-            "frontLeft"
+            "rightSide"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/33915A_8.jpg",
+          [
+            "front"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/33833B_7.jpg",
           [
@@ -2209,9 +2209,9 @@
           [
             "rightSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/33915A_8.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/10309P_7.jpg",
           [
-            "front"
+            "frontLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/34395B_1.jpg",
           [
@@ -2225,13 +2225,13 @@
           [
             "rightSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/33913A_1.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/34213A_7.jpg",
           [
-            "frontRight"
+            "frontLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/3514P_3.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/34416A_7.jpg",
           [
-            "rearLeft"
+            "frontLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/33664BA_2.jpg",
           [
@@ -2241,19 +2241,19 @@
           [
             "rear"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/20474A_7.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/20871A_2.jpg",
           [
-            "frontLeft"
+            "rightSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/34416A_7.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/3514P_3.jpg",
           [
-            "frontLeft"
+            "rearLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/34418A_7.jpg",
           [
             "frontLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/34213A_7.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/20474A_7.jpg",
           [
             "frontLeft"
           ],
@@ -2265,23 +2265,19 @@
           [
             "rightSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/20871A_2.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/33913A_1.jpg",
           [
-            "rightSide"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/19649A_7.jpg",
-          [
-            "frontLeft"
+            "frontRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/33536C_6.jpg",
           [
             "leftSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/3514P_4.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/19649A_7.jpg",
           [
-            "rear"
+            "frontLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/10310P_4.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/3514P_4.jpg",
           [
             "rear"
           ],
@@ -2289,37 +2285,29 @@
           [
             "frontLeft"
           ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/10310P_4.jpg",
+          [
+            "rear"
+          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/34017A_8.jpg",
           [
             "front"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/S10210_5.jpg",
-          [
-            "rearRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/33833B_3.jpg",
           [
             "rearLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/10557P_5.jpg",
-          [
-            "rearRight"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/3514P_8.jpg",
-          [
-            "front"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/20441A_4.jpg",
-          [
-            "rear"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/34458A_1.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/33678A_1.jpg",
           [
             "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/34173A_4.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/S10210_5.jpg",
           [
-            "rear"
+            "rearRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/34020A_3.jpg",
+          [
+            "rearLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/34292A_5.jpg",
           [
@@ -2329,13 +2317,25 @@
           [
             "frontLeft"
           ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/20441A_4.jpg",
+          [
+            "rear"
+          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/33998A_6.jpg",
           [
             "leftSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/S164_5.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/34173A_4.jpg",
           [
-            "rearRight"
+            "rear"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/3514P_8.jpg",
+          [
+            "front"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/10312P_8.jpg",
+          [
+            "front"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/34345B_2.jpg",
           [
@@ -2345,6 +2345,10 @@
           [
             "rear"
           ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/10519P_5.jpg",
+          [
+            "rearRight"
+          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/33998A_7.jpg",
           [
             "frontLeft"
@@ -2353,23 +2357,19 @@
           [
             "leftSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/10312P_8.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/10557P_5.jpg",
           [
-            "front"
+            "rearRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/S163_1.jpg",
           [
             "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/34020A_3.jpg",
-          [
-            "rearLeft"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/33678A_1.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/34458A_1.jpg",
           [
             "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/10519P_5.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/S164_5.jpg",
           [
             "rearRight"
           ],
@@ -2393,11 +2393,11 @@
           [
             "rear"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/34352A_8.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/34312A_8.jpg",
           [
             "front"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/34312A_8.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/34352A_8.jpg",
           [
             "front"
           ],
@@ -2417,25 +2417,25 @@
           [
             "rear"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/34277A_3.jpg",
-          [
-            "rearLeft"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/34173A_6.jpg",
           [
             "leftSide"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/34277A_3.jpg",
+          [
+            "rearLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/33812A_6.jpg",
           [
             "leftSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/33898A_8.jpg",
-          [
-            "front"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/20359A_5.jpg",
           [
             "rearRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/33898A_8.jpg",
+          [
+            "front"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/20346D_4.jpg",
           [
@@ -2553,10 +2553,6 @@
           [
             "rightSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/20856B_5.jpg",
-          [
-            "rearRight"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/34094B_8.jpg",
           [
             "front"
@@ -2565,13 +2561,17 @@
           [
             "frontLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/20437A_2.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/20856B_5.jpg",
           [
-            "rightSide"
+            "rearRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/10567P_8.jpg",
           [
             "front"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/20437A_2.jpg",
+          [
+            "rightSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/10479P_3.jpg",
           [
@@ -2585,39 +2585,39 @@
           [
             "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/20373A_8.jpg",
-          [
-            "front"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/34155A_1.jpg",
           [
             "frontRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/20373A_8.jpg",
+          [
+            "front"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/10309P_8.jpg",
           [
             "front"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/S207_3.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/10299P_5.jpg",
           [
-            "rearLeft"
+            "rearRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/34094B_5.jpg",
           [
             "rearRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/10299P_5.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/S207_3.jpg",
           [
-            "rearRight"
+            "rearLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/S178_4.jpg",
           [
             "rear"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/20361A_2.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/3321P_2.jpg",
           [
             "rightSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/3321P_2.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/20361A_2.jpg",
           [
             "rightSide"
           ],
@@ -2669,13 +2669,13 @@
           [
             "frontLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/20556C_1.jpg",
-          [
-            "frontRight"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/10546P_3.jpg",
           [
             "rearLeft"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/20556C_1.jpg",
+          [
+            "frontRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/33944E_4.jpg",
           [
@@ -2693,13 +2693,13 @@
           [
             "front"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/33944E_1.jpg",
-          [
-            "frontRight"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/20353A_4.jpg",
           [
             "rear"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/33944E_1.jpg",
+          [
+            "frontRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/33944E_6.jpg",
           [
@@ -2709,9 +2709,9 @@
           [
             "leftSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/20317B_4.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/34155A_3.jpg",
           [
-            "rear"
+            "rearLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/33210B_5.jpg",
           [
@@ -2721,9 +2721,9 @@
           [
             "rear"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/34155A_3.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/20317B_4.jpg",
           [
-            "rearLeft"
+            "rear"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/34035A_1.jpg",
           [
@@ -2757,27 +2757,27 @@
           [
             "front"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/10502P_6.jpg",
-          [
-            "leftSide"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/33738CA_3.jpg",
-          [
-            "rearLeft"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/3519P_7.jpg",
           [
             "frontLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/20631B_2.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/33738CA_3.jpg",
           [
-            "rightSide"
+            "rearLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/34062A_6.jpg",
           [
             "leftSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/10526P_6.jpg",
+          [
+            "leftSide"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/20631B_2.jpg",
+          [
+            "rightSide"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/10502P_6.jpg",
           [
             "leftSide"
           ],
@@ -2825,17 +2825,17 @@
           [
             "front"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/34325A_8.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/19649A_1.jpg",
           [
-            "front"
+            "frontRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/10282P_5.jpg",
           [
             "rearRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/19649A_1.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/34325A_8.jpg",
           [
-            "frontRight"
+            "front"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/32597A_2.jpg",
           [
@@ -2849,29 +2849,29 @@
           [
             "front"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/33959A_5.jpg",
-          [
-            "rearRight"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/20404A_5.jpg",
           [
             "rearRight"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/10515P_6.jpg",
-          [
-            "leftSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/20016C_1.jpg",
           [
             "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/S197_2.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/33959A_5.jpg",
           [
-            "rightSide"
+            "rearRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/S181_6.jpg",
           [
             "leftSide"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/S197_2.jpg",
+          [
+            "rightSide"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/10502P_2.jpg",
+          [
+            "rightSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/20353A_5.jpg",
           [
@@ -2885,9 +2885,9 @@
           [
             "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/10502P_2.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/10515P_6.jpg",
           [
-            "rightSide"
+            "leftSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/20475AA_7.jpg",
           [
@@ -2961,13 +2961,13 @@
           [
             "rightSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/3513P_2.jpg",
-          [
-            "rightSide"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/33833B_4.jpg",
           [
             "rear"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/3513P_2.jpg",
+          [
+            "rightSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/20768A_4.jpg",
           [
@@ -3053,19 +3053,19 @@
           [
             "rearRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/20661A_6.jpg",
-          [
-            "leftSide"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/34173A_2.jpg",
           [
             "rightSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/34292A_4.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/20661A_6.jpg",
+          [
+            "leftSide"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/20623A_4.jpg",
           [
             "rear"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/20623A_4.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/34292A_4.jpg",
           [
             "rear"
           ],
@@ -3113,17 +3113,17 @@
           [
             "frontLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/20488B_2.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/10309P_6.jpg",
           [
-            "rightSide"
+            "leftSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/34017A_1.jpg",
           [
             "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/10309P_6.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/20488B_2.jpg",
           [
-            "leftSide"
+            "rightSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/32597A_3.jpg",
           [
@@ -3149,15 +3149,15 @@
           [
             "rearRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/34202A_1.jpg",
-          [
-            "frontRight"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/33974A_7.jpg",
           [
             "frontLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/34418A_1.jpg",
+          [
+            "frontRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/34202A_1.jpg",
           [
             "frontRight"
           ],
@@ -3185,7 +3185,7 @@
           [
             "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/34277A_1.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/33841A_1.jpg",
           [
             "frontRight"
           ],
@@ -3197,33 +3197,33 @@
           [
             "frontLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/34284A_7.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/34085A_6.jpg",
           [
-            "frontLeft"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/20450AAA_8.jpg",
-          [
-            "front"
+            "leftSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/33759B_2.jpg",
           [
             "rightSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/33841A_1.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/33677D_5.jpg",
           [
-            "frontRight"
+            "rearRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/19982D_8.jpg",
+          [
+            "front"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/34056A_5.jpg",
           [
             "rearRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/34085A_6.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/34284A_7.jpg",
           [
-            "leftSide"
+            "frontLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/33677D_5.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/34277A_1.jpg",
           [
-            "rearRight"
+            "frontRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/34401A_8.jpg",
           [
@@ -3241,7 +3241,7 @@
           [
             "front"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/19982D_8.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/20450AAA_8.jpg",
           [
             "front"
           ],
@@ -3277,13 +3277,13 @@
           [
             "frontLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/S163_8.jpg",
-          [
-            "front"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/S201_2.jpg",
           [
             "rightSide"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/S163_8.jpg",
+          [
+            "front"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/32869B_1.jpg",
           [
@@ -3317,9 +3317,9 @@
           [
             "front"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/33677D_4.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/S197_3.jpg",
           [
-            "rear"
+            "rearLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/34017A_2.jpg",
           [
@@ -3333,9 +3333,9 @@
           [
             "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/S197_3.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/33677D_4.jpg",
           [
-            "rearLeft"
+            "rear"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/20582A_8.jpg",
           [
@@ -3353,11 +3353,11 @@
           [
             "rear"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/10291PA_5.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/10568P_5.jpg",
           [
             "rearRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/10568P_5.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/10291PA_5.jpg",
           [
             "rearRight"
           ],
@@ -3381,9 +3381,9 @@
           [
             "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/34143A_2.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/10282P_1.jpg",
           [
-            "rightSide"
+            "frontRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/3533P_1.jpg",
           [
@@ -3393,9 +3393,9 @@
           [
             "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/10282P_1.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/34143A_2.jpg",
           [
-            "frontRight"
+            "rightSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/3490P_8.jpg",
           [
@@ -3473,13 +3473,13 @@
           [
             "rightSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/34345B_5.jpg",
-          [
-            "rearRight"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/20361A_3.jpg",
           [
             "rearLeft"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/34345B_5.jpg",
+          [
+            "rearRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/3516P_6.jpg",
           [
@@ -3489,21 +3489,21 @@
           [
             "frontLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/10455PA_1.jpg",
-          [
-            "frontRight"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/3510P_6.jpg",
           [
             "leftSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/3510P_7.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/10455PA_1.jpg",
           [
-            "frontLeft"
+            "frontRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/10498P_1.jpg",
           [
             "frontRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/3510P_7.jpg",
+          [
+            "frontLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/S167_3.jpg",
           [
@@ -3557,13 +3557,13 @@
           [
             "front"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/S207_2.jpg",
-          [
-            "rightSide"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/34035A_8.jpg",
           [
             "front"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/S207_2.jpg",
+          [
+            "rightSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/33210B_4.jpg",
           [
@@ -3609,9 +3609,9 @@
           [
             "rear"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/34418A_3.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/20583B_5.jpg",
           [
-            "rearLeft"
+            "rearRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/10557P_8.jpg",
           [
@@ -3621,9 +3621,9 @@
           [
             "front"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/20583B_5.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/33833B_2.jpg",
           [
-            "rearRight"
+            "rightSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/33536C_8.jpg",
           [
@@ -3633,9 +3633,9 @@
           [
             "rear"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/33833B_2.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/34418A_3.jpg",
           [
-            "rightSide"
+            "rearLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/10572P_2.jpg",
           [
@@ -3665,7 +3665,11 @@
           [
             "leftSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/34116B_7.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/10512P_4.jpg",
+          [
+            "rear"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/10306P_7.jpg",
           [
             "frontLeft"
           ],
@@ -3673,13 +3677,9 @@
           [
             "rearRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/10306P_7.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/34116B_7.jpg",
           [
             "frontLeft"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/10512P_4.jpg",
-          [
-            "rear"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/74777C_5.jpg",
           [
@@ -3729,13 +3729,13 @@
           [
             "leftSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/34202B_8.jpg",
-          [
-            "front"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/10305P_5.jpg",
           [
             "rearRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/34202B_8.jpg",
+          [
+            "front"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/33677D_3.jpg",
           [
@@ -3765,11 +3765,15 @@
           [
             "frontLeft"
           ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/10515P_5.jpg",
+          [
+            "rearRight"
+          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/20418A_4.jpg",
           [
             "rear"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/10515P_5.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/10562P_5.jpg",
           [
             "rearRight"
           ],
@@ -3780,10 +3784,6 @@
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/20491AA_4.jpg",
           [
             "rear"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/10562P_5.jpg",
-          [
-            "rearRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/74974B_1.jpg",
           [
@@ -3797,21 +3797,21 @@
           [
             "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/S160A_7.jpg",
-          [
-            "frontLeft"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/3500P_2.jpg",
           [
             "rightSide"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/S160A_7.jpg",
+          [
+            "frontLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/3508P_6.jpg",
           [
             "leftSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/10283P_5.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/3516P_7.jpg",
           [
-            "rearRight"
+            "frontLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/34020A_4.jpg",
           [
@@ -3821,7 +3821,7 @@
           [
             "rear"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/3516P_7.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/S205_7.jpg",
           [
             "frontLeft"
           ],
@@ -3829,25 +3829,25 @@
           [
             "leftSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/S205_7.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/10573P_4.jpg",
           [
-            "frontLeft"
+            "rear"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/3523P_6.jpg",
           [
             "leftSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/10573P_4.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/10283P_5.jpg",
           [
-            "rear"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/10563P_7.jpg",
-          [
-            "frontLeft"
+            "rearRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/34035A_6.jpg",
           [
             "leftSide"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/10563P_7.jpg",
+          [
+            "frontLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/3435P_5.jpg",
           [
@@ -3921,17 +3921,17 @@
           [
             "rearLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/34325A_3.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/34085A_5.jpg",
           [
-            "rearLeft"
+            "rearRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/3519P_8.jpg",
           [
             "front"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/34085A_5.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/34325A_3.jpg",
           [
-            "rearRight"
+            "rearLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/20728B_6.jpg",
           [
@@ -3949,13 +3949,13 @@
           [
             "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/20871A_5.jpg",
-          [
-            "rearRight"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/3522P_3.jpg",
           [
             "rearLeft"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/20871A_5.jpg",
+          [
+            "rearRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/20392B_1.jpg",
           [
@@ -4001,6 +4001,14 @@
           [
             "leftSide"
           ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/10305P_8.jpg",
+          [
+            "front"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/20346AA_2.jpg",
+          [
+            "rightSide"
+          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/34124A_6.jpg",
           [
             "leftSide"
@@ -4008,14 +4016,6 @@
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/10502P_4.jpg",
           [
             "rear"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/20346AA_2.jpg",
-          [
-            "rightSide"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/10305P_8.jpg",
-          [
-            "front"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/34062A_5.jpg",
           [
@@ -4041,13 +4041,13 @@
           [
             "rightSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/34143A_3.jpg",
-          [
-            "rearLeft"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/10571P_4.jpg",
           [
             "rear"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/34143A_3.jpg",
+          [
+            "rearLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/34155A_7.jpg",
           [
@@ -4245,25 +4245,21 @@
           [
             "rearLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/3507P_1.jpg",
-          [
-            "frontRight"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/33846A_1.jpg",
           [
             "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/20404B_4.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/3507P_1.jpg",
           [
-            "rear"
+            "frontRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/34169A_8.jpg",
           [
             "front"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/20838A_8.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/20404B_4.jpg",
           [
-            "front"
+            "rear"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/10575P_7.jpg",
           [
@@ -4273,15 +4269,15 @@
           [
             "leftSide"
           ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/20838A_8.jpg",
+          [
+            "front"
+          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/10308P_7.jpg",
           [
             "frontLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/20583B_7.jpg",
-          [
-            "frontLeft"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/20671B_7.jpg",
           [
             "frontLeft"
           ],
@@ -4293,6 +4289,10 @@
           [
             "rear"
           ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/20671B_7.jpg",
+          [
+            "frontLeft"
+          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/3435P_8.jpg",
           [
             "front"
@@ -4301,11 +4301,11 @@
           [
             "frontLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/10579P_7.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/3494PA_7.jpg",
           [
             "frontLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/3494PA_7.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/10579P_7.jpg",
           [
             "frontLeft"
           ],
@@ -4397,11 +4397,11 @@
           [
             "front"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/10525P_5.jpg",
-          [
-            "rearRight"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/32943A_1.jpg",
+          [
+            "frontRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/3455P_1.jpg",
           [
             "frontRight"
           ],
@@ -4413,9 +4413,9 @@
           [
             "front"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/3455P_1.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/10525P_5.jpg",
           [
-            "frontRight"
+            "rearRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/34385A_4.jpg",
           [
@@ -4457,13 +4457,13 @@
           [
             "frontLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/3525P_6.jpg",
-          [
-            "leftSide"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/20442A_4.jpg",
           [
             "rear"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/3525P_6.jpg",
+          [
+            "leftSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/10552P_3.jpg",
           [
@@ -4497,27 +4497,15 @@
           [
             "rear"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/20631B_5.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/32412A_2.jpg",
           [
-            "rearRight"
+            "rightSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/74990A_6.jpg",
           [
             "leftSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/32412A_2.jpg",
-          [
-            "rightSide"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/20699A_1.jpg",
-          [
-            "frontRight"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/10312P_4.jpg",
-          [
-            "rear"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/3514P_5.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/20631B_5.jpg",
           [
             "rearRight"
           ],
@@ -4525,9 +4513,21 @@
           [
             "rightSide"
           ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/10312P_4.jpg",
+          [
+            "rear"
+          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/34103B_5.jpg",
           [
             "rearRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/3514P_5.jpg",
+          [
+            "rearRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/20699A_1.jpg",
+          [
+            "frontRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/34337R_1.jpg",
           [
@@ -4597,45 +4597,45 @@
           [
             "leftSide"
           ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/3534P_5.jpg",
+          [
+            "rearRight"
+          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/34103B_1.jpg",
           [
             "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/20436A_4.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/33998A_2.jpg",
           [
-            "rear"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/3534P_5.jpg",
-          [
-            "rearRight"
+            "rightSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/34312A_6.jpg",
           [
             "leftSide"
           ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/S167_1.jpg",
+          [
+            "frontRight"
+          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/10534P_3.jpg",
           [
             "rearLeft"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/20353A_8.jpg",
-          [
-            "front"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/20464B_1.jpg",
           [
             "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/S167_1.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/20353A_8.jpg",
           [
-            "frontRight"
+            "front"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/20436A_5.jpg",
           [
             "rearRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/33998A_2.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/20436A_4.jpg",
           [
-            "rightSide"
+            "rear"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/20661A_5.jpg",
           [
@@ -4701,10 +4701,6 @@
           [
             "rear"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/74974B_8.jpg",
-          [
-            "front"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/3513P_1.jpg",
           [
             "frontRight"
@@ -4712,6 +4708,10 @@
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/33959A_4.jpg",
           [
             "rear"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/74974B_8.jpg",
+          [
+            "front"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/10530P_2.jpg",
           [
@@ -4741,23 +4741,15 @@
           [
             "leftSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/20582A_3.jpg",
-          [
-            "rearLeft"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/20633A_7.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/32161B_7.jpg",
           [
             "frontLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/74990A_3.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/33868A_3.jpg",
           [
             "rearLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/10479P_2.jpg",
-          [
-            "rightSide"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/33868A_3.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/74990A_3.jpg",
           [
             "rearLeft"
           ],
@@ -4765,17 +4757,25 @@
           [
             "rightSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/3427P_3.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/20633A_7.jpg",
           [
-            "rearLeft"
+            "frontLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/34103B_8.jpg",
           [
             "front"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/32161B_7.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/3427P_3.jpg",
           [
-            "frontLeft"
+            "rearLeft"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/20582A_3.jpg",
+          [
+            "rearLeft"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/10479P_2.jpg",
+          [
+            "rightSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/10575P_8.jpg",
           [
@@ -4801,13 +4801,13 @@
           [
             "frontLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/33831A_6.jpg",
-          [
-            "leftSide"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/20703A_2.jpg",
           [
             "rightSide"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/33831A_6.jpg",
+          [
+            "leftSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/20475AA_5.jpg",
           [
@@ -4853,6 +4853,10 @@
           [
             "frontLeft"
           ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/3490P_4.jpg",
+          [
+            "rear"
+          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/10571P_3.jpg",
           [
             "rearLeft"
@@ -4861,21 +4865,17 @@
           [
             "rearRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/3490P_4.jpg",
-          [
-            "rear"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/10551P_6.jpg",
+          [
+            "leftSide"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/34056A_6.jpg",
           [
             "leftSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/20661A_8.jpg",
           [
             "front"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/34056A_6.jpg",
-          [
-            "leftSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/3517P_1.jpg",
           [
@@ -4897,13 +4897,13 @@
           [
             "leftSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/20513A_3.jpg",
-          [
-            "rearLeft"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/34020A_8.jpg",
           [
             "front"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/20513A_3.jpg",
+          [
+            "rearLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/20871A_6.jpg",
           [
@@ -4933,13 +4933,13 @@
           [
             "rear"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/3504P_1.jpg",
-          [
-            "frontRight"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/20628B_5.jpg",
           [
             "rearRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/3504P_1.jpg",
+          [
+            "frontRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/34103B_2.jpg",
           [
@@ -4993,13 +4993,13 @@
           [
             "rightSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/33841A_7.jpg",
-          [
-            "frontLeft"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/3427P_8.jpg",
           [
             "front"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/33841A_7.jpg",
+          [
+            "frontLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/10285P_5.jpg",
           [
@@ -5057,13 +5057,13 @@
           [
             "rear"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/34401A_5.jpg",
-          [
-            "rearRight"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/10567P_4.jpg",
           [
             "rear"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/34401A_5.jpg",
+          [
+            "rearRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/33790A_5.jpg",
           [
@@ -5085,13 +5085,13 @@
           [
             "rearLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/10313P_1.jpg",
-          [
-            "frontRight"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/20353A_3.jpg",
           [
             "rearLeft"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/10313P_1.jpg",
+          [
+            "frontRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/34395B_3.jpg",
           [
@@ -5105,11 +5105,11 @@
           [
             "frontLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/10311P_4.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/S10211_4.jpg",
           [
             "rear"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/S10211_4.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/10311P_4.jpg",
           [
             "rear"
           ],
@@ -5137,18 +5137,6 @@
           [
             "rightSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/20556C_7.jpg",
-          [
-            "frontRight"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/20856B_3.jpg",
-          [
-            "rearLeft"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/20703A_4.jpg",
-          [
-            "rear"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/S205_3.jpg",
           [
             "rearLeft"
@@ -5156,6 +5144,18 @@
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/20554A_3.jpg",
           [
             "rearLeft"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/20856B_3.jpg",
+          [
+            "rearLeft"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/20556C_7.jpg",
+          [
+            "frontRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/20628B_8.jpg",
+          [
+            "front"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/34307A_3.jpg",
           [
@@ -5169,9 +5169,9 @@
           [
             "rearLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/20628B_8.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/20703A_4.jpg",
           [
-            "front"
+            "rear"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/33678A_2.jpg",
           [
@@ -5189,13 +5189,13 @@
           [
             "leftSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/3532P_8.jpg",
-          [
-            "front"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/34277A_7.jpg",
           [
             "frontLeft"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/3532P_8.jpg",
+          [
+            "front"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/10311P_8.jpg",
           [
@@ -5285,13 +5285,13 @@
           [
             "leftSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/20317B_3.jpg",
-          [
-            "rearLeft"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/20470A_8.jpg",
           [
             "front"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/20317B_3.jpg",
+          [
+            "rearLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/34032A_3.jpg",
           [
@@ -5305,29 +5305,29 @@
           [
             "rearLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/3532P_6.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/10479P_5.jpg",
           [
-            "leftSide"
+            "rearRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/20359A_4.jpg",
           [
             "rear"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/10479P_5.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/3532P_6.jpg",
           [
-            "rearRight"
+            "leftSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/20778A_8.jpg",
           [
             "front"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/74973A_7.jpg",
-          [
-            "frontLeft"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/20488B_4.jpg",
           [
             "rear"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/74973A_7.jpg",
+          [
+            "frontLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/20442A_3.jpg",
           [
@@ -5393,15 +5393,15 @@
           [
             "front"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/34062A_1.jpg",
-          [
-            "frontRight"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/20346D_7.jpg",
           [
             "frontLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/10298PA_7.jpg",
+          [
+            "frontRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/34062A_1.jpg",
           [
             "frontRight"
           ],
@@ -5477,23 +5477,15 @@
           [
             "rearRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/S164_8.jpg",
-          [
-            "front"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/33812A_7.jpg",
           [
             "frontLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/74990A_5.jpg",
-          [
-            "rearRight"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/33908A_5.jpg",
-          [
-            "rearRight"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/3506P_5.jpg",
+          [
+            "rearRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/74990A_5.jpg",
           [
             "rearRight"
           ],
@@ -5501,11 +5493,15 @@
           [
             "rearLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/10460P_5.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/33908A_5.jpg",
           [
             "rearRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/20728B_5.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/20404B_3.jpg",
+          [
+            "rearLeft"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/10460P_5.jpg",
           [
             "rearRight"
           ],
@@ -5513,45 +5509,49 @@
           [
             "frontLeft"
           ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/S164_8.jpg",
+          [
+            "front"
+          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/34141B_7.jpg",
           [
             "frontLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/20404B_3.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/20728B_5.jpg",
           [
-            "rearLeft"
+            "rearRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/20615A_7.jpg",
           [
             "frontLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/3517P_3.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/3519P_6.jpg",
           [
-            "rearLeft"
+            "leftSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/3523P_5.jpg",
           [
             "rearRight"
           ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/3517P_3.jpg",
+          [
+            "rearLeft"
+          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/3427P_2.jpg",
           [
             "rightSide"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/3519P_6.jpg",
-          [
-            "leftSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/10556P_7.jpg",
           [
             "frontLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/34202A_4.jpg",
-          [
-            "rear"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/20488B_1.jpg",
           [
             "frontRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/34202A_4.jpg",
+          [
+            "rear"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/34325A_2.jpg",
           [
@@ -5577,17 +5577,13 @@
           [
             "rearRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/10479P_7.jpg",
-          [
-            "frontLeft"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/20373A_5.jpg",
           [
             "rearRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/10526P_8.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/10479P_7.jpg",
           [
-            "front"
+            "frontLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/20513A_1.jpg",
           [
@@ -5596,6 +5592,10 @@
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/10530P_4.jpg",
           [
             "rear"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/10526P_8.jpg",
+          [
+            "front"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/33119A_7.jpg",
           [
@@ -5609,21 +5609,21 @@
           [
             "rear"
           ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/10563P_1.jpg",
+          [
+            "frontRight"
+          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/31941B_1.jpg",
           [
             "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/10563P_1.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/20737A_1.jpg",
           [
             "frontRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/3503P_5.jpg",
           [
             "rearRight"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/20737A_1.jpg",
-          [
-            "frontRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/10308P_4.jpg",
           [
@@ -5729,11 +5729,11 @@
           [
             "rearLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/S160A_3.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/20871A_3.jpg",
           [
             "rearLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/20871A_3.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/S160A_3.jpg",
           [
             "rearLeft"
           ],
@@ -5745,13 +5745,13 @@
           [
             "leftSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/34143A_7.jpg",
-          [
-            "frontLeft"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/20809B_7.jpg",
           [
             "front"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/34143A_7.jpg",
+          [
+            "frontLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/S186_1.jpg",
           [
@@ -5761,25 +5761,25 @@
           [
             "rearRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/20373A_6.jpg",
-          [
-            "leftSide"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/20406AA_1.jpg",
-          [
-            "frontRight"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/3490P_5.jpg",
           [
             "rearRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/34138A_8.jpg",
+          [
+            "front"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/20373A_6.jpg",
+          [
+            "leftSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/74923A_7.jpg",
           [
             "frontLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/34138A_8.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/20406AA_1.jpg",
           [
-            "front"
+            "frontRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/74777C_8.jpg",
           [
@@ -5813,43 +5813,43 @@
           [
             "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/3532P_5.jpg",
-          [
-            "rearRight"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/10551P_4.jpg",
           [
             "rear"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/34094B_6.jpg",
+          [
+            "leftSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/20554A_5.jpg",
           [
             "rearRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/33959A_1.jpg",
-          [
-            "frontRight"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/10305P_6.jpg",
           [
             "leftSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/20359A_6.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/33959A_1.jpg",
           [
-            "leftSide"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/34141B_6.jpg",
-          [
-            "leftSide"
+            "frontRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/10309P_3.jpg",
           [
             "rearLeft"
           ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/3532P_5.jpg",
+          [
+            "rearRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/20359A_6.jpg",
+          [
+            "leftSide"
+          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/31941B_2.jpg",
           [
             "rightSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/34094B_6.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/34141B_6.jpg",
           [
             "leftSide"
           ],
@@ -5857,13 +5857,13 @@
           [
             "leftSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/20075A_1.jpg",
-          [
-            "frontRight"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/20583B_2.jpg",
           [
             "rightSide"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/20075A_1.jpg",
+          [
+            "frontRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/10534P_5.jpg",
           [
@@ -5897,33 +5897,33 @@
           [
             "rightSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/20631B_1.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/34138A_5.jpg",
           [
-            "frontRight"
+            "rearRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/3507P_3.jpg",
           [
             "rearLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/34138A_5.jpg",
-          [
-            "rearRight"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/10465P_7.jpg",
           [
             "frontLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/10312P_3.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/20631B_1.jpg",
           [
-            "rearLeft"
+            "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/33831A_3.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/10312P_3.jpg",
           [
             "rearLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/34215A_4.jpg",
           [
             "rear"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/33831A_3.jpg",
+          [
+            "rearLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/10569P_1.jpg",
           [
@@ -5973,29 +5973,29 @@
           [
             "front"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/74777C_2.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/10291PA_6.jpg",
           [
-            "rightSide"
+            "leftSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/10556P_6.jpg",
           [
             "leftSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/34138A_1.jpg",
-          [
-            "frontRight"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/18958A_6.jpg",
           [
             "leftSide"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/74777C_2.jpg",
+          [
+            "rightSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/10519P_4.jpg",
           [
             "rear"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/10291PA_6.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/34138A_1.jpg",
           [
-            "leftSide"
+            "frontRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/34202B_1.jpg",
           [
@@ -6053,10 +6053,6 @@
           [
             "rearLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/20735B_5.jpg",
-          [
-            "rearRight"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/34141B_5.jpg",
           [
             "rearRight"
@@ -6064,6 +6060,10 @@
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/20735B_8.jpg",
           [
             "front"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/20735B_5.jpg",
+          [
+            "rearRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/3516P_8.jpg",
           [
@@ -6085,13 +6085,13 @@
           [
             "rearLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/20658B_4.jpg",
-          [
-            "rear"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/20746A_3.jpg",
           [
             "rearLeft"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/20658B_4.jpg",
+          [
+            "rear"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/34124A_3.jpg",
           [
@@ -6145,37 +6145,37 @@
           [
             "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/3504P_5.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/10282P_4.jpg",
           [
-            "rearRight"
+            "rear"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/3505P_1.jpg",
           [
             "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/10282P_4.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/3504P_5.jpg",
           [
-            "rear"
+            "rearRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/33294A_8.jpg",
           [
             "front"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/20359A_3.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/33776A_2.jpg",
           [
-            "rearLeft"
+            "rightSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/S182_1.jpg",
           [
             "frontRight"
           ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/20359A_3.jpg",
+          [
+            "rearLeft"
+          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/3435P_4.jpg",
           [
             "rear"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/33776A_2.jpg",
-          [
-            "rightSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/33690AA_3.jpg",
           [
@@ -6197,11 +6197,11 @@
           [
             "rear"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/33790A_6.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/20768A_6.jpg",
           [
             "leftSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/20768A_6.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/33790A_6.jpg",
           [
             "leftSide"
           ],
@@ -6217,6 +6217,10 @@
           [
             "frontRight"
           ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/34116B_5.jpg",
+          [
+            "rearRight"
+          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/34292A_8.jpg",
           [
             "front"
@@ -6224,10 +6228,6 @@
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/34267A_2.jpg",
           [
             "rightSide"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/34116B_5.jpg",
-          [
-            "rearRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/33903A_2.jpg",
           [
@@ -6237,13 +6237,13 @@
           [
             "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/20552A_1.jpg",
-          [
-            "frontRight"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/20442A_6.jpg",
           [
             "leftSide"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/20552A_1.jpg",
+          [
+            "frontRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/33808D_1.jpg",
           [
@@ -6253,17 +6253,17 @@
           [
             "rearLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/S167_8.jpg",
-          [
-            "front"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/3508P_2.jpg",
           [
             "rightSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/20846A_7.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/S167_8.jpg",
           [
-            "frontLeft"
+            "front"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/20809B_4.jpg",
+          [
+            "rear"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/20735B_4.jpg",
           [
@@ -6281,9 +6281,9 @@
           [
             "front"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/20809B_4.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/20846A_7.jpg",
           [
-            "rear"
+            "frontLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/10283P_1.jpg",
           [
@@ -6293,15 +6293,15 @@
           [
             "rearRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/33944E_3.jpg",
-          [
-            "rearLeft"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/S10211_8.jpg",
           [
             "front"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/10502P_3.jpg",
+          [
+            "rearLeft"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/33944E_3.jpg",
           [
             "rearLeft"
           ],
@@ -6361,13 +6361,13 @@
           [
             "rearRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/33833B_5.jpg",
-          [
-            "rearRight"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/10308P_1.jpg",
           [
             "frontRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/33833B_5.jpg",
+          [
+            "rearRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/34670A_7.jpg",
           [
@@ -6385,6 +6385,10 @@
           [
             "rightSide"
           ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/20658B_2.jpg",
+          [
+            "rightSide"
+          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/10558P_2.jpg",
           [
             "rightSide"
@@ -6392,10 +6396,6 @@
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/S181_1.jpg",
           [
             "frontRight"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/20658B_2.jpg",
-          [
-            "rightSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/20373A_1.jpg",
           [
@@ -6413,15 +6413,11 @@
           [
             "front"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/20437A_6.jpg",
-          [
-            "leftSide"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/34048A_4.jpg",
           [
             "rear"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/19982D_6.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/20437A_6.jpg",
           [
             "leftSide"
           ],
@@ -6429,13 +6425,13 @@
           [
             "front"
           ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/19982D_6.jpg",
+          [
+            "leftSide"
+          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/34213A_2.jpg",
           [
             "rightSide"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/34130A_8.jpg",
-          [
-            "front"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/34431A_6.jpg",
           [
@@ -6444,6 +6440,10 @@
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/32161B_5.jpg",
           [
             "rearRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/34130A_8.jpg",
+          [
+            "front"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/10305P_3.jpg",
           [
@@ -6469,13 +6469,13 @@
           [
             "leftSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/10311P_1.jpg",
-          [
-            "frontRight"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/3508P_8.jpg",
           [
             "front"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/10311P_1.jpg",
+          [
+            "frontRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/33882A_3.jpg",
           [
@@ -6513,7 +6513,7 @@
           [
             "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/34670A_3.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/34267A_3.jpg",
           [
             "rearLeft"
           ],
@@ -6529,17 +6529,17 @@
           [
             "leftSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/34267A_3.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/10465P_1.jpg",
           [
-            "rearLeft"
+            "frontRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/34116B_1.jpg",
           [
             "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/10465P_1.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/34670A_3.jpg",
           [
-            "frontRight"
+            "rearLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/20831A_4.jpg",
           [
@@ -6585,7 +6585,15 @@
           [
             "frontLeft"
           ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/34143A_6.jpg",
+          [
+            "leftSide"
+          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/10579P_3.jpg",
+          [
+            "rearLeft"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/74912A_3.jpg",
           [
             "rearLeft"
           ],
@@ -6593,21 +6601,13 @@
           [
             "front"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/74912A_3.jpg",
-          [
-            "rearLeft"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/34143A_6.jpg",
-          [
-            "leftSide"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/20361A_7.jpg",
-          [
-            "frontLeft"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/10452P_1.jpg",
           [
             "frontRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/S201_8.jpg",
+          [
+            "front"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/20703A_8.jpg",
           [
@@ -6625,9 +6625,9 @@
           [
             "rearRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/S201_8.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/20361A_7.jpg",
           [
-            "front"
+            "frontLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/10562P_6.jpg",
           [
@@ -6669,6 +6669,18 @@
           [
             "front"
           ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/20431A_7.jpg",
+          [
+            "frontLeft"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/10540P_1.jpg",
+          [
+            "frontRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/20558A_1.jpg",
+          [
+            "frontRight"
+          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/33210B_1.jpg",
           [
             "frontRight"
@@ -6676,18 +6688,6 @@
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/20546A_5.jpg",
           [
             "rearRight"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/10540P_1.jpg",
-          [
-            "frontRight"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/20431A_7.jpg",
-          [
-            "frontLeft"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/20558A_1.jpg",
-          [
-            "frontRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/34138A_2.jpg",
           [
@@ -6701,21 +6701,21 @@
           [
             "rearLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/32412A_3.jpg",
-          [
-            "rearLeft"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/20703A_5.jpg",
           [
             "rearRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/S160A_8.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/32412A_3.jpg",
           [
-            "front"
+            "rearLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/34431A_4.jpg",
           [
             "rear"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/S160A_8.jpg",
+          [
+            "front"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/10510PAA_1.jpg",
           [
@@ -6729,29 +6729,29 @@
           [
             "rightSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/34056A_3.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/74935A_8.jpg",
           [
-            "rearLeft"
+            "front"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/10573P_5.jpg",
           [
             "rearRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/74935A_8.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/34056A_3.jpg",
           [
-            "front"
+            "rearLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/33998A_1.jpg",
           [
             "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/34062A_8.jpg",
-          [
-            "front"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/10546P_7.jpg",
           [
             "frontLeft"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/34062A_8.jpg",
+          [
+            "front"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/33868A_2.jpg",
           [
@@ -6777,29 +6777,25 @@
           [
             "front"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/20317B_6.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/33738CA_1.jpg",
           [
-            "leftSide"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/S201_6.jpg",
-          [
-            "leftSide"
+            "frontRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/10478PA_1.jpg",
           [
             "frontRight"
           ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/S201_6.jpg",
+          [
+            "leftSide"
+          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/33950A_5.jpg",
           [
             "rearRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/33738CA_1.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/20317B_6.jpg",
           [
-            "frontRight"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/10304P_1.jpg",
-          [
-            "frontRight"
+            "leftSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/34138A_4.jpg",
           [
@@ -6808,6 +6804,10 @@
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/10526P_5.jpg",
           [
             "rearRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/10304P_1.jpg",
+          [
+            "frontRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/33677D_8.jpg",
           [
@@ -6861,13 +6861,13 @@
           [
             "rear"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/10502P_8.jpg",
-          [
-            "front"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/33846A_7.jpg",
           [
             "frontLeft"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/10502P_8.jpg",
+          [
+            "front"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/32412A_8.jpg",
           [
@@ -6889,21 +6889,21 @@
           [
             "leftSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/34202A_7.jpg",
-          [
-            "frontLeft"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/33893D_6.jpg",
           [
             "leftSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/33903A_8.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/34202A_7.jpg",
           [
-            "front"
+            "frontLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/33972A_7.jpg",
           [
             "frontLeft"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/33903A_8.jpg",
+          [
+            "front"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/34056A_4.jpg",
           [
@@ -6953,21 +6953,21 @@
           [
             "rearLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/20373A_7.jpg",
-          [
-            "frontLeft"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/34020A_2.jpg",
           [
             "rightSide"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/31941B_4.jpg",
+          [
+            "rear"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/34056A_7.jpg",
           [
             "frontLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/31941B_4.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/33536C_1.jpg",
           [
-            "rear"
+            "frontRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/10557P_7.jpg",
           [
@@ -6977,13 +6977,13 @@
           [
             "rearLeft"
           ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/20373A_7.jpg",
+          [
+            "frontLeft"
+          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/20491AA_8.jpg",
           [
             "front"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/33536C_1.jpg",
-          [
-            "frontRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/20699A_7.jpg",
           [
@@ -7045,17 +7045,17 @@
           [
             "frontLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/74954A_5.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/3511P_1.jpg",
           [
-            "rearRight"
+            "frontRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/10460P_3.jpg",
           [
             "rearLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/3511P_1.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/74954A_5.jpg",
           [
-            "frontRight"
+            "rearRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/20482A_5.jpg",
           [
@@ -7077,33 +7077,33 @@
           [
             "rearRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/34169A_2.jpg",
-          [
-            "rightSide"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/3522P_7.jpg",
           [
             "frontLeft"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/34169A_2.jpg",
+          [
+            "rightSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/S201_4.jpg",
           [
             "rear"
           ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/20729C_7.jpg",
+          [
+            "frontLeft"
+          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/33913A_2.jpg",
+          [
+            "rightSide"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/34215A_2.jpg",
           [
             "rightSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/34458A_5.jpg",
           [
             "rearRight"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/34215A_2.jpg",
-          [
-            "rightSide"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/20729C_7.jpg",
-          [
-            "frontLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/20868B_4.jpg",
           [
@@ -7141,57 +7141,57 @@
           [
             "leftSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/20474A_3.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/34074A_5.jpg",
           [
-            "rearLeft"
+            "rearRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/20464B_2.jpg",
           [
             "rightSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/33833B_6.jpg",
-          [
-            "leftSide"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/3508P_1.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/3522P_1.jpg",
           [
             "frontRight"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/34074A_5.jpg",
-          [
-            "rearRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/S181_4.jpg",
           [
             "rear"
           ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/3508P_1.jpg",
+          [
+            "frontRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/33833B_6.jpg",
+          [
+            "leftSide"
+          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/33536C_4.jpg",
           [
             "rear"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/3522P_1.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/20474A_3.jpg",
           [
-            "frontRight"
+            "rearLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/34431A_2.jpg",
           [
             "rightSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/34024BA_8.jpg",
-          [
-            "front"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/20016C_3.jpg",
           [
             "rearLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/10282P_3.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/34024BA_8.jpg",
           [
-            "rearLeft"
+            "front"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/20583B_1.jpg",
           [
             "frontRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/10282P_3.jpg",
+          [
+            "rearLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/33915A_4.jpg",
           [
@@ -7213,13 +7213,13 @@
           [
             "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/3510P_2.jpg",
-          [
-            "rightSide"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/20498A_1.jpg",
           [
             "frontRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/3510P_2.jpg",
+          [
+            "rightSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/20846A_2.jpg",
           [
@@ -7229,10 +7229,6 @@
           [
             "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/3494PA_8.jpg",
-          [
-            "front"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/S160A_5.jpg",
           [
             "rearRight"
@@ -7241,21 +7237,25 @@
           [
             "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/34017A_3.jpg",
-          [
-            "rearLeft"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/10460P_7.jpg",
           [
             "frontLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/20317B_8.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/34017A_3.jpg",
+          [
+            "rearLeft"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/3494PA_8.jpg",
           [
             "front"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/34074A_1.jpg",
           [
             "frontRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/20317B_8.jpg",
+          [
+            "front"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/33210B_3.jpg",
           [
@@ -7265,10 +7265,6 @@
           [
             "rightSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/3527P_5.jpg",
-          [
-            "rearRight"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/10283P_3.jpg",
           [
             "rearLeft"
@@ -7276,6 +7272,10 @@
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/18958A_7.jpg",
           [
             "frontLeft"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/3511P_5.jpg",
+          [
+            "rearRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/10562P_8.jpg",
           [
@@ -7285,7 +7285,7 @@
           [
             "rearRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/3511P_5.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/3527P_5.jpg",
           [
             "rearRight"
           ],
@@ -7325,41 +7325,41 @@
           [
             "rear"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/10495P_1.jpg",
-          [
-            "frontRight"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/20359A_8.jpg",
           [
             "front"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/10495P_1.jpg",
+          [
+            "frontRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/18958A_2.jpg",
           [
             "rightSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/20450AAA_4.jpg",
-          [
-            "rear"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/34203A_5.jpg",
           [
             "rearRight"
           ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/20450AAA_4.jpg",
+          [
+            "rear"
+          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/34035A_3.jpg",
-          [
-            "rearLeft"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/20925A_3.jpg",
-          [
-            "rearLeft"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/74974B_3.jpg",
           [
             "rearLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/10310P_1.jpg",
           [
             "frontRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/74974B_3.jpg",
+          [
+            "rearLeft"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/20925A_3.jpg",
+          [
+            "rearLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/20856B_4.jpg",
           [
@@ -7369,17 +7369,17 @@
           [
             "leftSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/33738CA_4.jpg",
-          [
-            "rear"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/10515P_8.jpg",
           [
             "front"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/34418A_6.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/33738CA_4.jpg",
           [
-            "leftSide"
+            "rear"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/34155A_8.jpg",
+          [
+            "front"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/20482A_4.jpg",
           [
@@ -7393,11 +7393,11 @@
           [
             "leftSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/34155A_8.jpg",
-          [
-            "front"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/34169A_6.jpg",
+          [
+            "leftSide"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/34418A_6.jpg",
           [
             "leftSide"
           ],
@@ -7405,13 +7405,13 @@
           [
             "rear"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/10546P_4.jpg",
-          [
-            "rear"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/34138A_7.jpg",
           [
             "frontLeft"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/10546P_4.jpg",
+          [
+            "rear"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/10557P_2.jpg",
           [
@@ -7433,13 +7433,13 @@
           [
             "rightSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/34074A_8.jpg",
-          [
-            "front"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/20464B_4.jpg",
           [
             "rear"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/34074A_8.jpg",
+          [
+            "front"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/S181_7.jpg",
           [
@@ -7457,33 +7457,33 @@
           [
             "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/20558A_5.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/10495P_7.jpg",
           [
-            "rearRight"
+            "frontLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/10304P_5.jpg",
           [
             "rearRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/74912A_2.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/20558A_5.jpg",
           [
-            "rightSide"
+            "rearRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/10557P_3.jpg",
           [
             "rearLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/10304P_8.jpg",
-          [
-            "front"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/34048A_7.jpg",
           [
             "frontLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/10495P_7.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/10304P_8.jpg",
           [
-            "frontLeft"
+            "front"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/74912A_2.jpg",
+          [
+            "rightSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/10562P_1.jpg",
           [
@@ -7529,17 +7529,17 @@
           [
             "rearLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/74935A_2.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/34395B_8.jpg",
           [
-            "rightSide"
+            "front"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/20633A_2.jpg",
           [
             "rightSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/34395B_8.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/74935A_2.jpg",
           [
-            "front"
+            "rightSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/S10210_8.jpg",
           [
@@ -7561,6 +7561,10 @@
           [
             "rightSide"
           ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/10291PA_1.jpg",
+          [
+            "frontRight"
+          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/34066B_7.jpg",
           [
             "frontLeft"
@@ -7568,10 +7572,6 @@
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/34237A_5.jpg",
           [
             "rearRight"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/10291PA_1.jpg",
-          [
-            "frontRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/34141B_4.jpg",
           [
@@ -7581,13 +7581,13 @@
           [
             "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/33119A_3.jpg",
-          [
-            "rearLeft"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/20547A_5.jpg",
           [
             "rearRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/33119A_3.jpg",
+          [
+            "rearLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/10298PA_4.jpg",
           [
@@ -7605,33 +7605,33 @@
           [
             "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/20436A_3.jpg",
-          [
-            "rearLeft"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/33690AA_2.jpg",
           [
             "rightSide"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/3321P_4.jpg",
-          [
-            "rear"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/20482A_3.jpg",
-          [
-            "rearLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/10575P_1.jpg",
           [
             "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/10309P_5.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/20482A_3.jpg",
           [
-            "rearRight"
+            "rearLeft"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/20436A_3.jpg",
+          [
+            "rearLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/33915A_3.jpg",
           [
             "rearLeft"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/10309P_5.jpg",
+          [
+            "rearRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/3321P_4.jpg",
+          [
+            "rear"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/10465P_6.jpg",
           [
@@ -7665,10 +7665,6 @@
           [
             "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/10299P_7.jpg",
-          [
-            "frontLeft"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/20728B_4.jpg",
           [
             "rear"
@@ -7676,6 +7672,10 @@
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/74913B_8.jpg",
           [
             "front"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/10299P_7.jpg",
+          [
+            "frontLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/20353A_2.jpg",
           [
@@ -7689,21 +7689,21 @@
           [
             "rearLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/34116B_4.jpg",
-          [
-            "rear"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/34307A_1.jpg",
           [
             "frontRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/33868A_5.jpg",
+          [
+            "rearRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/3507P_2.jpg",
           [
             "rightSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/33868A_5.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/34116B_4.jpg",
           [
-            "rearRight"
+            "rear"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/3513P_3.jpg",
           [
@@ -7729,13 +7729,13 @@
           [
             "leftSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/20546A_1.jpg",
-          [
-            "frontRight"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/3500P_6.jpg",
           [
             "leftSide"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/20546A_1.jpg",
+          [
+            "frontRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/32597A_4.jpg",
           [
@@ -7753,10 +7753,6 @@
           [
             "rearRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/34082A_7.jpg",
-          [
-            "frontLeft"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/20546A_2.jpg",
           [
             "rightSide"
@@ -7765,13 +7761,17 @@
           [
             "leftSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/20809B_1.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/34082A_7.jpg",
           [
-            "frontRight"
+            "frontLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/34143A_5.jpg",
           [
             "rearRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/20809B_1.jpg",
+          [
+            "frontRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/20846A_8.jpg",
           [
@@ -7789,11 +7789,11 @@
           [
             "front"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/33536C_5.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/34325A_5.jpg",
           [
             "rearRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/34325A_5.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/33536C_5.jpg",
           [
             "rearRight"
           ],
@@ -7833,33 +7833,33 @@
           [
             "frontLeft"
           ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/33678A_3.jpg",
+          [
+            "rearLeft"
+          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/10525P_2.jpg",
           [
             "rightSide"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/S178_7.jpg",
-          [
-            "frontLeft"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/20925A_7.jpg",
-          [
-            "frontLeft"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/3500P_5.jpg",
-          [
-            "rearRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/3499P_2.jpg",
           [
             "rightSide"
           ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/10306P_8.jpg",
+          [
+            "front"
+          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/20658B_5.jpg",
           [
             "rearRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/33893D_5.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/S178_7.jpg",
           [
-            "rearRight"
+            "frontLeft"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/10502P_7.jpg",
+          [
+            "frontLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/33882A_1.jpg",
           [
@@ -7869,11 +7869,19 @@
           [
             "rightSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/34352A_3.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/10526P_1.jpg",
           [
-            "rearLeft"
+            "frontRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/34155A_2.jpg",
+          [
+            "rightSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/34352A_5.jpg",
+          [
+            "rearRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/33903A_5.jpg",
           [
             "rearRight"
           ],
@@ -7881,37 +7889,29 @@
           [
             "rightSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/33903A_5.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/34352A_3.jpg",
+          [
+            "rearLeft"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/33893D_5.jpg",
           [
             "rearRight"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/34155A_2.jpg",
-          [
-            "rightSide"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/33536C_2.jpg",
-          [
-            "rightSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/34141B_3.jpg",
           [
             "rearLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/10306P_8.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/34401A_3.jpg",
           [
-            "front"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/10502P_7.jpg",
-          [
-            "frontLeft"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/74923A_1.jpg",
-          [
-            "frontRight"
+            "rearLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/S10209_4.jpg",
           [
             "rear"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/33536C_2.jpg",
+          [
+            "rightSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/33910B_5.jpg",
           [
@@ -7921,11 +7921,11 @@
           [
             "rightSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/10285P_1.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/10312P_7.jpg",
           [
-            "frontRight"
+            "frontLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/34231A_1.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/10285P_1.jpg",
           [
             "frontRight"
           ],
@@ -7933,7 +7933,7 @@
           [
             "leftSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/10312P_7.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/3511P_7.jpg",
           [
             "frontLeft"
           ],
@@ -7941,25 +7941,25 @@
           [
             "rightSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/34401A_3.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/34231A_1.jpg",
           [
-            "rearLeft"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/3511P_7.jpg",
-          [
-            "frontLeft"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/33678A_3.jpg",
-          [
-            "rearLeft"
+            "frontRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/34074A_7.jpg",
           [
             "frontLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/10526P_1.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/74923A_1.jpg",
           [
             "frontRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/20925A_7.jpg",
+          [
+            "frontLeft"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/3500P_5.jpg",
+          [
+            "rearRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/20554A_2.jpg",
           [
@@ -7993,6 +7993,10 @@
           [
             "frontRight"
           ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/34203A_8.jpg",
+          [
+            "front"
+          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/10285P_3.jpg",
           [
             "rearLeft"
@@ -8000,10 +8004,6 @@
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/20703A_6.jpg",
           [
             "leftSide"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/34203A_8.jpg",
-          [
-            "front"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/10546P_6.jpg",
           [
@@ -8017,13 +8017,13 @@
           [
             "frontLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/S169_2.jpg",
-          [
-            "rightSide"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/S175_1.jpg",
           [
             "frontRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/S169_2.jpg",
+          [
+            "rightSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/10283P_4.jpg",
           [
@@ -8045,13 +8045,13 @@
           [
             "rightSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/3455P_6.jpg",
-          [
-            "leftSide"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/33776A_4.jpg",
           [
             "rear"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/3455P_6.jpg",
+          [
+            "leftSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/20729C_2.jpg",
           [
@@ -8069,11 +8069,11 @@
           [
             "rear"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/33950A_3.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/10562P_3.jpg",
           [
             "rearLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/10562P_3.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/33950A_3.jpg",
           [
             "rearLeft"
           ],
@@ -8093,6 +8093,10 @@
           [
             "rightSide"
           ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/34418A_8.jpg",
+          [
+            "front"
+          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/3516P_1.jpg",
           [
             "frontRight"
@@ -8100,10 +8104,6 @@
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/20491AA_3.jpg",
           [
             "rearLeft"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/34418A_8.jpg",
-          [
-            "front"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/20346AA_5.jpg",
           [
@@ -8137,17 +8137,17 @@
           [
             "leftSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/3519P_4.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/10575P_2.jpg",
           [
-            "rear"
+            "rightSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/33210B_7.jpg",
           [
             "frontLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/10575P_2.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/3519P_4.jpg",
           [
-            "rightSide"
+            "rear"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/32161B_2.jpg",
           [
@@ -8161,13 +8161,13 @@
           [
             "rear"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/10452P_8.jpg",
-          [
-            "front"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/20615A_5.jpg",
           [
             "rearRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/10452P_8.jpg",
+          [
+            "front"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/32869B_4.jpg",
           [
@@ -8205,13 +8205,13 @@
           [
             "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/32597A_5.jpg",
-          [
-            "rearRight"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/10291PA_4.jpg",
           [
             "rear"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/32597A_5.jpg",
+          [
+            "rearRight"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/20537A_1.jpg",
           [
@@ -8269,31 +8269,47 @@
           [
             "rightSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/20346AA_4.jpg",
-          [
-            "rear"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/34312A_5.jpg",
           [
             "rearRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/20346AA_4.jpg",
+          [
+            "rear"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/20735B_6.jpg",
           [
             "leftSide"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/20361A_8.jpg",
-          [
-            "front"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/20809B_5.jpg",
           [
             "rearRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/20361A_8.jpg",
+          [
+            "front"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/34074A_3.jpg",
           [
             "rearLeft"
           ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/20542A_1.jpg",
+          [
+            "frontRight"
+          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/33841A_4.jpg",
+          [
+            "rear"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/33893D_2.jpg",
+          [
+            "rightSide"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/20448A_5.jpg",
+          [
+            "rearRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/33950A_4.jpg",
           [
             "rear"
           ],
@@ -8301,29 +8317,13 @@
           [
             "rearLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/33893D_2.jpg",
-          [
-            "rightSide"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/20542A_1.jpg",
-          [
-            "frontRight"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/33950A_4.jpg",
-          [
-            "rear"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/20448A_5.jpg",
-          [
-            "rearRight"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/33664BA_8.jpg",
           [
             "front"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/33690AA_8.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/19982D_2.jpg",
           [
-            "front"
+            "rightSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/74881A_1.jpg",
           [
@@ -8333,9 +8333,9 @@
           [
             "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/19982D_2.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/33690AA_8.jpg",
           [
-            "rightSide"
+            "front"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/74881A_6.jpg",
           [
@@ -8353,13 +8353,13 @@
           [
             "frontLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/20346AA_6.jpg",
-          [
-            "leftSide"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/20582A_4.jpg",
           [
             "rear"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/20346AA_6.jpg",
+          [
+            "leftSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/34094B_2.jpg",
           [
@@ -8401,13 +8401,13 @@
           [
             "frontLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/10495P_2.jpg",
-          [
-            "rightSide"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontLeft/10310P_7.jpg",
           [
             "frontLeft"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/10495P_2.jpg",
+          [
+            "rightSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/34017A_6.jpg",
           [
@@ -8429,9 +8429,9 @@
           [
             "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/34213A_4.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/10519P_8.jpg",
           [
-            "rear"
+            "front"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/33841A_2.jpg",
           [
@@ -8441,17 +8441,17 @@
           [
             "front"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/3499P_4.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/34213A_4.jpg",
           [
             "rear"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/10519P_8.jpg",
-          [
-            "front"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/20778A_1.jpg",
           [
             "frontRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/3499P_4.jpg",
+          [
+            "rear"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/33998A_3.jpg",
           [
@@ -8465,21 +8465,21 @@
           [
             "rearLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/33998A_4.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/20633A_8.jpg",
           [
-            "rear"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/S10211_1.jpg",
-          [
-            "frontRight"
+            "front"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/S188_1.jpg",
           [
             "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/33974A_3.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/frontRight/S10211_1.jpg",
           [
-            "rearLeft"
+            "frontRight"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/33998A_4.jpg",
+          [
+            "rear"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/3522P_5.jpg",
           [
@@ -8497,9 +8497,9 @@
           [
             "rear"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/20633A_8.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/33974A_3.jpg",
           [
-            "front"
+            "rearLeft"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/20868B_5.jpg",
           [
@@ -8517,14 +8517,6 @@
           [
             "rearLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/3526P_2.jpg",
-          [
-            "rightSide"
-          ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/33846A_6.jpg",
-          [
-            "leftSide"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/3504P_3.jpg",
           [
             "rearLeft"
@@ -8537,13 +8529,21 @@
           [
             "rearLeft"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/33690AA_6.jpg",
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/33846A_6.jpg",
           [
             "leftSide"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/3526P_2.jpg",
+          [
+            "rightSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/front/10299P_8.jpg",
           [
             "front"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/leftSide/33690AA_6.jpg",
+          [
+            "leftSide"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rightSide/34124A_2.jpg",
           [
@@ -8585,13 +8585,13 @@
           [
             "frontRight"
           ],
-          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/33903A_4.jpg",
-          [
-            "rear"
-          ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearLeft/10573P_3.jpg",
           [
             "rearLeft"
+          ],
+          "file:///Users/justincollins/Downloads/VehicleAngleDataset/rear/33903A_4.jpg",
+          [
+            "rear"
           ],
           "file:///Users/justincollins/Downloads/VehicleAngleDataset/rearRight/3528P_5.jpg",
           [
@@ -8662,7 +8662,7 @@
     "89FBAA82-7533-4E34-987E-E1A024829C81"
   ],
   "id" : "F5F04FE8-674E-41CA-983B-8A7070FADA82",
-  "modifiedDate" : "2025-09-22T20:32:54Z",
+  "modifiedDate" : "2025-09-22T20:36:38Z",
   "pathType" : 0,
   "preferredFilename" : "VehicleAngleDataset",
   "title" : "VehicleAngleDataset",

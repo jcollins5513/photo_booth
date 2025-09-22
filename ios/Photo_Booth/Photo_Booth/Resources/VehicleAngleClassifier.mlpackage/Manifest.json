@@ -1,0 +1,24 @@
+{
+    "fileFormatVersion": "1.0.0",
+    "itemInfoEntries": {
+        "8E3EB591-9E17-4097-8F1F-1186270FC00D": {
+            "author": "com.apple.CoreML",
+            "description": "External FeatureDescription Overlay",
+            "name": "FeatureDescriptions.json",
+            "path": "com.apple.CoreML/FeatureDescriptions.json"
+        },
+        "E3B33B34-F982-4352-88D8-B9B62618038A": {
+            "author": "com.apple.CoreML",
+            "description": "CoreML Model Specification",
+            "name": "VehicleAngleClassifier.mlmodel",
+            "path": "com.apple.CoreML/VehicleAngleClassifier.mlmodel"
+        },
+        "E98A2B23-6544-4D83-9849-4CB2EE942DA3": {
+            "author": "com.apple.CoreML",
+            "description": "External Metadata Overlay",
+            "name": "Metadata.json",
+            "path": "com.apple.CoreML/Metadata.json"
+        }
+    },
+    "rootModelIdentifier": "E3B33B34-F982-4352-88D8-B9B62618038A"
+}

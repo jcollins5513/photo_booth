@@ -106,7 +106,7 @@ class CameraService: @unchecked Sendable, CameraServiceProtocol {
     }
     
     func startSession() async throws {
-        guard let session = captureSession, isSessionConfigured else {
+        guard captureSession != nil, isSessionConfigured else {
             throw CameraServiceError.sessionNotConfigured
         }
         
@@ -114,11 +114,11 @@ class CameraService: @unchecked Sendable, CameraServiceProtocol {
             return // Already running
         }
         
-        await withCheckedContinuation { continuation in
+        await withCheckedContinuation { (continuation: CheckedContinuation<Void, Never>) in
             DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-                session.startRunning()
+                self?.captureSession?.startRunning()
                 Task { @MainActor in
-                    self?.isSessionRunning = session.isRunning
+                    self?.isSessionRunning = self?.captureSession?.isRunning ?? false
                 }
                 continuation.resume()
             }
@@ -130,7 +130,7 @@ class CameraService: @unchecked Sendable, CameraServiceProtocol {
     }
     
     func stopSession() async throws {
-        guard let session = captureSession else {
+        guard captureSession != nil else {
             return // No session to stop
         }
         
@@ -138,9 +138,9 @@ class CameraService: @unchecked Sendable, CameraServiceProtocol {
             return // Already stopped
         }
         
-        await withCheckedContinuation { continuation in
+        await withCheckedContinuation { (continuation: CheckedContinuation<Void, Never>) in
             DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-                session.stopRunning()
+                self?.captureSession?.stopRunning()
                 Task { @MainActor in
                     self?.isSessionRunning = false
                 }
@@ -184,20 +184,20 @@ class CameraService: @unchecked Sendable, CameraServiceProtocol {
         print("🔍 CameraService: Session configured: \(isSessionConfigured)")
         
         // Double-check that the session is actually running
-        guard let session = captureSession else {
+        guard captureSession != nil else {
             print("❌ CameraService: No capture session available")
             throw CameraServiceError.sessionNotRunning
         }
         
         // Give the session a moment to start if it's not running yet
-        if !session.isRunning {
+        if !(captureSession?.isRunning ?? false) {
             print("⚠️ CameraService: Session not running, attempting to start...")
-            session.startRunning()
+            captureSession?.startRunning()
             // Wait a brief moment for the session to start
             try await Task.sleep(nanoseconds: 100_000_000) // 0.1 seconds
         }
         
-        guard session.isRunning else {
+        guard captureSession?.isRunning ?? false else {
             print("❌ CameraService: Session failed to start")
             throw CameraServiceError.sessionNotRunning
         }
