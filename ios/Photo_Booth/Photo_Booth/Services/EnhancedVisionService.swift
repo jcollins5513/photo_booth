@@ -90,6 +90,14 @@ class EnhancedVisionService: VisionServiceProtocol, ObservableObject {
     }
     
     // MARK: - Enhanced Classification
+    func classifyVehicleAngle(from imageData: Data) async throws -> PhotoAngleType {
+        guard let image = UIImage(data: imageData) else {
+            throw VisionServiceError.invalidImageData
+        }
+        
+        return try await classifyVehicleAngle(from: image)
+    }
+    
     func classifyVehicleAngle(from image: UIImage) async throws -> PhotoAngleType {
         guard isModelLoaded else {
             throw VisionServiceError.modelNotLoaded
@@ -114,35 +122,33 @@ class EnhancedVisionService: VisionServiceProtocol, ObservableObject {
                 let result = await enhancedModelManager.classifyVehicleAngle(from: processedImage)
                 
                 // Update published properties with enhanced validation
-                await MainActor.run {
-                    if let angle = result.angle {
-                        self.currentAngle = angle.displayName
-                        self.confidence = result.confidence
-                        
-                        // Enhanced validation with secondary checks
-                        let isValidVehicleView = self.performEnhancedValidation(
-                            image: image,
-                            angle: angle,
-                            confidence: result.confidence,
-                            quality: qualityAssessment.score,
-                            probabilities: result.probabilities
-                        )
-                        
-                        self.isPositionValid = isValidVehicleView
-                        self.updateGuidance(angle: angle, isValid: isValidVehicleView, quality: qualityAssessment.score)
-                        
-                        print("✅ EnhancedVisionService: Detected \(angle.displayName) with confidence \(result.confidence), quality \(qualityAssessment.score) - Valid: \(isValidVehicleView)")
-                    } else {
-                        self.currentAngle = "Unknown"
-                        self.confidence = result.confidence
-                        self.isPositionValid = false
-                        self.updateGuidance(angle: nil, isValid: false, quality: qualityAssessment.score)
-                        print("⚠️ EnhancedVisionService: No angle detected")
-                    }
+                if let angle = result.angle {
+                    self.currentAngle = angle.displayName
+                    self.confidence = result.confidence
                     
-                    self.imageQuality = qualityAssessment.score
-                    self.qualityIssues = qualityAssessment.issues
+                    // Enhanced validation with secondary checks
+                    let isValidVehicleView = await self.performEnhancedValidation(
+                        image: image,
+                        angle: angle,
+                        confidence: result.confidence,
+                        quality: qualityAssessment.score,
+                        probabilities: result.probabilities
+                    )
+                    
+                    self.isPositionValid = isValidVehicleView
+                    self.updateGuidance(angle: angle, isValid: isValidVehicleView, quality: qualityAssessment.score)
+                    
+                    print("✅ EnhancedVisionService: Detected \(angle.displayName) with confidence \(result.confidence), quality \(qualityAssessment.score) - Valid: \(isValidVehicleView)")
+                } else {
+                    self.currentAngle = "Unknown"
+                    self.confidence = result.confidence
+                    self.isPositionValid = false
+                    self.updateGuidance(angle: nil, isValid: false, quality: qualityAssessment.score)
+                    print("⚠️ EnhancedVisionService: No angle detected")
                 }
+                
+                self.imageQuality = qualityAssessment.score
+                self.qualityIssues = qualityAssessment.issues
                 
                 // Convert to PhotoAngleType
                 if let detectedAngle = result.angle {
@@ -176,7 +182,7 @@ class EnhancedVisionService: VisionServiceProtocol, ObservableObject {
         confidence: Float,
         quality: Float,
         probabilities: [EnhancedModelManager.VehicleAngle: Float]
-    ) -> Bool {
+    ) async -> Bool {
         // 1. Basic confidence check
         guard confidence >= confidenceThreshold else {
             print("⚠️ EnhancedVisionService: Confidence too low: \(confidence)")
@@ -191,11 +197,13 @@ class EnhancedVisionService: VisionServiceProtocol, ObservableObject {
         
         // 3. Secondary validation using enhanced model manager
         if let enhancedModelManager = enhancedModelManager {
-            let secondaryValidation = enhancedModelManager.performSecondaryValidation(
-                image: image,
-                predictedAngle: angle,
-                confidence: confidence
-            )
+            let secondaryValidation = await Task { @MainActor in
+                enhancedModelManager.performSecondaryValidation(
+                    image: image,
+                    predictedAngle: angle,
+                    confidence: confidence
+                )
+            }.value
             guard secondaryValidation else {
                 print("⚠️ EnhancedVisionService: Secondary validation failed")
                 return false
@@ -308,36 +316,34 @@ class EnhancedVisionService: VisionServiceProtocol, ObservableObject {
         // Enhanced classification with probability distribution
         let result = await enhancedModelManager.classifyVehicleAngle(from: processedImage)
         
-        await MainActor.run {
-            if let angle = result.angle {
-                self.currentAngle = angle.displayName
-                self.confidence = result.confidence
-                
-                // Enhanced validation with all checks
-                let isValidVehicleView = self.performEnhancedValidation(
-                    image: image,
-                    angle: angle,
-                    confidence: result.confidence,
-                    quality: qualityAssessment.score,
-                    probabilities: result.probabilities
-                )
-                
-                self.isPositionValid = isValidVehicleView
-                self.updateGuidance(angle: angle, isValid: isValidVehicleView, quality: qualityAssessment.score)
-                
-                print("✅ EnhancedVisionService: \(angle.displayName) - confidence: \(result.confidence), quality: \(qualityAssessment.score), valid: \(isValidVehicleView)")
-            } else {
-                self.currentAngle = "Unknown"
-                self.confidence = 0.0
-                self.isPositionValid = false
-                self.updateGuidance(angle: nil, isValid: false, quality: qualityAssessment.score)
-                print("⚠️ EnhancedVisionService: No angle detected")
-            }
+        if let angle = result.angle {
+            self.currentAngle = angle.displayName
+            self.confidence = result.confidence
             
-            self.imageQuality = qualityAssessment.score
-            self.qualityIssues = qualityAssessment.issues
-            self.isProcessing = false
+            // Enhanced validation with all checks
+            let isValidVehicleView = await self.performEnhancedValidation(
+                image: image,
+                angle: angle,
+                confidence: result.confidence,
+                quality: qualityAssessment.score,
+                probabilities: result.probabilities
+            )
+            
+            self.isPositionValid = isValidVehicleView
+            self.updateGuidance(angle: angle, isValid: isValidVehicleView, quality: qualityAssessment.score)
+            
+            print("✅ EnhancedVisionService: \(angle.displayName) - confidence: \(result.confidence), quality: \(qualityAssessment.score), valid: \(isValidVehicleView)")
+        } else {
+            self.currentAngle = "Unknown"
+            self.confidence = 0.0
+            self.isPositionValid = false
+            self.updateGuidance(angle: nil, isValid: false, quality: qualityAssessment.score)
+            print("⚠️ EnhancedVisionService: No angle detected")
         }
+        
+        self.imageQuality = qualityAssessment.score
+        self.qualityIssues = qualityAssessment.issues
+        self.isProcessing = false
     }
     
     // MARK: - Helper Methods

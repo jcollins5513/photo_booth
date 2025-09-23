@@ -2,7 +2,6 @@ import Foundation
 import CoreML
 import Vision
 import UIKit
-import CreateML
 
 /// Enhanced model manager with improved training data collection and validation
 @MainActor
@@ -280,7 +279,7 @@ class EnhancedModelManager: ObservableObject {
     func validateModelPerformance() async -> ValidationResult {
         print("🔍 EnhancedModelManager: Starting model validation...")
         
-        var correctPredictions = 0
+        let correctPredictions = 0
         var totalPredictions = 0
         var falsePositives = 0
         

@@ -5,6 +5,7 @@ import UIKit
 import Combine
 
 /// Automated vehicle detector for static camera setup - detects vehicle positions as they drive past
+@MainActor
 class AutomatedVehicleDetector: ObservableObject {
     
     // MARK: - Published Properties
@@ -148,7 +149,7 @@ class AutomatedVehicleDetector: ObservableObject {
     func processFrame(_ image: UIImage) async {
         guard isDetecting else { return }
         
-        await processingQueue.async { [weak self] in
+        processingQueue.async { [weak self] in
             guard let self = self else { return }
             
             Task { @MainActor in
@@ -327,7 +328,7 @@ class AutomatedVehicleDetector: ObservableObject {
     func capturePhoto() async -> UIImage? {
         guard captureReady,
               let position = currentVehiclePosition,
-              let session = currentSession else {
+              let _ = currentSession else {
             print("❌ AutomatedVehicleDetector: Not ready to capture")
             return nil
         }

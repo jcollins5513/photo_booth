@@ -1,9 +1,10 @@
 import Foundation
 @preconcurrency import AVFoundation
 import UIKit
+import Combine
 
 /// Camera service implementation
-class CameraService: @unchecked Sendable, CameraServiceProtocol {
+class CameraService: @unchecked Sendable, CameraServiceProtocol, ObservableObject {
     
     // MARK: - Properties
     

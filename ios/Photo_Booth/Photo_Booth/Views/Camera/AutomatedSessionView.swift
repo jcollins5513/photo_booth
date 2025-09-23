@@ -1,12 +1,15 @@
 import SwiftUI
 import AVFoundation
+import CoreData
 
 /// Automated session view for static camera setup - no user guidance needed
 struct AutomatedSessionView: View {
     
     // MARK: - Properties
     @StateObject private var automatedDetector = AutomatedVehicleDetector()
-    @StateObject private var cameraViewModel = CameraViewModel()
+    @StateObject private var cameraService = CameraService()
+    @StateObject private var visionService = VisionService()
+    @StateObject private var cameraViewModel: CameraViewModel
     @StateObject private var sessionViewModel: AutomatedSessionViewModel
     
     // MARK: - State Properties
@@ -14,7 +17,7 @@ struct AutomatedSessionView: View {
     @State private var capturedPhotos: [UIImage] = []
     @State private var sessionStartTime: Date?
     @State private var showSessionComplete = false
-    @State private var sessionStatistics: AutomatedVehicleDetector.SessionStatistics?
+    @State private var sessionStatistics: AutomatedSessionViewModel.AutomatedSessionStatistics?
     
     // MARK: - Constants
     private let totalPositions = 8
@@ -22,14 +25,25 @@ struct AutomatedSessionView: View {
     // MARK: - Initialization
     init(persistentContainer: NSPersistentContainer, fileSystemManager: FileSystemManagerProtocol) {
         self._sessionViewModel = StateObject(wrappedValue: AutomatedSessionViewModel(persistentContainer: persistentContainer, fileSystemManager: fileSystemManager))
+        
+        // Initialize camera view model with the services
+        self._cameraViewModel = StateObject(wrappedValue: CameraViewModel(cameraService: cameraService, visionService: visionService))
     }
     
     // MARK: - Body
     var body: some View {
         ZStack {
             // Camera Preview
-            CameraPreviewView(cameraViewModel: cameraViewModel)
-                .ignoresSafeArea()
+            CameraPreviewView(
+                isActive: $isSessionActive,
+                isDetecting: $sessionViewModel.isVehicleDetected,
+                detectionConfidence: $sessionViewModel.vehicleConfidence,
+                onFrameCaptured: { image in
+                    // Handle frame capture
+                    cameraViewModel.processFrame(image)
+                }
+            )
+            .ignoresSafeArea()
             
             // Session Status Overlay
             VStack {

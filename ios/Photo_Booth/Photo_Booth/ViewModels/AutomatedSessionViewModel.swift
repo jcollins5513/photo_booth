@@ -4,6 +4,7 @@ import Combine
 import CoreData
 
 /// Automated session view model for static camera setup - manages vehicle detection and capture
+@MainActor
 class AutomatedSessionViewModel: ObservableObject {
     
     // MARK: - Published Properties

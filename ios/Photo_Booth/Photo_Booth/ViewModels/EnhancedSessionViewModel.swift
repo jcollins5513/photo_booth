@@ -360,7 +360,7 @@ class EnhancedSessionViewModel: ObservableObject {
         do {
             let sessionId = UUID()
             let startTime = sessionStartTime ?? Date()
-            let endTime = Date()
+            let _ = Date() // endTime not used
             let totalAngles = Int16(totalPhotos)
             let completedAngles = Int16(capturedPhotos.count)
             let status = sessionQuality == .excellent ? "Completed" : "In Progress"
@@ -374,7 +374,7 @@ class EnhancedSessionViewModel: ObservableObject {
                 completedAngles: completedAngles
             )
             
-            print("✅ EnhancedSessionViewModel: Session data saved successfully - ID: \(photoSession.id)")
+            print("✅ EnhancedSessionViewModel: Session data saved successfully - ID: \(photoSession.id ?? "unknown")")
         } catch {
             print("❌ EnhancedSessionViewModel: Failed to save session data - \(error)")
             enhancedErrorHandler.handleError(.storageError, context: "Failed to save session: \(error.localizedDescription)")

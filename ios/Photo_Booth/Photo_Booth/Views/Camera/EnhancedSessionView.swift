@@ -1,13 +1,15 @@
 import SwiftUI
 import AVFoundation
+import CoreData
 
 /// Enhanced session view with improved user guidance and feedback
 struct EnhancedSessionView: View {
     
     // MARK: - Properties
-    @StateObject private var sessionViewModel = SessionViewModel()
+    @StateObject private var sessionViewModel: EnhancedSessionViewModel
     @StateObject private var enhancedVisionService = EnhancedVisionService()
-    @StateObject private var cameraViewModel = CameraViewModel()
+    @StateObject private var cameraService = CameraService()
+    @StateObject private var cameraViewModel: CameraViewModel
     
     // MARK: - State Properties
     @State private var isSessionActive = false
@@ -22,12 +24,28 @@ struct EnhancedSessionView: View {
     private let totalPhotos = 8
     private let guidanceAnimationDuration: Double = 0.3
     
+    // MARK: - Initialization
+    init(persistentContainer: NSPersistentContainer, fileSystemManager: FileSystemManagerProtocol) {
+        self._sessionViewModel = StateObject(wrappedValue: EnhancedSessionViewModel(persistentContainer: persistentContainer, fileSystemManager: fileSystemManager))
+        
+        // Initialize camera view model with the services
+        self._cameraViewModel = StateObject(wrappedValue: CameraViewModel(cameraService: cameraService, visionService: enhancedVisionService))
+    }
+    
     // MARK: - Body
     var body: some View {
         ZStack {
             // Camera Preview
-            CameraPreviewView(cameraViewModel: cameraViewModel)
-                .ignoresSafeArea()
+            CameraPreviewView(
+                isActive: $isSessionActive,
+                isDetecting: $sessionViewModel.isProcessing,
+                detectionConfidence: $sessionViewModel.sessionProgress,
+                onFrameCaptured: { image in
+                    // Handle frame capture
+                    cameraViewModel.processFrame(image)
+                }
+            )
+            .ignoresSafeArea()
             
             // Enhanced Guidance Overlay
             if showGuidanceOverlay {
@@ -49,10 +67,10 @@ struct EnhancedSessionView: View {
         .onDisappear {
             cleanupSession()
         }
-        .onChange(of: enhancedVisionService.isPositionValid) { isValid in
+        .onChange(of: enhancedVisionService.isPositionValid) { _, isValid in
             handlePositionValidation(isValid)
         }
-        .onChange(of: enhancedVisionService.guidanceType) { guidanceType in
+        .onChange(of: enhancedVisionService.guidanceType) { _, guidanceType in
             updateGuidanceDisplay(guidanceType)
         }
     }
@@ -378,7 +396,7 @@ struct EnhancedSessionView: View {
         Task {
             do {
                 try await enhancedVisionService.loadModel()
-                try await cameraViewModel.startSession()
+                await cameraViewModel.startCamera()
                 isSessionActive = true
                 print("✅ EnhancedSessionView: Session started successfully")
             } catch {
@@ -389,7 +407,9 @@ struct EnhancedSessionView: View {
     
     private func cleanupSession() {
         isSessionActive = false
-        cameraViewModel.stopSession()
+        Task {
+            await cameraViewModel.stopCamera()
+        }
         enhancedVisionService.stopContinuousClassification()
     }
     
@@ -419,33 +439,33 @@ struct EnhancedSessionView: View {
         guard enhancedVisionService.isPositionValid else { return }
         
         Task {
-            do {
-                let photo = try await cameraViewModel.capturePhoto()
+            await cameraViewModel.capturePhoto()
+            if let photo = cameraViewModel.lastCapturedPhoto {
                 capturedPhotos.append(photo)
-                currentPhotoIndex += 1
-                
-                // Provide capture feedback
-                provideCaptureFeedback()
-                
-                // Check if session is complete
-                if currentPhotoIndex >= totalPhotos {
-                    completeSession()
-                }
-            } catch {
-                print("❌ EnhancedSessionView: Failed to capture photo - \(error)")
+            }
+            currentPhotoIndex += 1
+            
+            // Provide capture feedback
+            provideCaptureFeedback()
+            
+            // Check if session is complete
+            if currentPhotoIndex >= totalPhotos {
+                completeSession()
             }
         }
     }
     
     private func pauseSession() {
         isSessionActive = false
-        cameraViewModel.pauseSession()
+        // Camera pause not implemented in CameraViewModel
         enhancedVisionService.stopContinuousClassification()
     }
     
     private func endSession() {
         isSessionActive = false
-        cameraViewModel.stopSession()
+        Task {
+            await cameraViewModel.stopCamera()
+        }
         enhancedVisionService.stopContinuousClassification()
         // Navigate back or show results
     }
@@ -476,7 +496,8 @@ struct EnhancedSessionView: View {
 // MARK: - Preview
 struct EnhancedSessionView_Previews: PreviewProvider {
     static var previews: some View {
-        EnhancedSessionView()
+        // Preview requires Core Data setup - commented out for now
+        Text("EnhancedSessionView Preview")
             .preferredColorScheme(.dark)
     }
 }

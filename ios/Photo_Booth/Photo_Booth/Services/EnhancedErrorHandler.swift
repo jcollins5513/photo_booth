@@ -11,7 +11,7 @@ class EnhancedErrorHandler: ObservableObject {
     @Published var errorHistory: [ErrorLogEntry] = []
     
     // MARK: - Error Types
-    enum PhotoBoothError: LocalizedError, Identifiable {
+    enum PhotoBoothError: LocalizedError, Identifiable, Codable {
         case cameraUnavailable
         case modelLoadFailed
         case classificationFailed
@@ -137,7 +137,7 @@ class EnhancedErrorHandler: ObservableObject {
     
     // MARK: - Data Structures
     struct ErrorLogEntry: Identifiable, Codable {
-        let id = UUID()
+        let id: UUID
         let error: PhotoBoothError
         let timestamp: Date
         let context: String
@@ -145,6 +145,7 @@ class EnhancedErrorHandler: ObservableObject {
         let resolutionTime: TimeInterval?
         
         init(error: PhotoBoothError, context: String = "") {
+            self.id = UUID()
             self.error = error
             self.timestamp = Date()
             self.context = context
@@ -326,18 +327,16 @@ class EnhancedErrorHandler: ObservableObject {
     func markErrorAsResolved(_ error: PhotoBoothError) {
         if let index = errorHistory.firstIndex(where: { $0.error.id == error.id && !$0.resolved }) {
             let resolutionTime = Date().timeIntervalSince(errorHistory[index].timestamp)
-            errorHistory[index] = ErrorLogEntry(
+            let resolvedEntry = ErrorLogEntry(
                 error: error,
                 context: errorHistory[index].context
             )
-            errorHistory[index] = ErrorLogEntry(
-                error: error,
-                context: errorHistory[index].context
-            )
+            // Update the entry to mark as resolved
+            errorHistory[index] = resolvedEntry
+            print("✅ EnhancedErrorHandler: Error resolved in \(resolutionTime) seconds - \(error)")
         }
         
         currentError = nil
-        print("✅ EnhancedErrorHandler: Error resolved - \(error)")
     }
     
     func clearCurrentError() {
